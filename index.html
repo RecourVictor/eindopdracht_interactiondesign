@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollenradar</title>
+
+    <!-- CSS INLADEN -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- JS INLADEN -->
+    <script src="script/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="c-container">
+            <nav>
+                <h1 class="c-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.041 34.333">
+                        <path id="radar" d="M13.894,1.309A16.023,16.023,0,0,1,33.043,17.022a1.144,1.144,0,0,1-2.289,0A13.734,13.734,0,1,0,15.876,30.71v-2.3A11.445,11.445,0,1,1,28.465,17.022a1.144,1.144,0,0,1-2.289,0,9.156,9.156,0,1,0-10.3,9.085V23.793a6.865,6.865,0,1,1,8.011-6.771,1.144,1.144,0,0,1-2.289,0,4.578,4.578,0,1,0-5.722,4.431V19a2.289,2.289,0,1,1,2.289,0V34.189a1.144,1.144,0,0,1-2.289,0V33a16.023,16.023,0,0,1-1.982-31.7Z" transform="translate(-1.002 -1)" fill="currentcolor" />
+                    </svg>
+                    Pollen<span class="c-title__radar">radar</span>
+                </h1>
+                <button class="u-resetbutton js-filterbtn">Filters</button>
+                <div class="c-filter js-filter">
+                    <h5>Personaliseer je pollenkaart</h5>
+                    <input class="u-hidden" type="checkbox" name="Graspollen" id="gras">
+                    <label for="gras">Graspollen</label>
+                    <input class="u-hidden" type="checkbox" name="Boompollen" id="boom">
+                    <label for="boom">Boompollen</label>
+                    <input class="u-hidden" type="checkbox" name="Onkruidpollen" id="onkruid">
+                    <label for="onkruid">Onkruidpollen</label>
+                </div>
+            </nav>
+            <section class="c-today">
+                <div class="c-today__date">
+                    <h2>Vandaag</h2>
+                    <p class="c-header__date">18/10/2023</p>
+                </div>
+                <div class="c-today__description">
+                    <p class="c-header__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
+                </div>
+                <div class="c-today__weather">weer</div>
+                <div class="c-today__graspollen c-card c-card__gras c-card__gray">
+                    <h3>Graspollen</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
+                    <div class="c-gauge">
+                        <div class="c-gauge__body">
+                            <div class="c-gauge__fill c-gauge__fill--high"></div>
+                            <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                            <div class="c-gauge__fill c-gauge__fill--low"></div>
+                            <div class="c-gauge__cover"></div>
+                            <div class="c-gauge__pin"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>60%</h4>
+                        <h5>Matig</h5>
+                        <h6>Matige graspollen</h6>
+                    </div>
+                </div>
+                <div class="c-today__boompollen c-card c-card__boom c-card__gray">
+                    <h3>Boompollen</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
+                    <div class="c-gauge">
+                        <div class="c-gauge__body">
+                            <div class="c-gauge__fill c-gauge__fill--high"></div>
+                            <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                            <div class="c-gauge__fill c-gauge__fill--low"></div>
+                            <div class="c-gauge__cover"></div>
+                            <div class="c-gauge__pin"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>60%</h4>
+                        <h5>Matig</h5>
+                        <h6>Matige boompollen</h6>
+                    </div>
+                </div>
+                <div class="c-today__onkruidpollen c-card c-card__onkruid c-card__gray">
+                    <h3>Onkruidpollen</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
+                    <div class="c-gauge">
+                        <div class="c-gauge__body">
+                            <div class="c-gauge__fill c-gauge__fill--high"></div>
+                            <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                            <div class="c-gauge__fill c-gauge__fill--low"></div>
+                            <div class="c-gauge__cover"></div>
+                            <div class="c-gauge__pin"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>60%</h4>
+                        <h5>Matig</h5>
+                        <h6>Matige onkruidpollen</h6>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </header>
+    <main>
+        <h2>voorspelling</h2>
+        <section>voorspelling</section>
+    </main>
+    <footer>
+        <div class="c-container c-footer">
+            <p>&copy; Pollenradar 2023</p>
+            <p>In opdracht van Howest MCT</p>
+        </div>
+    </footer>
+</body>
+
+</html>

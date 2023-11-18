@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    /* colors */
+    --global-color-white: #E4E5E7;
+    --global-color-lightblue: #5099CE;
+    --global-color-darkblue: #152B81;
+    --global-color-black: #545454;
+
+    --global-backGroundColor-black: rgba(84, 84, 84, 0.6);
+
+    /* fonts */
+    --global-font-family: 'Poppins', sans-serif;
+    /* fontsize */
+    --global-fontsize: 1rem; /* 16px */
+    --global-fontsize-xs: 0.75rem; /* 12px */
+    --global-fontsize-s: 1.25rem; /* 20px */
+    --global-fontsize-m: 1.5rem; /* 24px */
+    --global-fontsize-l: 2rem; /* 32px */
+    --global-fontsize-xl: 3rem; /* 48px */
+    --global-fontsize-xxl: 5rem; /* 80px */
+
+    /* spacing */
+    --global-spacing: 1rem; /* 16px */
+    --global-spacing-xs: 0.5rem; /* 8px */
+    --global-spacing-s: 2rem; /* 32px */
+
+    /* border radius */
+    --global-border-radius: 30px;
+
+    /* box shadows */
+    --global-boShadow-black: 10px 10px 30px rgba(84, 84, 84, 0.3);
+    --global-boxShadow-rgba: rgba(21, 43, 129, 0.3);
+
+    /* width */
+    --global-width: 90vw;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    line-height: 1.5;
+}
+
+body{
+    background-color: var(--global-color-white);
+    font-family: var(--global-font-family);
+    color: var(--global-color-darkblue);
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+h2{
+    font-size: var(--global-fontsize-xxl);
+}
+
+h3{
+    font-size: var(--global-fontsize-l);
+    font-weight: 700;
+}
+
+h4{
+    font-size: var(--global-fontsize-l);
+    text-align: center;
+}
+
+h5{
+    font-size: var(--global-fontsize-m);
+    font-weight: 600;
+    text-align: center;
+}
+
+h6{
+    font-size: var(--global-fontsize-s);
+    font-weight: 500;
+    text-align: center;
+}
+
+header{
+    min-height: 100vh;
+    background-image: url(../assets/img/background.jpg);
+    background-position: top;
+    background-size: cover;
+    color: var(--global-color-white);
+    padding-bottom: var(--global-spacing-s);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--global-spacing) 0;
+}
+
+label{
+    font-size: var(--global-fontsize-s);
+    display: block;
+    line-height: 2;
+}
+
+/* algemene */
+.c-container{
+    width: var(--global-width);
+    margin: 0 auto;
+}
+
+.c-header__date{
+    font-size: var(--global-fontsize-xl);
+    font-weight: 700;
+}
+
+.c-header__text{
+    font-size: var(--global-fontsize-m);
+}
+
+/* navigation */
+.c-title{
+    color: var(--global-color-darkblue);
+    font-weight: 700;
+    font-size: var(--global-fontsize-l);
+    & svg{
+        height: var(--global-fontsize-l);
+        width: auto;
+    }
+}
+
+.c-title__radar{
+    color: var(--global-color-white);
+}
+
+.c-filter{
+    background-color: var(--global-color-darkblue);
+    min-width: 35rem;
+    position: absolute;
+    right: 0;
+    /* right: -100vw; */
+    transform: translateX(100%);
+    top: 5rem;
+    padding: var(--global-spacing);
+    padding-left: calc(var(--global-spacing) * 2);
+    border-top-left-radius: var(--global-border-radius);
+    border-bottom-left-radius: var(--global-border-radius);
+    box-shadow: var(--global-boxShadow-rgba);
+    transition: 0.3s all ease-in-out;
+    opacity: 0;
+    & h5{
+        text-align: left;
+        line-height: 2;
+    }
+}
+
+.c-filter__show{
+    /* right: 0; */
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* footer */
+.c-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--global-fontsize-xs);
+    padding: var(--global-spacing-xs) 0;
+}
+
+/* today */
+.c-today{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: var(--global-spacing);
+    grid-template-areas:
+        "date date date weather weather weather"
+        "description description description weather weather weather"
+        "gras gras boom boom onkruid onkruid";
+}
+
+.c-today__date{
+    grid-area: date;
+}
+
+.c-today__description{
+    grid-area: description;
+}
+
+.c-today__weather{
+    grid-area: weather;
+}
+
+.c-today__graspollen{
+    grid-area: gras;
+}
+
+.c-today__onkruidpollen{
+    grid-area: onkruid;
+}
+
+.c-today__boompollen{
+    grid-area: boom;
+}
+
+/* card */
+.c-card{
+    padding: var(--global-spacing-s);
+    border-radius: var(--global-border-radius);
+    display: flex;
+    flex-direction: column;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 10rem auto;
+    gap: var(--global-spacing);
+}
+
+.c-card__gras{
+    background-image: url(../assets/svg/grass_dblue.svg);
+}
+
+.c-card__boom{
+    background-image: url(../assets/svg/boom_dblue.svg);
+}
+
+.c-card__onkruid{
+    background-image: url(../assets/svg/onkruid_dblue.svg);
+}
+
+.c-card__gray{
+    box-shadow: var(--global-boxShadow-black);
+    background-color: var(--global-backGroundColor-black);
+    & .c-gauge__cover{
+        background-color: var(--global-color-black);
+    }
+}
+
+
+
+/* gauge */
+.c-gauge {
+    width: 100%;
+    max-width: 15rem;
+    margin: 0 auto;
+}
+
+.c-gauge__body {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden;
+}
+
+.c-gauge__fill {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    border-bottom-right-radius: 100% 200%;
+    border-bottom-left-radius: 100% 200%;
+    transform-origin: center top;
+    transition: transform 0.2s;
+}
+
+.c-gauge__fill--low {
+    background-color: green;
+    transform: rotate(0.15turn);
+}
+
+.c-gauge__fill--medium {
+    background-color: orange;
+    transform: rotate(0.35turn);
+}
+
+.c-gauge__fill--high {
+    background-color: red;
+    transform: rotate(0.5turn);
+}
+
+.c-gauge__cover{
+    width: 75%;
+    height: 150%;
+    background-color: hotpink;
+    position: absolute;
+    border-radius: 50%;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.c-gauge__pin{
+    background-color: var(--global-color-darkblue);
+    width: 0.3rem;
+    border-radius: 30px;
+    height: 90%;
+    position: absolute;
+    bottom: calc(0% + 0.5rem / 2);
+    left: 50%;
+    transform: translateX(-50%);
+    transform: rotate(55deg);
+    transform-origin: center bottom;
+}
+.c-gauge__pin::after{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%) translateY(50%);
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--global-color-darkblue);
+}
+
+
+/* utilities */
+
+.u-resetbutton{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.u-hidden{
+    display: none;
+}
