@@ -6,6 +6,7 @@
     --global-color-lightblue: #5099CE;
     --global-color-darkblue: #152B81;
     --global-color-black: #545454;
+    --global-color-lighlightblue: #8AB8D8;
 
     --global-backGroundColor-black: rgba(84, 84, 84, 0.6);
 
@@ -24,6 +25,7 @@
     --global-spacing: 1rem; /* 16px */
     --global-spacing-xs: 0.5rem; /* 8px */
     --global-spacing-s: 2rem; /* 32px */
+    --global-spacing-xl: 4rem; /* 64px */
 
     /* border radius */
     --global-border-radius: 30px;
@@ -31,6 +33,7 @@
     /* box shadows */
     --global-boShadow-black: 10px 10px 30px rgba(84, 84, 84, 0.3);
     --global-boxShadow-rgba: rgba(21, 43, 129, 0.3);
+    --global-boxShadow-lblue: 10px 10px 30px rgba(79, 153, 207, 0.3);
 
     /* width */
     --global-width: 90vw;
@@ -102,6 +105,10 @@ label{
     line-height: 2;
 }
 
+main{
+    padding: var(--global-spacing-xl);
+}
+
 /* algemene */
 .c-container{
     width: var(--global-width);
@@ -130,6 +137,13 @@ label{
 
 .c-title__radar{
     color: var(--global-color-white);
+}
+
+.c-filterbtn{
+    color: var(--global-color-darkblue);
+    &:focus-visible{
+        color: var(--global-color-white);
+    }
 }
 
 .c-filter{
@@ -204,6 +218,20 @@ label{
     grid-area: boom;
 }
 
+/* modal */
+.c-modal{
+    background-color: var(--global-color-darkblue);
+    position: fixed;
+    top: 0;
+    width: calc(100vw - 2 * var(--global-spacing-xl));
+    height: calc(100vh - 2 * var(--global-spacing-xl));
+    margin: var(--global-spacing-xl);
+    padding: var(--global-spacing-s);
+    overflow-y: auto;
+    color: var(--global-color-white);
+    border-radius: var(--global-border-radius);
+}
+
 /* card */
 .c-card{
     padding: var(--global-spacing-s);
@@ -236,7 +264,29 @@ label{
     }
 }
 
+.c-card__blue{
+    box-shadow: var(--global-boxShadow-black);
+    background-color: yellow;
+    & .c-gauge__cover{
+        background-color: yellow;
+    }
+}
 
+/* weather */
+.c-weather{
+    display: flex;
+    /* gap: var(--global-spacing); */
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.c-weather__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--global-spacing-xs);
+}
 
 /* gauge */
 .c-gauge {
@@ -285,7 +335,7 @@ label{
 .c-gauge__cover{
     width: 75%;
     height: 150%;
-    background-color: hotpink;
+    background-color: var(--global-color-lighlightblue);
     position: absolute;
     border-radius: 50%;
     top: 25%;
@@ -318,6 +368,85 @@ label{
     background-color: var(--global-color-darkblue);
 }
 
+/* scroll */
+.c-scroll{
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type:  x mandatory;
+    min-height: 20rem;
+    align-items: stretch;
+    padding: var(--global-spacing-s) 0;
+}
+
+.c-scroll::-webkit-scrollbar{
+    /* height: 5px; */
+    display: none;
+}
+
+/* .c-scroll::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.c-scroll::-webkit-scrollbar-thumb{
+    background-color: yellow;
+    border-radius: 20px;
+    margin: 0.5rem;
+} */
+
+.c-scroll__item{
+    font-family: inherit;
+    color: inherit;
+    text-align: left;
+    background-color: var(--global-color-lighlightblue);
+    border-radius: var(--global-border-radius);
+    box-shadow: var(--global-boxShadow-lblue);
+    min-width: calc(100% / 2.5);
+    scroll-snap-align: start;
+    border: none;
+    cursor: pointer;
+    padding: var(--global-spacing-s);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: var(--global-spacing);
+    grid-template-areas:
+        "title title title"
+        "description description description"
+        "gras boom onkruid";
+    &:focus-visible{
+        outline: 2px solid var(--global-color-darkblue);
+
+    }
+}
+
+.c-forecast__title{
+    grid-area: title;
+}
+
+.c-forecast__description{
+    grid-area: description;
+}
+
+.c-forecast__gras{
+    grid-area: gras;
+}
+
+.c-forecast__onkruid{
+    grid-area: onkruid;
+}
+
+.c-forecast__boom{
+    grid-area: boom;
+}
+
+.c-forecast__gauge{
+    display: flex;
+    flex-direction: column;
+    gap: var(--global-spacing-xs);
+    align-items: center;
+}
 
 /* utilities */
 
