@@ -7,6 +7,7 @@
     --global-color-darkblue: #152B81;
     --global-color-black: #545454;
     --global-color-lighlightblue: #8AB8D8;
+    --global-color-accentlbue: #254990;
 
     --global-backGroundColor-black: rgba(84, 84, 84, 0.6);
 
@@ -34,6 +35,7 @@
     --global-boShadow-black: 10px 10px 30px rgba(84, 84, 84, 0.3);
     --global-boxShadow-rgba: rgba(21, 43, 129, 0.3);
     --global-boxShadow-lblue: 10px 10px 30px rgba(79, 153, 207, 0.3);
+    --global-boxShadow-dblue: 10px 10px 30px rgba(21, 42, 127, 0.3);
 
     /* width */
     --global-width: 90vw;
@@ -43,6 +45,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    &:focus-visible{
+        outline: none;
+    }
 }
 
 html{
@@ -107,6 +112,42 @@ label{
 
 main{
     padding: var(--global-spacing-xl);
+}
+
+/* toggle */
+.c-toggle__switch{
+    width: 2.5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--global-color-white);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    position: relative;
+    transition: all .3s;
+    &::after{
+        content: "";
+        background-color: var(--global-color-lightblue);
+        width: 1rem;
+        height: 1rem;
+        position: absolute;        
+        top: 0.25rem;
+        left: 0.25rem;
+        border-radius: 50%;
+        transition: all .3s;
+    }
+}
+
+.c-toggle__checkbox:checked + .c-toggle__switch{
+    /* background-color: yellow; */
+    &::after{
+        margin-left: 1rem;
+        background-color: var(--global-color-darkblue);
+    }
+}
+
+.c-toggle__checkbox{
+    display: none;
 }
 
 /* algemene */
@@ -194,12 +235,37 @@ main{
         "gras gras boom boom onkruid onkruid";
 }
 
+.c-today__filter--1{
+    grid-template-areas:
+        "date date date date date date"
+        "description description description . . ."
+        "gras gras chart chart chart chart";
+}
+
+.c-today__filter--2{
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+    "date date date date date date"
+    "description1 description1 description1 description2 description2 description2"
+    "gras gras chart chart chart chart"
+    'boom boom chart chart chart chart';
+    
+}
+
 .c-today__date{
     grid-area: date;
 }
 
 .c-today__description{
     grid-area: description;
+}
+
+.c-today__description--1{
+    grid-area: description1;
+}
+
+.c-today__description--2{
+    grid-area: description2;
 }
 
 .c-today__weather{
@@ -218,6 +284,68 @@ main{
     grid-area: boom;
 }
 
+.c-today__chart{
+    grid-area: chart;
+}
+
+/* chart */
+.c-chart{
+    height: 90%;
+    min-height: 20rem;
+    display: flex;
+    gap: var(--global-spacing);
+    align-items: flex-end;
+    justify-content: center;
+}
+.c-chart__bar{
+    background-color: var(--global-color-darkblue);
+    width: var(--global-spacing-s);
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.c-chart__bar--2{
+    background-color: var(--global-color-lightblue);
+}
+
+.c-chart__percent{
+    position: absolute;
+    bottom: 1rem;
+    transform: rotate(-90deg);
+}
+.c-chart__group{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.c-chart__legende{
+    display: flex;
+    gap: var(--global-spacing-xs);
+    justify-content: center;
+}
+
+.c-chart__legende--item{
+    display: flex;
+    align-items: center;
+    gap: var(--global-spacing-xs);
+}
+
+.c-chart__legende--color{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.c-chart__legende--color1{
+    background-color: var(--global-color-darkblue);
+}
+
+.c-chart__legende--color2{
+    background-color: var(--global-color-lightblue);
+}
+
 /* modal */
 .c-modal{
     background-color: var(--global-color-darkblue);
@@ -230,8 +358,55 @@ main{
     overflow-y: auto;
     color: var(--global-color-white);
     border-radius: var(--global-border-radius);
+    box-shadow: var(--global-boxShadow-dblue);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    visibility: hidden;
 }
 
+.c-modal__filter--1{
+    grid-template-areas:
+    "date date date card1 card1 card1"
+    "description description description card1 card1 card1"
+    "weather weather weather weather weather weather";
+    height: auto;
+}
+
+.c-modal__filter--2{
+    grid-template-areas:
+    "date date date weather weather weather"
+    "description description description weather weather weather"
+    "card1 card1 card1 card2 card2 card2";
+}
+
+.c-modal__1{
+    grid-area: card1;
+}
+
+.c-modal__2{
+    grid-area: card2;
+}
+
+.c-modal__show{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.c-modal__close{
+    position: absolute;
+    top: var(--global-spacing);
+    right: var(--global-spacing);
+    cursor: pointer;
+    color: var(--global-color-white);
+    &:focus-visible{
+        color: var(--global-color-lightblue);
+    }
+}
+
+.c-modal::-webkit-scrollbar {
+    display: none;
+}
 /* card */
 .c-card{
     padding: var(--global-spacing-s);
@@ -242,6 +417,10 @@ main{
     background-repeat: no-repeat;
     background-size: 10rem auto;
     gap: var(--global-spacing);
+}
+
+.c-card__flex{
+    justify-content: center;
 }
 
 .c-card__gras{
@@ -266,9 +445,15 @@ main{
 
 .c-card__blue{
     box-shadow: var(--global-boxShadow-black);
-    background-color: yellow;
+    background-color: var(--global-color-accentlbue);
     & .c-gauge__cover{
-        background-color: yellow;
+        background-color: var(--global-color-accentlbue);
+    }
+    & .c-gauge__pin{
+        background-color: var(--global-color-white);
+    }
+    & .c-gauge__pin::after{
+        background-color: var(--global-color-white);
     }
 }
 
@@ -378,6 +563,7 @@ main{
     min-height: 20rem;
     align-items: stretch;
     padding: var(--global-spacing-s) 0;
+    /* margin-left: 2rem;    */
 }
 
 .c-scroll::-webkit-scrollbar{
@@ -406,6 +592,7 @@ main{
     scroll-snap-align: start;
     border: none;
     cursor: pointer;
+    /* margin: 0.5rem;           */
     padding: var(--global-spacing-s);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -416,9 +603,22 @@ main{
         "description description description"
         "gras boom onkruid";
     &:focus-visible{
-        outline: 2px solid var(--global-color-darkblue);
-
+        border: 2px solid var(--global-color-darkblue) !important;
     }
+}
+
+.c-scroll__item--filter1{
+    grid-template-areas:
+    "title title title"
+    "description description description"
+    "card card card";
+}
+.c-scroll__item--filter2{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "title title title title"
+    "description description description description"
+    "card card card2 card2";
 }
 
 .c-forecast__title{
@@ -439,6 +639,14 @@ main{
 
 .c-forecast__boom{
     grid-area: boom;
+}
+
+.c-forecast__1{
+    grid-area: card;
+}
+
+.c-forecast__2{
+    grid-area: card2;
 }
 
 .c-forecast__gauge{
