@@ -1,26 +1,22 @@
+/*---------------------------------------/*
+ # SETTINGS
+/*---------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
-    /* colors */
-    --global-color-white: #E4E5E7;
-    --global-color-lightblue: #5099CE;
-    --global-color-darkblue: #152B81;
-    --global-color-black: #545454;
-    --global-color-lighlightblue: #8AB8D8;
-    --global-color-accentlbue: #254990;
-
-    --global-backGroundColor-black: rgba(84, 84, 84, 0.6);
+    /* Container with */
+    --global-container-width: 95vw;
 
     /* fonts */
-    --global-font-family: 'Poppins', sans-serif;
+    --global-fontFamily: 'Poppins', sans-serif;
     /* fontsize */
-    --global-fontsize: 1rem; /* 16px */
-    --global-fontsize-xs: 0.75rem; /* 12px */
-    --global-fontsize-s: 1.25rem; /* 20px */
-    --global-fontsize-m: 1.5rem; /* 24px */
-    --global-fontsize-l: 2rem; /* 32px */
-    --global-fontsize-xl: 3rem; /* 48px */
-    --global-fontsize-xxl: 5rem; /* 80px */
+    --global-fontSize: 1rem; /* 16px */
+    --global-fontSize-xs: 0.75rem; /* 12px */
+    --global-fontSize-s: 1rem; /* 18px */
+    --global-fontSize-m: 1.1rem; /* 20px */
+    --global-fontSize-l: 1.2rem; /* 24px */
+    --global-fontSize-xl: 1.5rem; /* 32px */
+    --global-fontSize-xxl: 2.5rem; /* 48px */
 
     /* spacing */
     --global-spacing: 1rem; /* 16px */
@@ -29,72 +25,130 @@
     --global-spacing-xl: 4rem; /* 64px */
 
     /* border radius */
-    --global-border-radius: 30px;
+    --global-borderRadius: 30px;
 
-    /* box shadows */
-    --global-boShadow-black: 10px 10px 30px rgba(84, 84, 84, 0.3);
-    --global-boxShadow-rgba: rgba(21, 43, 129, 0.3);
-    --global-boxShadow-lblue: 10px 10px 30px rgba(79, 153, 207, 0.3);
-    --global-boxShadow-dblue: 10px 10px 30px rgba(21, 42, 127, 0.3);
+    /* colors */
+    --global-color-white: #E4E5E7;
+    --global-color-lightblue: #5099CE;
+    --global-color-darkblue: #152B81;
+    --global-color-gray: #545454;
 
-    /* width */
-    --global-width: 90vw;
+    /* backgroundcolors */
+    --global-backGroundColor-gray: rgba(84, 84, 84, 0.6);
+    --global-backGroundColor-lightblue: #8AB8D8;
+    --global-backGroundColor-accentlbue: #254990;
+
+    /* box shadow */
+    --global-boxShadow-gray: 10px 10px 30px rgba(84, 84, 84, 0.3);
+    --global-boxShadow-lightblue: 10px 10px 30px rgba(79, 153, 207, 0.3);
+    --global-boxShadow-darkblue: 10px 10px 30px rgba(21, 42, 127, 0.3);
+    --global-boxShadow-accentblue: 10px 10px 30px rgba(37, 73, 144, 0.3);
 }
 
+@media screen and (min-width: 48rem) {
+    :root{
+        --global-container-width: 90vw;
+
+        --global-fontSize-s: 1.1rem; /* 18px */
+        --global-fontSize-m: 1.2rem; /* 20px */
+        --global-fontSize-l: 1.3rem; /* 24px */
+        --global-fontSize-xl: 2rem; /* 32px */
+        --global-fontSize-xxl: 3.5rem; /* 48px */
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    :root{
+        --global-container-width: 85vw;
+
+        --global-fontSize-s: 1.15rem; /* 18px */
+        --global-fontSize-m: 1.25rem; /* 20px */
+        --global-fontSize-l: 1.5rem; /* 24px */
+        --global-fontSize-xl: 2rem; /* 32px */
+        --global-fontSize-xxl: 4rem; /* 48px */
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+  
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+/*---------------------------------------/*
+ # GENERIC
+/*---------------------------------------*/
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    &:focus-visible{
-        outline: none;
-    }
+    box-sizing: border-box;
 }
 
 html{
     line-height: 1.5;
+    background-color: var(--global-color-white);
+    font-family: var(--global-fontFamily);
+    color: var(--global-color-darkblue);
+    font-weight: 500;
 }
 
 body{
-    background-color: var(--global-color-white);
-    font-family: var(--global-font-family);
-    color: var(--global-color-darkblue);
-    font-weight: 500;
+    position: relative;
     overflow-x: hidden;
+}
+/*---------------------------------------/*
+ # ELEMENTS
+/*---------------------------------------*/
+button{
+    all: unset;
+    cursor: pointer;
+}
+
+main{
+    padding: var(--global-spacing-xl) 0;
 }
 
 h2{
-    font-size: var(--global-fontsize-xxl);
+    font-size: var(--global-fontSize-xxl);
 }
 
 h3{
-    font-size: var(--global-fontsize-l);
+    font-size: var(--global-fontSize-l);
     font-weight: 700;
 }
 
 h4{
-    font-size: var(--global-fontsize-l);
+    font-size: var(--global-fontSize-l);
     text-align: center;
 }
 
 h5{
-    font-size: var(--global-fontsize-m);
+    font-size: var(--global-fontSize-m);
     font-weight: 600;
     text-align: center;
 }
 
 h6{
-    font-size: var(--global-fontsize-s);
+    font-size: var(--global-fontSize-s);
     font-weight: 500;
     text-align: center;
-}
-
-header{
-    min-height: 100vh;
-    background-image: url(../assets/img/background.jpg);
-    background-position: top;
-    background-size: cover;
-    color: var(--global-color-white);
-    padding-bottom: var(--global-spacing-s);
 }
 
 nav{
@@ -104,17 +158,98 @@ nav{
     padding: var(--global-spacing) 0;
 }
 
+header{
+    background-image: url(../assets/img/background.jpg);
+    background-position: center top;
+    background-size: cover;
+    /* min-height: 100Vh; */
+    padding-bottom: var(--global-spacing-s);
+}
+
 label{
     font-size: var(--global-fontsize-s);
     display: block;
     line-height: 2;
 }
 
-main{
-    padding: var(--global-spacing-xl);
+/*---------------------------------------/*
+ # OBJECTS
+/*---------------------------------------*/
+.o-container{
+    max-width: var(--global-container-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+/*---------------------------------------/*
+ # COMPONENTS
+/*---------------------------------------*/
+/* Navigation */
+.c-title{
+    color: var(--global-color-darkblue);
+    font-weight: 700;
+    font-size: var(--global-fontSize-l);
+    & svg{
+        height: var(--global-fontSize-l);
+        width: auto;
+    }
 }
 
-/* toggle */
+.c-title__radar{
+    color: var(--global-color-white);
+}
+
+.c-filterbtn{
+    color: var(--global-color-darkblue);
+    z-index: 3000;
+    & svg{
+        height: var(--global-fontSize-l);
+        width: auto;
+    }
+}
+
+/* Filter */
+.c-filter{
+    background-color: var(--global-color-darkblue);
+    min-width: 20rem;
+    max-width: 25rem;
+    position: absolute;
+    right: 0;
+    top: 5rem;
+    padding: var(--global-spacing);
+    padding-left: calc(var(--global-spacing) * 2);
+    border-top-left-radius: var(--global-borderRadius);
+    border-bottom-left-radius: var(--global-borderRadius);
+    box-shadow: var(--global-boxShadow-darkblue);
+    color: var(--global-color-white);
+    transition: 0.3s all ease-in-out;
+    opacity: 0;
+    transform: translateX(100%);
+    & h5{
+        text-align: left;
+        line-height: 2;
+    }
+}
+
+.c-filter__show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media screen and (min-width: 48rem) {
+    .c-filter{
+        min-width: 25rem;
+        max-width: 30rem;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .c-filter{
+        min-width: 35rem;
+        max-width: 40rem;
+    }
+}
+
+/* Toggle */
 .c-toggle__switch{
     width: 2.5rem;
     height: 1.5rem;
@@ -150,145 +285,7 @@ main{
     display: none;
 }
 
-/* algemene */
-.c-container{
-    width: var(--global-width);
-    margin: 0 auto;
-}
-
-.c-header__date{
-    font-size: var(--global-fontsize-xl);
-    font-weight: 700;
-}
-
-.c-header__text{
-    font-size: var(--global-fontsize-m);
-}
-
-/* navigation */
-.c-title{
-    color: var(--global-color-darkblue);
-    font-weight: 700;
-    font-size: var(--global-fontsize-l);
-    & svg{
-        height: var(--global-fontsize-l);
-        width: auto;
-    }
-}
-
-.c-title__radar{
-    color: var(--global-color-white);
-}
-
-.c-filterbtn{
-    color: var(--global-color-darkblue);
-    &:focus-visible{
-        color: var(--global-color-white);
-    }
-}
-
-.c-filter{
-    background-color: var(--global-color-darkblue);
-    min-width: 35rem;
-    position: absolute;
-    right: 0;
-    /* right: -100vw; */
-    transform: translateX(100%);
-    top: 5rem;
-    padding: var(--global-spacing);
-    padding-left: calc(var(--global-spacing) * 2);
-    border-top-left-radius: var(--global-border-radius);
-    border-bottom-left-radius: var(--global-border-radius);
-    box-shadow: var(--global-boxShadow-rgba);
-    transition: 0.3s all ease-in-out;
-    opacity: 0;
-    & h5{
-        text-align: left;
-        line-height: 2;
-    }
-}
-
-.c-filter__show{
-    /* right: 0; */
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* footer */
-.c-footer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: var(--global-fontsize-xs);
-    padding: var(--global-spacing-xs) 0;
-}
-
-/* today */
-.c-today{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-gap: var(--global-spacing);
-    grid-template-areas:
-        "date date date weather weather weather"
-        "description description description weather weather weather"
-        "gras gras boom boom onkruid onkruid";
-}
-
-.c-today__filter--1{
-    grid-template-areas:
-        "date date date date date date"
-        "description description description . . ."
-        "gras gras chart chart chart chart";
-}
-
-.c-today__filter--2{
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas:
-    "date date date date date date"
-    "description1 description1 description1 description2 description2 description2"
-    "gras gras chart chart chart chart"
-    'boom boom chart chart chart chart';
-    
-}
-
-.c-today__date{
-    grid-area: date;
-}
-
-.c-today__description{
-    grid-area: description;
-}
-
-.c-today__description--1{
-    grid-area: description1;
-}
-
-.c-today__description--2{
-    grid-area: description2;
-}
-
-.c-today__weather{
-    grid-area: weather;
-}
-
-.c-today__graspollen{
-    grid-area: gras;
-}
-
-.c-today__onkruidpollen{
-    grid-area: onkruid;
-}
-
-.c-today__boompollen{
-    grid-area: boom;
-}
-
-.c-today__chart{
-    grid-area: chart;
-}
-
-/* chart */
+/* Chart */
 .c-chart{
     height: 90%;
     min-height: 20rem;
@@ -346,126 +343,138 @@ main{
     background-color: var(--global-color-lightblue);
 }
 
-/* modal */
-.c-modal{
-    background-color: var(--global-color-darkblue);
-    position: fixed;
-    top: 0;
-    width: calc(100vw - 2 * var(--global-spacing-xl));
-    height: calc(100vh - 2 * var(--global-spacing-xl));
-    margin: var(--global-spacing-xl);
-    padding: var(--global-spacing-s);
-    overflow-y: auto;
+/* Overview */
+.c-overview{
     color: var(--global-color-white);
-    border-radius: var(--global-border-radius);
-    box-shadow: var(--global-boxShadow-dblue);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    visibility: hidden;
-}
-
-.c-modal__filter--1{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-gap: var(--global-spacing);
     grid-template-areas:
-    "date date date card1 card1 card1"
-    "description description description card1 card1 card1"
-    "weather weather weather weather weather weather";
-    height: auto;
+        "date date date date date date"
+        "description description description description description description"
+        "weer weer weer weer weer weer"
+        "grass grass grass grass grass grass"
+        "boom boom boom boom boom boom"
+        "onkruid onkruid onkruid onkruid onkruid onkruid";
 }
 
-.c-modal__filter--2{
+.c-filter1{
+    grid-template-rows: repeat(4, auto);
     grid-template-areas:
-    "date date date weather weather weather"
-    "description description description weather weather weather"
-    "card1 card1 card1 card2 card2 card2";
+    "date date date date date date"
+    "description description description description description description"
+    "gauge1 gauge1 gauge1 gauge1 gauge1 gauge1"
+    "chart chart chart chart chart chart";
 }
 
-.c-modal__1{
-    grid-area: card1;
+.c-filter2{
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+    "date date date date date date"
+    "description description description description description description"
+    'description2 description2 description2 description2 description2 description2'
+    "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
+    "chart chart chart chart chart chart";
 }
 
-.c-modal__2{
-    grid-area: card2;
-}
+@media screen and (min-width: 48rem) {
+    .c-overview{
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+            "date date date date date date"
+            "description description description description description description"
+            "weer weer weer weer weer weer"
+            "grass grass grass boom boom boom"
+            "onkruid onkruid onkruid onkruid onkruid onkruid";
+    }
 
-.c-modal__show{
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s ease-in-out;
-}
+    .c-filter1{
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+        "date date date date date date"
+        "description description description description description description"
+        "gauge1 gauge1 chart chart chart chart"
+        "gauge1 gauge1 chart chart chart chart";
+    }
 
-.c-modal__close{
-    position: absolute;
-    top: var(--global-spacing);
-    right: var(--global-spacing);
-    cursor: pointer;
-    color: var(--global-color-white);
-    &:focus-visible{
-        color: var(--global-color-lightblue);
+    .c-filter2{
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+        "date date date date date date"
+        "description description description description description description"
+        'description2 description2 description2 description2 description2 description2'
+        "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
+        "chart chart chart chart chart chart";
     }
 }
 
-.c-modal::-webkit-scrollbar {
-    display: none;
+@media screen and (min-width: 64rem) {
+    .c-overview{
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            "date date date weer weer weer"
+            "description description description weer weer weer"
+            "grass grass boom boom onkruid onkruid";
+    }
+    .c-filter1{
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+        "date date date date date date"
+        "description description description description description description"
+        "gauge1 gauge1 chart chart chart chart"
+        "gauge1 gauge1 chart chart chart chart";
+    }
+
+    .c-filter2{
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+        "date date date date date date"
+        "description description description description2 description2 description2"
+        "gauge1 gauge1 chart chart chart chart"
+        "gauge2 gauge2 chart chart chart chart";
+    }
 }
-/* card */
-.c-card{
-    padding: var(--global-spacing-s);
-    border-radius: var(--global-border-radius);
+
+.c-overview__date{
+    font-size: var(--global-fontSize-xl);
+    font-weight: 700;
+    grid-area: date;
+}
+
+.c-overview__description{
+    grid-area: description;
+}
+
+.c-overview__description2{
+    grid-area: description2;
+}
+
+.c-overview__grass{
+    grid-area: grass;
+}
+
+.c-overview__boom{
+    grid-area: boom;
+}
+
+.c-overview__onkruid{
+    grid-area: onkruid;
+}
+
+.c-overview__text{
+    font-size: var(--global-fontSize-l);
+}
+
+.c-overview__weather{
     display: flex;
-    flex-direction: column;
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-size: 10rem auto;
-    gap: var(--global-spacing);
-}
-
-.c-card__flex{
-    justify-content: center;
-}
-
-.c-card__gras{
-    background-image: url(../assets/svg/grass_dblue.svg);
-}
-
-.c-card__boom{
-    background-image: url(../assets/svg/boom_dblue.svg);
-}
-
-.c-card__onkruid{
-    background-image: url(../assets/svg/onkruid_dblue.svg);
-}
-
-.c-card__gray{
-    box-shadow: var(--global-boxShadow-black);
-    background-color: var(--global-backGroundColor-black);
-    & .c-gauge__cover{
-        background-color: var(--global-color-black);
-    }
-}
-
-.c-card__blue{
-    box-shadow: var(--global-boxShadow-black);
-    background-color: var(--global-color-accentlbue);
-    & .c-gauge__cover{
-        background-color: var(--global-color-accentlbue);
-    }
-    & .c-gauge__pin{
-        background-color: var(--global-color-white);
-    }
-    & .c-gauge__pin::after{
-        background-color: var(--global-color-white);
-    }
-}
-
-/* weather */
-.c-weather{
-    display: flex;
-    /* gap: var(--global-spacing); */
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    grid-area: weer;
 }
 
-.c-weather__item{
+.c-overview__weatheritem{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -473,7 +482,19 @@ main{
     gap: var(--global-spacing-xs);
 }
 
-/* gauge */
+.c-overview__card{
+    background-color: hotpink;
+    border-radius: var(--global-borderRadius);
+    padding: var(--global-spacing-s);
+    display: flex;
+    flex-direction: column;
+    gap: var(--global-spacing);
+    background-size: 10rem auto;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+/* Gauge */
 .c-gauge {
     width: 100%;
     max-width: 15rem;
@@ -520,7 +541,8 @@ main{
 .c-gauge__cover{
     width: 75%;
     height: 150%;
-    background-color: var(--global-color-lighlightblue);
+    /* background-color: var(--global-color-lighlightblue); */
+    background-color: hotpink;
     position: absolute;
     border-radius: 50%;
     top: 25%;
@@ -553,72 +575,129 @@ main{
     background-color: var(--global-color-darkblue);
 }
 
-/* scroll */
+.c-filter__gauge1{
+    grid-area: gauge1;
+    justify-content: center;
+}
+
+.c-filter__gauge2{
+    grid-area: gauge2;
+    justify-content: center;
+}
+
+.c-filter__chart{
+    grid-area: chart;
+}
+
+/* Scroll */
 .c-scroll{
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type:  x mandatory;
-    min-height: 20rem;
-    align-items: stretch;
+    overflow-x: none;
     padding: var(--global-spacing-s) 0;
-    /* margin-left: 2rem;    */
 }
 
 .c-scroll::-webkit-scrollbar{
-    /* height: 5px; */
     display: none;
 }
-
-/* .c-scroll::-webkit-scrollbar-track{
-    background-color: transparent;
-}
-
-.c-scroll::-webkit-scrollbar-thumb{
-    background-color: yellow;
-    border-radius: 20px;
-    margin: 0.5rem;
-} */
 
 .c-scroll__item{
     font-family: inherit;
     color: inherit;
     text-align: left;
-    background-color: var(--global-color-lighlightblue);
-    border-radius: var(--global-border-radius);
-    box-shadow: var(--global-boxShadow-lblue);
-    min-width: calc(100% / 2.5);
+    background-color: var(--global-backGroundColor-lightblue);
+    border-radius: var(--global-borderRadius);
+    max-width: 100%;
+    box-shadow: var(--global-boxShadow-lightblue);
     scroll-snap-align: start;
     border: none;
-    cursor: pointer;
-    /* margin: 0.5rem;           */
     padding: var(--global-spacing-s);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, auto);
     grid-gap: var(--global-spacing);
     grid-template-areas:
-        "title title title"
-        "description description description"
-        "gras boom onkruid";
-    &:focus-visible{
-        border: 2px solid var(--global-color-darkblue) !important;
+        "title"
+        "description"
+        "item1"
+        "item2"
+        "item3";
+    & .c-gauge__cover{
+        background-color: var(--global-backGroundColor-lightblue);
     }
 }
 
-.c-scroll__item--filter1{
-    grid-template-areas:
-    "title title title"
-    "description description description"
-    "card card card";
+.c-scrollfilter1{
+    & .c-scroll__item{
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+        "title"
+        "description"
+        "item1";        
+    }
 }
-.c-scroll__item--filter2{
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-    "title title title title"
-    "description description description description"
-    "card card card2 card2";
+
+.c-scrollfilter2{
+    & .c-scroll__item{
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+        "title"
+        "description"
+        "item1"
+        "item2";        
+    }
+}
+
+
+@media screen and (min-width: 35rem) {
+    .c-scroll__item{
+        grid-template-columns: repeat(3, 8rem);
+        grid-template-rows: repeat(3, auto);
+        grid-gap: var(--global-spacing);
+        grid-template-areas:
+            "title title title"
+            "description description description"
+            "item1 item2 item3";
+    }
+    .c-scrollfilter1{
+        & .c-scroll__item{
+            grid-template-areas:
+            "title title title"
+            "description description description"
+            ". item1 .";
+        }
+    }
+    .c-scrollfilter2{
+        & .c-scroll__item{
+            grid-template-columns: repeat(4, 6rem);
+            grid-template-areas:
+            "title title title title"
+            "description description description description"
+            "item1 item1 item2 item2";
+        }
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    .c-scroll{
+        flex-direction: row;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type:  x mandatory;
+        min-height: 20rem;
+        align-items: stretch;    
+    }
+
+    .c-scroll__item{
+        grid-template-columns: repeat(3, 8rem);
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .c-scroll__item{
+        grid-template-columns: repeat(3, 10rem);
+    }
 }
 
 .c-forecast__title{
@@ -629,45 +708,109 @@ main{
     grid-area: description;
 }
 
-.c-forecast__gras{
-    grid-area: gras;
-}
-
-.c-forecast__onkruid{
-    grid-area: onkruid;
-}
-
-.c-forecast__boom{
-    grid-area: boom;
-}
-
 .c-forecast__1{
-    grid-area: card;
+    grid-area: item1;
+}
+
+.c-forecast__3{
+    grid-area: item3;
 }
 
 .c-forecast__2{
-    grid-area: card2;
+    grid-area: item2;
 }
 
 .c-forecast__gauge{
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--global-spacing-xs);
     align-items: center;
 }
 
-/* utilities */
+/* Footer */
+.c-footer{
+    text-align: center;
+    font-size: var(--global-fontSize-xs);
+    padding: var(--global-spacing-xs) 1rem;
+}
 
-.u-resetbutton{
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+@media screen and (min-width: 35rem) {
+    .c-footer{
+        text-align: left;
+        display: flex;
+        align-items: center;    
+        justify-content: space-between;
+    }
+}
+
+/* Modal */
+.c-modal{
+    background-color: var(--global-color-darkblue);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100vw - 2 * var(--global-spacing-xl));
+    max-height: calc(100vh - 2 * var(--global-spacing-xl));
+    padding: var(--global-spacing-s);
+    overflow-y: auto;
+    color: var(--global-color-white);
+    border-radius: var(--global-borderRadius);
+    box-shadow: var(--global-boxShadow-darkblue);
     border: none;
-    margin: 0;
-    padding: 0;
-    background: none;
+
+    animation: fade-out 0.3s ease-in-out;
+}
+
+.c-modal__close{
+    position: absolute;
+    top: var(--global-spacing);
+    right: var(--global-spacing);
     cursor: pointer;
-    outline: none;
+    color: var(--global-color-white);
+}
+
+.c-modal::-webkit-scrollbar {
+    display: none;
+}
+
+.c-modal[open]{
+    animation: fade-in 0.3s ease-in-out;
+}
+
+
+
+
+/*---------------------------------------/*
+ # UTILITIES
+/*---------------------------------------*/
+.u-background__grass{
+    background-image: url(../assets/svg/grass_dblue.svg);
+}
+
+.u-background__boom{
+    background-image: url(../assets/svg/boom_dblue.svg);
+}
+
+.u-background__onkruid{
+    background-image: url(../assets/svg/onkruid_dblue.svg);
+}
+
+.u-background__gray{
+    background-color: var(--global-backGroundColor-gray);
+    box-shadow: var(--global-boxShadow-gray);
+    & .c-gauge__cover{
+        background-color: var(--global-color-gray);
+    }
+}
+
+.u-background__blue{
+    background-color: var(--global-backGroundColor-accentlbue);
+    box-shadow: var(--global-boxShadow-accentblue);
+    & .c-gauge__cover{
+        background-color: var(--global-backGroundColor-accentlbue);
+    }
 }
 
 .u-hidden{
