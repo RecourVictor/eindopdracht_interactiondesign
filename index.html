@@ -7,6 +7,16 @@
     <title>Pollenradar</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="script/script.js"></script>
+    <!-- Favico -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5099ce">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#e4e5e7">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#e4e5e7">
 </head>
 
 <body>
@@ -27,18 +37,18 @@
                 <div class="c-filter js-filter">
                     <h5>Personaliseer je pollenkaart</h5>
                     <form action="#">
-                        <label class="c-toggle">
-                            <input name="Graspollen" class="c-toggle__checkbox js-toggle" type="checkbox">
+                        <label class="c-toggle js-toggle" for="Graspollen">
+                            <input name="Graspollen" id="Graspollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
                             <span class="c-toggle__switch"></span>
                             Graspollen
                         </label>
-                        <label class="c-toggle">
-                            <input name="Boompollen" class="c-toggle__checkbox js-toggle" type="checkbox">
+                        <label class="c-toggle js-toggle" for="Boompollen">
+                            <input name="Boompollen" id="Boompollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
                             <span class="c-toggle__switch"></span>
                             Boompollen
                         </label>
-                        <label class="c-toggle">
-                            <input name="Onkruidpollen" class="c-toggle__checkbox js-toggle" type="checkbox">
+                        <label class="c-toggle js-toggle" for="Onkruidpollen">
+                            <input name="Onkruidpollen" id="Onkruidpollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
                             <span class="c-toggle__switch"></span>
                             Onkruidpollen
                         </label>
@@ -84,7 +94,7 @@
                             <div class="c-gauge__fill c-gauge__fill--medium"></div>
                             <div class="c-gauge__fill c-gauge__fill--low"></div>
                             <div class="c-gauge__cover"></div>
-                            <div class="c-gauge__pin"></div>
+                            <div class="c-gauge__pin js-today__grass--pin"></div>
                         </div>
                     </div>
                     <div>
@@ -102,7 +112,7 @@
                             <div class="c-gauge__fill c-gauge__fill--medium"></div>
                             <div class="c-gauge__fill c-gauge__fill--low"></div>
                             <div class="c-gauge__cover"></div>
-                            <div class="c-gauge__pin"></div>
+                            <div class="c-gauge__pin js-today__boom--pin"></div>
                         </div>
                     </div>
                     <div>
@@ -120,7 +130,7 @@
                             <div class="c-gauge__fill c-gauge__fill--medium"></div>
                             <div class="c-gauge__fill c-gauge__fill--low"></div>
                             <div class="c-gauge__cover"></div>
-                            <div class="c-gauge__pin"></div>
+                            <div class="c-gauge__pin js-today__onkruid--pin"></div>
                         </div>
                     </div>
                     <div>
@@ -361,10 +371,10 @@
     </main>
     <dialog class="js-modal c-modal">
         <button class="c-modal__close js-close">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30.973" height="30.973" viewBox="0 0 30.973 30.973">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.973 30.973">
                 <g id="close-circle-svgrepo-com" transform="translate(-1.25 -1.25)">
                     <path id="Path_16" data-name="Path 16" d="M10.594,9.066a1.08,1.08,0,0,0-1.528,1.528L11.9,13.432,9.066,16.269A1.08,1.08,0,1,0,10.594,17.8l2.838-2.837L16.269,17.8A1.08,1.08,0,1,0,17.8,16.269L14.96,13.432,17.8,10.594a1.08,1.08,0,1,0-1.528-1.528L13.432,11.9Z" transform="translate(3.304 3.304)" fill="currentcolor" />
-                    <path id="Path_17" data-name="Path 17" d="M16.736,1.25A15.486,15.486,0,1,0,32.223,16.736,15.486,15.486,0,0,0,16.736,1.25ZM3.411,16.736A13.325,13.325,0,1,1,16.736,30.062,13.325,13.325,0,0,1,3.411,16.736Z" transform="translate(0 0)" fill="currentcolor             " fill-rule="evenodd" />
+                    <path id="Path_17" data-name="Path 17" d="M16.736,1.25A15.486,15.486,0,1,0,32.223,16.736,15.486,15.486,0,0,0,16.736,1.25ZM3.411,16.736A13.325,13.325,0,1,1,16.736,30.062,13.325,13.325,0,0,1,3.411,16.736Z" transform="translate(0 0)" fill="currentcolor" fill-rule="evenodd" />
                 </g>
             </svg>
         </button>
@@ -406,7 +416,7 @@
                         <div class="c-gauge__fill c-gauge__fill--medium"></div>
                         <div class="c-gauge__fill c-gauge__fill--low"></div>
                         <div class="c-gauge__cover"></div>
-                        <div class="c-gauge__pin"></div>
+                        <div class="c-gauge__pin js-modal__grass--pin"></div>
                     </div>
                 </div>
                 <div>
@@ -424,7 +434,7 @@
                         <div class="c-gauge__fill c-gauge__fill--medium"></div>
                         <div class="c-gauge__fill c-gauge__fill--low"></div>
                         <div class="c-gauge__cover"></div>
-                        <div class="c-gauge__pin"></div>
+                        <div class="c-gauge__pin js-modal__boom--pin"></div>
                     </div>
                 </div>
                 <div>
@@ -442,7 +452,7 @@
                         <div class="c-gauge__fill c-gauge__fill--medium"></div>
                         <div class="c-gauge__fill c-gauge__fill--low"></div>
                         <div class="c-gauge__cover"></div>
-                        <div class="c-gauge__pin"></div>
+                        <div class="c-gauge__pin js-modal__onkruid--pin"></div>
                     </div>
                 </div>
                 <div>
