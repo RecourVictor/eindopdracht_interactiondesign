@@ -10,40 +10,35 @@
     /* fonts */
     --global-fontFamily: 'Poppins', sans-serif;
     /* fontsize */
-    --global-fontSize: 1rem; /* 16px */
-    --global-fontSize-xs: 0.75rem; /* 12px */
-    --global-fontSize-s: 1rem; /* 18px */
-    --global-fontSize-m: 1.1rem; /* 20px */
-    --global-fontSize-l: 1.2rem; /* 24px */
-    --global-fontSize-xl: 1.5rem; /* 32px */
-    --global-fontSize-xxl: 2.5rem; /* 48px */
+    --global-fontSize: 1rem;
+    --global-fontSize-xs: 0.75rem;
+    --global-fontSize-s: 1rem;
+    --global-fontSize-m: 1.1rem;
+    --global-fontSize-l: 1.2rem;
+    --global-fontSize-xl: 1.5rem;
+    --global-fontSize-xxl: 2.5rem;
 
     /* spacing */
-    --global-spacing: 1rem; /* 16px */
-    --global-spacing-xs: 0.5rem; /* 8px */
-    --global-spacing-s: 2rem; /* 32px */
-    --global-spacing-m: 3rem; /* 48px */
-    --global-spacing-xl: 4rem; /* 64px */
+    --global-spacing: 1rem;
+    --global-spacing-xs: 0.5rem;
+    --global-spacing-s: 2rem;
+    --global-spacing-m: 3rem; 
+    --global-spacing-xl: 4rem;
 
     /* border radius */
     --global-borderRadius: 30px;
 
     /* colors */
-    --global-color-white: #E4E5E7;
+    --global-color-whitewhite: white;
+    --global-color-white: #FAFAFA;
     --global-color-lightblue: #5099CE;
-    --global-color-darkblue: #152B81;
-    --global-color-gray: #545454;
-
-    /* backgroundcolors */
-    --global-backGroundColor-gray: rgba(84, 84, 84, 0.6);
-    --global-backGroundColor-lightblue: #8AB8D8;
-    --global-backGroundColor-accentlbue: #254990;
+    --global-color-lightblue-rgba50: rgba(80, 153, 206, 0.5);
+    --global-color-darkblue: #1F4068;
 
     /* box shadow */
-    --global-boxShadow-gray: 10px 10px 30px rgba(84, 84, 84, 0.3);
-    --global-boxShadow-lightblue: 10px 10px 30px rgba(79, 153, 207, 0.3);
-    --global-boxShadow-darkblue: 10px 10px 30px rgba(21, 42, 127, 0.3);
-    --global-boxShadow-accentblue: 10px 10px 30px rgba(37, 73, 144, 0.3);
+    --global-boxShadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    --global-boxShadow-lg: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    --global-boxShadow-hover: 0px 0px 20px rgba(0, 0, 0, 0.2);
 
     /* Transition */
     --global-transition: all 0.3s ease;
@@ -53,11 +48,11 @@
     :root{
         --global-container-width: 90vw;
 
-        --global-fontSize-s: 1.1rem; /* 18px */
-        --global-fontSize-m: 1.15rem; /* 20px */
-        --global-fontSize-l: 1.2rem; /* 24px */
-        --global-fontSize-xl: 2rem; /* 32px */
-        --global-fontSize-xxl: 3.5rem; /* 48px */
+        --global-fontSize-s: 1.1rem;
+        --global-fontSize-m: 1.15rem;
+        --global-fontSize-l: 1.2rem;
+        --global-fontSize-xl: 2rem;
+        --global-fontSize-xxl: 3.5rem;
     }
 }
 
@@ -65,11 +60,11 @@
     :root{
         --global-container-width: 85vw;
 
-        --global-fontSize-s: 1.15rem; /* 18px */
-        --global-fontSize-m: 1.2rem; /* 20px */
-        --global-fontSize-l: 1.3rem; /* 24px */
-        --global-fontSize-xl: 2rem; /* 32px */
-        --global-fontSize-xxl: 4rem; /* 48px */
+        --global-fontSize-s: 1.15rem;
+        --global-fontSize-m: 1.2rem;
+        --global-fontSize-l: 1.3rem;
+        --global-fontSize-xl: 2rem;
+        --global-fontSize-xxl: 4rem;
     }
 }
 
@@ -103,10 +98,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    &::selection{
-        background-color: var(--global-color-darkblue);
-        color: var(--global-color-white);
-    }
+}
+
+::selection{
+    background-color: var(--global-color-lightblue);
+    color: var(--global-color-white);
 }
 
 html{
@@ -121,6 +117,7 @@ body{
     position: relative;
     overflow-x: hidden;
 }
+
 /*---------------------------------------/*
  # ELEMENTS
 /*---------------------------------------*/
@@ -135,6 +132,7 @@ main{
 
 h2{
     font-size: var(--global-fontSize-xxl);
+    color: var(--global-color-lightblue);
 }
 
 h3{
@@ -166,19 +164,11 @@ nav{
     padding: var(--global-spacing) 0;
 }
 
-header{
-    background-image: url(../assets/img/background.jpg);
-    background-position: center top;
-    background-size: cover;
-    /* min-height: 100Vh; */
-    padding-bottom: var(--global-spacing-s);
-}
-
 label{
     all: unset;
     font-size: var(--global-fontsize-s);
     display: block;
-    line-height: 2;
+    line-height: 2.5;
     cursor: pointer;
 }
 
@@ -190,6 +180,7 @@ label{
     margin: 0 auto;
     padding: 0 1rem;
 }
+
 /*---------------------------------------/*
  # COMPONENTS
 /*---------------------------------------*/
@@ -205,7 +196,7 @@ label{
 }
 
 .c-title__radar{
-    color: var(--global-color-white);
+    color: var(--global-color-lightblue);
 }
 
 .c-filterbtn{
@@ -218,13 +209,13 @@ label{
     }
     &:focus-visible{
         & svg{
-            filter: drop-shadow(0 0 .2rem var(--global-color-white));
+            filter: drop-shadow(0 0 .2rem var(--global-color-lightblue));
             transform: scale(1.2);
         }
     }
     &:hover{
         & svg{
-            filter: drop-shadow(0 0 .2rem var(--global-color-white));
+            filter: drop-shadow(0 0 .2rem var(--global-color-lightblue));
             transform: scale(1.2);
         }
     }
@@ -232,7 +223,7 @@ label{
 
 /* Filter */
 .c-filter{
-    background-color: var(--global-color-darkblue);
+    background-color: var(--global-color-whitewhite);
     min-width: 20rem;
     max-width: 25rem;
     position: absolute;
@@ -242,8 +233,7 @@ label{
     padding-left: calc(var(--global-spacing) * 2);
     border-top-left-radius: var(--global-borderRadius);
     border-bottom-left-radius: var(--global-borderRadius);
-    box-shadow: var(--global-boxShadow-darkblue);
-    color: var(--global-color-white);
+    box-shadow: var(--global-boxShadow);
     transition: var(--global-transition);
     opacity: 0;
     transform: translateX(100%);
@@ -277,32 +267,33 @@ label{
     transition: var(--global-transition);
     &:focus-visible{
         & .c-toggle__switch{
-            box-shadow: 0 0 0 0.2rem var(--global-color-lightblue);
+            box-shadow: 0 0 0 0.2rem var(--global-color-lightblue-rgba50);
         }
     }
     &:hover{
         & .c-toggle__switch{
-            box-shadow: 0 0 0 0.2rem var(--global-color-lightblue);
+            box-shadow: 0 0 0 0.2rem var(--global-color-lightblue-rgba50);
         }
     }
 }
 
 .c-toggle__switch{
-    width: 2.5rem;
+    width: 3rem;
     height: 1.5rem;
     border-radius: 1rem;
-    background-color: var(--global-color-white);
+    background-color: var(--global-color-lightblue);
     display: inline-block;
     vertical-align: middle;
-    margin-right: 0.3rem;
+    margin-right: 0.5rem;
     position: relative;
     transition: var(--global-transition);
     &::after{
         content: "";
-        background-color: var(--global-color-lightblue);
+        background-color: var(--global-color-white);
         width: 1rem;
         height: 1rem;
-        position: absolute;        
+        position: absolute;    
+        scale: 1.2;    
         top: 0.25rem;
         left: 0.25rem;
         border-radius: 50%;
@@ -311,9 +302,9 @@ label{
 }
 
 .c-toggle__checkbox:checked + .c-toggle__switch{
-    /* background-color: yellow; */
     &::after{
-        margin-left: 1rem;
+        margin-left: 1.5rem;
+        scale: 2;
         background-color: var(--global-color-darkblue);
     }
 }
@@ -344,6 +335,7 @@ label{
 }
 
 .c-chart__percent{
+    color: var(--global-color-white);
     position: absolute;
     bottom: 1rem;
     transform: rotate(-90deg);
@@ -382,7 +374,6 @@ label{
 
 /* Overview */
 .c-overview{
-    color: var(--global-color-white);
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, auto);
@@ -520,7 +511,6 @@ label{
 }
 
 .c-overview__card{
-    background-color: hotpink;
     border-radius: var(--global-borderRadius);
     padding: var(--global-spacing-s);
     display: flex;
@@ -529,6 +519,8 @@ label{
     background-size: 10rem auto;
     background-repeat: no-repeat;
     background-position: right bottom;
+    background-color: var(--global-color-whitewhite);
+    box-shadow: var(--global-boxShadow);
 }
 
 /* Gauge */
@@ -561,25 +553,24 @@ label{
 }
 
 .c-gauge__fill--low {
-    background-color: green;
+    background-color:  #4CAF50;
     transform: rotate(56deg);
 }
 
 .c-gauge__fill--medium {
-    background-color: orange;
+    background-color: #FFC107;
     transform: rotate(124deg);
 }
 
 .c-gauge__fill--high {
-    background-color: red;
+    background-color: #FF5733;
     transform: rotate(180deg);
 }
 
 .c-gauge__cover{
     width: 75%;
     height: 150%;
-    /* background-color: var(--global-color-lighlightblue); */
-    background-color: hotpink;
+    background-color: var(--global-color-whitewhite);
     position: absolute;
     border-radius: 50%;
     top: 25%;
@@ -596,7 +587,6 @@ label{
     bottom: calc(0% + 0.5rem / 2);
     left: 50%;
     transform: translateX(-50%);
-    /* transform: rotate(55deg); */
     transform-origin: center bottom;
 }
 .c-gauge__pin::after{
@@ -643,14 +633,12 @@ label{
     font-family: inherit;
     color: inherit;
     text-align: left;
-    background-color: var(--global-backGroundColor-lightblue);
+    background-color: var(--global-color-whitewhite);
     border-radius: var(--global-borderRadius);
-    border: 2px solid var(--global-backGroundColor-lightblue);
-    /* border: 2px solid hotpink; */
+    border: 2px solid var(--global-color-whitewhite);
     max-width: 100%;
-    box-shadow: var(--global-boxShadow-lightblue);
+    box-shadow: var(--global-boxShadow);
     scroll-snap-align: start;
-    /* border: none; */
     padding: var(--global-spacing-s);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -662,15 +650,14 @@ label{
         "item1"
         "item2"
         "item3";
-    & .c-gauge__cover{
-        background-color: var(--global-backGroundColor-lightblue);
-    }
     transition: var(--global-transition);
     &:focus-visible{
-        border: 2px solid var(--global-color-darkblue);
+        border: 2px solid var(--global-color-lightblue);
+        box-shadow: var(--global-boxShadow-hover);
     }
     &:hover{
-        border: 2px solid var(--global-color-darkblue);
+        border: 2px solid var(--global-color-lightblue);
+        box-shadow: var(--global-boxShadow-hover);
     }
 }
 
@@ -792,8 +779,8 @@ label{
 
 /* Modal */
 .c-modal{
-    background-color: var(--global-color-darkblue);
-    position: fixed;
+    background-color: var(--global-color-white);
+    /* position: fixed; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -801,9 +788,9 @@ label{
     max-height: calc(100vh - 2 * var(--global-spacing-s));
     padding: var(--global-spacing-s);
     overflow-y: auto;
-    color: var(--global-color-white);
+    color: var(--global-color-darkblue);
     border-radius: var(--global-borderRadius);
-    box-shadow: var(--global-boxShadow-darkblue);
+    box-shadow: var(--global-boxShadow-lg);
     border: none;
     animation: fade-out 0.3s ease-in-out;
 }
@@ -826,7 +813,7 @@ label{
     position: absolute;
     top: var(--global-spacing);
     right: var(--global-spacing);
-    color: var(--global-color-white);
+    color: var(--global-color-darkblue);
     & svg{
         height: var(--global-fontSize-xl);
         width: auto;
@@ -858,37 +845,15 @@ label{
  # UTILITIES
 /*---------------------------------------*/
 .u-background__grass{
-    background-image: url(../assets/svg/grass_dblue.svg);
+    background-image: url(../assets/svg/grass.svg);
 }
 
 .u-background__boom{
-    background-image: url(../assets/svg/boom_dblue.svg);
+    background-image: url(../assets/svg/boom.svg);
 }
 
 .u-background__onkruid{
-    background-image: url(../assets/svg/onkruid_dblue.svg);
-}
-
-.u-background__gray{
-    background-color: var(--global-backGroundColor-gray);
-    box-shadow: var(--global-boxShadow-gray);
-    & .c-gauge__cover{
-        background-color: var(--global-color-gray);
-    }
-}
-
-.u-background__blue{
-    background-color: var(--global-backGroundColor-accentlbue);
-    box-shadow: var(--global-boxShadow-accentblue);
-    & .c-gauge__cover{
-        background-color: var(--global-backGroundColor-accentlbue);
-    }
-    & .c-gauge__pin{
-        background-color: var(--global-color-white);
-        &::after{
-            background-color: var(--global-color-white);
-        }
-    }
+    background-image: url(../assets/svg/onkruid.svg);
 }
 
 .u-hidden{

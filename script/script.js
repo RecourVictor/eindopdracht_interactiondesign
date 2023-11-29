@@ -1,4 +1,4 @@
-let filter = [];
+let filter = [ "grass", "boom", "onkruid" ];
 
 // Frontend
 const listenToFilterTab = function(){
@@ -23,6 +23,7 @@ const listenToModal = function(){
             const data = this.dataset.json;
             showModalData(data);
             document.querySelector(".js-modal").showModal();
+            document.body.style.overflowY = "hidden";
         })
     }
 }
@@ -35,6 +36,7 @@ const listenToOneModal = function(){
             const type = this.dataset.type;
             showOneModalData(data, type);
             document.querySelector(".js-modal").showModal();
+            document.body.style.overflowY = "hidden";
         })
     }
 }
@@ -48,6 +50,7 @@ const listenToTwoModal = function(){
             const type2 = this.dataset.type2;
             showTwoModalData(data, type1, type2);
             document.querySelector(".js-modal").showModal();
+            document.body.style.overflowY = "hidden";
         })
     }
 }
@@ -67,6 +70,7 @@ const listenToCheckbox = function(){
 const listenToClose = function(){
     const closebtn = document.querySelector(".js-close");
     closebtn.addEventListener("click", function(){
+        document.body.style.overflowY = "auto";
         document.querySelector(".js-modal").close();
     })
 }
@@ -485,7 +489,7 @@ const showTwoModalData = function(json, type1, type2){
 }
 
 const showdata = function(data){
-    if (filter.length === 0){
+    if (filter.length === 3){
         showToday(data);
         showForecast(data);    
     } else if (filter.length === 1){
@@ -530,29 +534,27 @@ const getdata = function(){
 // 2 filters
 const listenToFilter = function () {
     const checkboxes = document.querySelectorAll(".js-checkbox");
-    let checkedCount = 0;
-
     for (const checkbox of checkboxes) {
         checkbox.addEventListener("change", function () {
-            if (checkbox.checked) {
-                checkedCount++;
-                filter.push(checkbox.value);
-                if (checkedCount > 2) {
-                    checkedCount--;
-                    const waarde = filter[0];
-                    const checkboxes = document.querySelectorAll(".js-checkbox");
-
-                    checkboxes.forEach(checkbox => {
-                        if (checkbox.value === waarde) {
-                            checkbox.checked = false;
-                        }
-                    });
-                
-                    filter = filter.slice(1);
+            let checkedCount = 0;
+            for (const checkbox of checkboxes) {
+                if (checkbox.checked) {
+                    checkedCount++;
                 }
+            }
+            if (checkedCount === 0){
+                checkedCount = 3;
+                filter = [ "grass", "boom", "onkruid"];
+                const checkboxes = document.querySelectorAll(".js-checkbox");
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = true;
+                });
             } else {
-                checkedCount--;
-                filter = filter.filter(item => item !== checkbox.value);
+                if (!checkbox.checked) {
+                    filter = filter.filter(item => item !== checkbox.value);
+                } else {
+                    filter.push(checkbox.value);
+                }
             }
             getdata();
         })

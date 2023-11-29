@@ -11,12 +11,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
     <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5099ce">
     <link rel="shortcut icon" href="assets/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#e4e5e7">
+    <meta name="msapplication-TileColor" content="#FAFAFA">
     <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#e4e5e7">
+    <meta name="theme-color" content="#FAFAFA">
 </head>
 
 <body>
@@ -38,17 +39,17 @@
                     <h5>Personaliseer je pollenkaart</h5>
                     <form action="#">
                         <label class="c-toggle js-toggle" for="Graspollen">
-                            <input value="grass" name="Graspollen" id="Graspollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
+                            <input checked value="grass" name="Graspollen" id="Graspollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
                             <span class="c-toggle__switch"></span>
                             Graspollen
                         </label>
                         <label class="c-toggle js-toggle" for="Boompollen">
-                            <input value="boom" name="Boompollen" id="Boompollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
+                            <input checked value="boom" name="Boompollen" id="Boompollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
                             <span class="c-toggle__switch"></span>
                             Boompollen
                         </label>
                         <label class="c-toggle js-toggle" for="Onkruidpollen">
-                            <input value="onkruid" name="Onkruidpollen" id="Onkruidpollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
+                            <input checked value="onkruid" name="Onkruidpollen" id="Onkruidpollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
                             <span class="c-toggle__switch"></span>
                             Onkruidpollen
                         </label>
@@ -65,27 +66,27 @@
                 </div>
                 <div class="c-overview__weather">
                     <div class="c-overview__weatheritem">
-                        <img src="assets/svg/temp_dblue.svg" alt="Temperatuur" height="90">
+                        <img src="assets/svg/temperatuur.svg" alt="Temperatuur" height="70">
                         <p>Temperatuur</p>
                         <h3 class="js-today__temp">18°C</h3>
                     </div>
                     <div class="c-overview__weatheritem">
-                        <img src="assets/svg/neerslag_dblue.svg" alt="Neerslag" height="90">
+                        <img src="assets/svg/neerslag.svg" alt="Neerslag" height="70">
                         <p>Neerslag</p>
                         <h3 class="js-today__neerslag">0.2 mm</h3>
                     </div>
                     <div class="c-overview__weatheritem">
-                        <img src="assets/svg/wind_dblue.svg" alt="Wind" height="90">
+                        <img src="assets/svg/wind.svg" alt="Wind" height="70">
                         <p>Wind</p>
                         <h3 class="js-today__wind">10 km/h</h3>
                     </div>
                     <div class="c-overview__weatheritem">
-                        <img src="assets/svg/uv_dblue.svg" alt="UV-index" height="90">
+                        <img src="assets/svg/uv.svg" alt="UV-index" height="70">
                         <p>UV-index</p>
                         <h3 class="js-today__uv">5</h3>
                     </div>
                 </div>
-                <div class="c-overview__card c-overview__grass u-background__gray u-background__grass">
+                <div class="c-overview__card c-overview__grass u-background__grass">
                     <h3>Graspollen</h3>
                     <p class="js-today__grass--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
                     <div class="c-gauge">
@@ -103,7 +104,7 @@
                         <h6 class="js-today__grass--words">Matige graspollen</h6>
                     </div>
                 </div>
-                <div class="c-overview__card c-overview__boom u-background__gray u-background__boom">
+                <div class="c-overview__card c-overview__boom u-background__boom">
                     <h3>Boompollen</h3>
                     <p class="js-today__boom--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
                     <div class="c-gauge">
@@ -121,7 +122,7 @@
                         <h6 class="js-today__boom--words">Matige boompollen</h6>
                     </div>
                 </div>
-                <div class="c-overview__card c-overview__onkruid u-background__gray u-background__onkruid">
+                <div class="c-overview__card c-overview__onkruid u-background__onkruid">
                     <h3>Onkruidpollen</h3>
                     <p class="js-today__onkruid--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
                     <div class="c-gauge">
@@ -148,7 +149,7 @@
                 <div class="c-overview__description">
                     <p class="c-overview__text js-filter1__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
                 </div>
-                <div class="js-filter1__gauge c-overview__card u-background__gray c-filter__gauge1 ">
+                <div class="js-filter1__gauge c-overview__card c-filter__gauge1 ">
                     <div class="c-gauge">
                         <div class="c-gauge__body">
                             <div class="c-gauge__fill c-gauge__fill--high"></div>
@@ -164,7 +165,7 @@
                         <h6 class="js-filter1__words">Matige graspollen</h6>
                     </div>
                 </div>
-                <div class="c-overview__card u-background__gray c-filter__chart">
+                <div class="c-overview__card c-filter__chart">
                     <h3>Komende week</h3>
                     <div class="c-chart js-filter1__chart">
                         <div class="c-chart__bar" style="height: 80%;"><span class="c-chart__percent">80%</span></div>
@@ -188,7 +189,7 @@
                 <div class="c-overview__description2">
                     <p class="c-overview__text js-filter2__description2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
                 </div>
-                <div class="c-overview__card js-filter2__gauge1 u-background__gray c-filter__gauge1">
+                <div class="c-overview__card js-filter2__gauge1 c-filter__gauge1">
                     <h3 class="js-filter2__type1">Graspollen</h3>
                     <div class="c-gauge">
                         <div class="c-gauge__body">
@@ -205,7 +206,7 @@
                         <h6 class="js-filter2__words1">Matige graspollen</h6>
                     </div>
                 </div>
-                <div class="c-overview__card js-filter2__gauge2 u-background__gray c-filter__gauge2">
+                <div class="c-overview__card js-filter2__gauge2 c-filter__gauge2">
                     <h3 class="js-filter2__type2">Boompollen</h3>
                     <div class="c-gauge">
                         <div class="c-gauge__body">
@@ -222,7 +223,7 @@
                         <h6 class="js-filter2__words2">Matige boompollen</h6>
                     </div>
                 </div>
-                <div class="c-overview__card u-background__gray c-filter__chart">
+                <div class="c-overview__card c-filter__chart">
                     <h3>Komende week</h3>
                     <div class="c-chart js-filter2__chart">
                         <div class="c-chart__group">
@@ -387,27 +388,27 @@
             </div>
             <div class="c-overview__weather">
                 <div class="c-overview__weatheritem">
-                    <img src="assets/svg/temp_lblue.svg" alt="Temperatuur" height="90">
+                    <img src="assets/svg/temperatuur.svg" alt="Temperatuur" height="70">
                     <p>Temperatuur</p>
                     <h3 class="js-modal__temp">18°C</h3>
                 </div>
                 <div class="c-overview__weatheritem">
-                    <img src="assets/svg/neerslag_lblue.svg" alt="Neerslag" height="90">
+                    <img src="assets/svg/neerslag.svg" alt="Neerslag" height="70">
                     <p>Neerslag</p>
                     <h3 class="js-modal__neerslag">0.2 mm</h3>
                 </div>
                 <div class="c-overview__weatheritem">
-                    <img src="assets/svg/wind_lblue.svg" alt="Wind" height="90">
+                    <img src="assets/svg/wind.svg" alt="Wind" height="70">
                     <p>Wind</p>
                     <h3 class="js-modal__wind">10 km/h</h3>
                 </div>
                 <div class="c-overview__weatheritem">
-                    <img src="assets/svg/uv_lblue.svg" alt="UV-index" height="90">
+                    <img src="assets/svg/uv.svg" alt="UV-index" height="70">
                     <p>UV-index</p>
                     <h3 class="js-modal__uv">5</h3>
                 </div>
             </div>
-            <div class="c-overview__card c-overview__grass u-background__blue u-background__grass">
+            <div class="c-overview__card c-overview__grass u-background__grass">
                 <h3>Graspollen</h3>
                 <p class="js-modal__grass--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
                 <div class="c-gauge">
@@ -425,7 +426,7 @@
                     <h6 class="js-modal__grass--words">Matige graspollen</h6>
                 </div>
             </div>
-            <div class="c-overview__card c-overview__boom u-background__blue u-background__boom">
+            <div class="c-overview__card c-overview__boom u-background__boom">
                 <h3>Boompollen</h3>
                 <p class="js-modal__boom--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
                 <div class="c-gauge">
@@ -443,7 +444,7 @@
                     <h6 class="js-modal__boom--words">Matige boompollen</h6>
                 </div>
             </div>
-            <div class="c-overview__card c-overview__onkruid u-background__blue u-background__onkruid">
+            <div class="c-overview__card c-overview__onkruid u-background__onkruid">
                 <h3>Onkruidpollen</h3>
                 <p class="js-modal__onkruid--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
                 <div class="c-gauge">
@@ -469,7 +470,7 @@
             <div class="c-overview__description">
                 <p class="c-overview__text js-onemodal__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
             </div>
-            <div class="c-overview__card u-background__blue js-onemodal__gauge c-filter__gauge1">
+            <div class="c-overview__card js-onemodal__gauge c-filter__gauge1">
                 <div class="c-gauge">
                     <div class="c-gauge__body">
                         <div class="c-gauge__fill c-gauge__fill--high"></div>
@@ -485,7 +486,7 @@
                     <h6 class="js-onemodal__words">Matige graspollen</h6>
                 </div>
             </div>
-            <div class="c-overview__card u-background__blue c-filter__chart">
+            <div class="c-overview__card c-filter__chart">
                 <h3>Komende week</h3>
                 <div class="c-chart js-onemodal__chart">
                     <div class="c-chart__bar" style="height: 80%;"><span class="c-chart__percent">80%</span></div>
@@ -508,7 +509,7 @@
             <div class="c-overview__description2">
                 <p class="c-overview__text js-twomodal__description2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
             </div>
-            <div class="c-overview__card js-twomodal__gauge1 u-background__blue u-background__grass c-filter__gauge1">
+            <div class="c-overview__card js-twomodal__gauge1 u-background__grass c-filter__gauge1">
                 <h3 class="js-twomodal__type1">Graspollen</h3>
                 <div class="c-gauge">
                     <div class="c-gauge__body">
@@ -525,7 +526,7 @@
                     <h6 class="js-twomodal__words1">Matige graspollen</h6>
                 </div>
             </div>
-            <div class="c-overview__card js-twomodal__gauge2 u-background__blue u-background__boom c-filter__gauge2">
+            <div class="c-overview__card js-twomodal__gauge2 u-background__boom c-filter__gauge2">
                 <h3 class="js-twomodal__type2">Boompollen</h3>
                 <div class="c-gauge">
                     <div class="c-gauge__body">
@@ -542,7 +543,7 @@
                     <h6 class="js-twomodal__words2">Matige boompollen</h6>
                 </div>
             </div>
-            <div class="c-overview__card u-background__blue c-filter__chart">
+            <div class="c-overview__card c-filter__chart">
                 <h3>Komende week</h3>
                 <div class="c-chart js-twomodal__chart">
                     <div class="c-chart__group">
