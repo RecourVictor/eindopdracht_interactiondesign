@@ -39,6 +39,19 @@ const listenToOneModal = function(){
     }
 }
 
+const listenToTwoModal = function(){
+    const modaltriggers = document.querySelectorAll(".js-modaltrigger");
+    for (const trigger of modaltriggers){
+        trigger.addEventListener("click", function(){
+            const data = this.dataset.json;
+            const type1 = this.dataset.type1;
+            const type2 = this.dataset.type2;
+            showTwoModalData(data, type1, type2);
+            document.querySelector(".js-modal").showModal();
+        })
+    }
+}
+
 const listenToCheckbox = function(){
     const toggles = document.querySelectorAll(".js-toggle");
     for (const toggle of toggles){
@@ -65,9 +78,6 @@ const calculatePin = function(percentage){
 }
 
 const showToday = function(data){
-    // Show
-    document.querySelector(".js-filter1").classList.add("u-hidden");    
-    document.querySelector(".js-overview").classList.remove("u-hidden");
     // Algemeen
     document.querySelector('.js-today__description').innerHTML = data.today.long_description;
     document.querySelector('.js-today__date').innerHTML = data.today.date;
@@ -93,6 +103,10 @@ const showToday = function(data){
     document.querySelector(".js-today__onkruid--word").innerHTML = data.today.pollen_info.onkruidpollen_info.concentration;
     document.querySelector(".js-today__onkruid--words").innerHTML = data.today.pollen_info.onkruidpollen_info.short_description;
     document.querySelector(".js-today__onkruid--pin").style.transform = `rotate(${calculatePin(data.today.pollen_info.onkruidpollen_info.percentage)}deg)`;
+    // Show
+    document.querySelector(".js-filter1").classList.add("u-hidden");  
+    document.querySelector(".js-filter2").classList.add("u-hidden");  
+    document.querySelector(".js-overview").classList.remove("u-hidden");
 }
 
 const showOneToday = function(data, type){
@@ -151,7 +165,79 @@ const showOneToday = function(data, type){
 
     // Show
     document.querySelector(".js-overview").classList.add("u-hidden");
+    document.querySelector(".js-filter2").classList.add("u-hidden");
     document.querySelector(".js-filter1").classList.remove("u-hidden");
+}
+
+const showTwoToday = function(data, type1, type2){
+    // Remove classes
+    document.querySelector(".js-filter2__gauge1").classList.remove("u-background__grass");
+    document.querySelector(".js-filter2__gauge1").classList.remove("u-background__boom");
+    document.querySelector(".js-filter2__gauge1").classList.remove("u-background__onkruid");
+    document.querySelector(".js-filter2__gauge2").classList.remove("u-background__grass");
+    document.querySelector(".js-filter2__gauge2").classList.remove("u-background__boom");
+    document.querySelector(".js-filter2__gauge2").classList.remove("u-background__onkruid");
+
+    // Variable
+    let variabelefilter1 , variabelefilter2;
+    let chartinfo1 = [], chartinfo2 = [];
+
+    // Algemeen
+    document.querySelector(".js-filter2__date").innerHTML = data.today.date;
+    // Filter 1
+    if (type1 === "grass"){
+        variabelefilter1 = data.today.pollen_info.graspollen_info;
+        chartfilter1 = "graspollen_info";
+    } else if (type1 === "boom"){
+        variabelefilter1 = data.today.pollen_info.boompollen_info;
+        chartfilter1 = "boompollen_info";
+    } else if (type1 === "onkruid"){
+        variabelefilter1 = data.today.pollen_info.onkruidpollen_info;
+        chartfilter1 = "onkruidpollen_info";
+    }
+    document.querySelector(".js-filter2__description1").innerHTML = variabelefilter1.long_description;
+    document.querySelector(".js-filter2__gauge1").classList.add(`u-background__${type1}`);
+    document.querySelector(".js-filter2__type1").innerHTML = variabelefilter1.type;
+    document.querySelector(".js-filter2__percent1").innerHTML = variabelefilter1.percentage + "%";
+    document.querySelector(".js-filter2__word1").innerHTML = variabelefilter1.concentration;
+    document.querySelector(".js-filter2__words1").innerHTML = variabelefilter1.short_description;
+    document.querySelector(".js-filter2__pin1").style.transform = `rotate(${calculatePin(variabelefilter1.percentage)}deg)`;
+    document.querySelector(".js-filter2__chartinfo1").innerHTML = variabelefilter1.type;
+    // Filter 2
+    if (type2 === "grass"){
+        variabelefilter2 = data.today.pollen_info.graspollen_info;
+        chartfilter2 = "graspollen_info";
+    } else if (type2 === "boom"){
+        variabelefilter2 = data.today.pollen_info.boompollen_info;
+        chartfilter2 = "boompollen_info";
+    } else if (type2 === "onkruid"){
+        variabelefilter2 = data.today.pollen_info.onkruidpollen_info;
+        chartfilter2 = "onkruidpollen_info";
+    }
+    document.querySelector(".js-filter2__description2").innerHTML = variabelefilter2.long_description;
+    document.querySelector(".js-filter2__gauge2").classList.add(`u-background__${type2}`);
+    document.querySelector(".js-filter2__type2").innerHTML = variabelefilter2.type;
+    document.querySelector(".js-filter2__percent2").innerHTML = variabelefilter2.percentage + "%";
+    document.querySelector(".js-filter2__word2").innerHTML = variabelefilter2.concentration;
+    document.querySelector(".js-filter2__words2").innerHTML = variabelefilter2.short_description;
+    document.querySelector(".js-filter2__pin2").style.transform = `rotate(${calculatePin(variabelefilter2.percentage)}deg)`;
+    document.querySelector(".js-filter2__chartinfo2").innerHTML = variabelefilter2.type;
+    // Chart
+    for (const day of data.forecast){
+        chartinfo1.push(day.pollen_info[chartfilter1].percentage);
+        chartinfo2.push(day.pollen_info[chartfilter2].percentage);
+    }
+    let html = "";
+    let teller = 0;
+    for (const day of chartinfo1){
+        html += `<div class="c-chart__group"><div class="c-chart__bar" style="height: ${day}%;"><span class="c-chart__percent">${day}%</span></div><div class="c-chart__bar c-chart__bar--2" style="height: ${chartinfo2[teller]}%;"><span class="c-chart__percent">${chartinfo2[teller]}%</span></div></div>`;
+        teller++;
+    }
+    document.querySelector(".js-filter2__chart").innerHTML = html;
+    // Show
+    document.querySelector(".js-overview").classList.add("u-hidden");
+    document.querySelector(".js-filter1").classList.add("u-hidden");
+    document.querySelector(".js-filter2").classList.remove("u-hidden");
 }
 
 const showForecast = function(data){
@@ -160,6 +246,7 @@ const showForecast = function(data){
         html += `<button data-json='${JSON.stringify(day)}' class="c-scroll__item js-modaltrigger"><h3 class="c-forecast__title">${day.date}</h3><p class="c-forecast__description">${day.short_description}</p><div class="c-forecast__1 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(day.pollen_info.graspollen_info.percentage)}deg)"></div></div></div><h5>Graspollen</h5><p>${day.pollen_info.graspollen_info.concentration}</p></div><div class="c-forecast__2 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(day.pollen_info.boompollen_info.percentage)}deg)"></div></div></div><h5>Boompollen</h5><p>${day.pollen_info.boompollen_info.concentration}</p></div><div class="c-forecast__3 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(day.pollen_info.onkruidpollen_info.percentage)}deg)"></div></div></div><h5>Onkruidpollen</h5><p>${day.pollen_info.onkruidpollen_info.concentration}</p></div></button>`
     }
     document.querySelector(".js-scroll").classList.remove("c-scrollfilter1");
+    document.querySelector(".js-scroll").classList.remove("c-scrollfilter2");
     document.querySelector(".js-scroll").innerHTML = html;
     listenToModal();
 }
@@ -193,9 +280,44 @@ const showOneForecast = function(data, type){
         }
         html += `<button data-type="${type}" data-json='${JSON.stringify(json)}' class="c-scroll__item js-modaltrigger"><h3 class="c-forecast__title">${day.date}</h3><p class="c-forecast__description">${description}</p><div class="c-forecast__1 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(percentage)}deg)"></div></div></div><h5>${soort}</h5><p>${concentration}</p></div></button>`
     }
+    document.querySelector(".js-scroll").classList.remove("c-scrollfilter2");
     document.querySelector(".js-scroll").classList.add("c-scrollfilter1");
     document.querySelector(".js-scroll").innerHTML = html;
     listenToOneModal();
+}
+
+const showTwoForecast = function(data, type1, type2){
+    let type1info, type2info;
+
+    if (type1 === "grass"){
+        type1info = "graspollen_info";
+    } else if (type1 === "boom"){
+        type1info = "boompollen_info";
+    } else if (type1 === "onkruid"){
+        type1info = "onkruidpollen_info";
+    }
+    if (type2 === "grass"){
+        type2info = "graspollen_info";
+    } else if (type2 === "boom"){
+        type2info = "boompollen_info";
+    } else if (type2 === "onkruid"){
+        type2info = "onkruidpollen_info";
+    }
+
+    let html = "";
+    for (const day of data.forecast){
+
+        const json = {
+            today : day,
+            forecast  : data.forecast
+        }
+
+        html += `<button data-type1="${type1}" data-type2="${type2}" data-json='${JSON.stringify(json)}' class="c-scroll__item js-modaltrigger"><h3 class="c-forecast__title">${day.date}</h3><p class="c-forecast__description">${day.pollen_info[type1info].short_description}<br>${day.pollen_info[type2info].short_description}</p><div class="c-forecast__1 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(day.pollen_info[type1info].percentage)}deg)"></div></div></div><h5>${day.pollen_info[type1info].type}</h5><p>${day.pollen_info[type1info].concentration}</p></div><div class="c-forecast__2 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(day.pollen_info[type2info].percentage)}deg)"></div></div></div><h5>${day.pollen_info[type2info].type}</h5><p>${day.pollen_info[type2info].concentration}</p></div></button>`;
+    }
+    document.querySelector(".js-scroll").classList.remove("c-scrollfilter1");
+    document.querySelector(".js-scroll").classList.add("c-scrollfilter2");
+    document.querySelector(".js-scroll").innerHTML = html;
+    listenToTwoModal();
 }
 
 const showModalData = function(json){
@@ -224,6 +346,10 @@ const showModalData = function(json){
     document.querySelector(".js-modal__onkruid--word").innerHTML = data.pollen_info.onkruidpollen_info.concentration;
     document.querySelector(".js-modal__onkruid--words").innerHTML = data.pollen_info.onkruidpollen_info.short_description;
     document.querySelector(".js-modal__onkruid--pin").style.transform = `rotate(${calculatePin(data.pollen_info.onkruidpollen_info.percentage)}deg)`;
+    // Show
+    document.querySelector(".js-onemodal").classList.add("u-hidden");
+    document.querySelector(".js-twomodal").classList.add("u-hidden");
+    document.querySelector(".js-modaloverview").classList.remove("u-hidden");
 }
 
 const showOneModalData = function(json, type){
@@ -281,7 +407,81 @@ const showOneModalData = function(json, type){
         document.querySelector(".js-onemodal__chart").innerHTML = html;
     }
     document.querySelector(".js-modaloverview").classList.add("u-hidden");
+    document.querySelector(".js-twomodal").classList.add("u-hidden");
     document.querySelector(".js-onemodal").classList.remove("u-hidden");
+}
+
+const showTwoModalData = function(json, type1, type2){
+    const data = JSON.parse(json);
+    // Remove classes
+    document.querySelector(".js-twomodal__gauge1").classList.remove("u-background__grass");
+    document.querySelector(".js-twomodal__gauge1").classList.remove("u-background__boom");
+    document.querySelector(".js-twomodal__gauge1").classList.remove("u-background__onkruid");
+    document.querySelector(".js-twomodal__gauge2").classList.remove("u-background__grass");
+    document.querySelector(".js-twomodal__gauge2").classList.remove("u-background__boom");
+    document.querySelector(".js-twomodal__gauge2").classList.remove("u-background__onkruid");
+
+    // Variable
+    let variabelefilter1 , variabelefilter2;
+    let chartinfo1 = [], chartinfo2 = [];
+
+    // Algemeen
+    document.querySelector(".js-twomodal__date").innerHTML = data.today.date;
+    // Filter 1
+    if (type1 === "grass"){
+        variabelefilter1 = data.today.pollen_info.graspollen_info;
+        chartfilter1 = "graspollen_info";
+    } else if (type1 === "boom"){
+        variabelefilter1 = data.today.pollen_info.boompollen_info;
+        chartfilter1 = "boompollen_info";
+    } else if (type1 === "onkruid"){
+        variabelefilter1 = data.today.pollen_info.onkruidpollen_info;
+        chartfilter1 = "onkruidpollen_info";
+    }
+    document.querySelector(".js-twomodal__description1").innerHTML = variabelefilter1.long_description;
+    document.querySelector(".js-twomodal__gauge1").classList.add(`u-background__${type1}`);
+    document.querySelector(".js-twomodal__type1").innerHTML = variabelefilter1.type;
+    document.querySelector(".js-twomodal__percent1").innerHTML = variabelefilter1.percentage + "%";
+    document.querySelector(".js-twomodal__word1").innerHTML = variabelefilter1.concentration;
+    document.querySelector(".js-twomodal__words1").innerHTML = variabelefilter1.short_description;
+    document.querySelector(".js-twomodal__pin1").style.transform = `rotate(${calculatePin(variabelefilter1.percentage)}deg)`;
+    document.querySelector(".js-twomodal__chartinfo1").innerHTML = variabelefilter1.type;
+    // // Filter 2
+    if (type2 === "grass"){
+        variabelefilter2 = data.today.pollen_info.graspollen_info;
+        chartfilter2 = "graspollen_info";
+    } else if (type2 === "boom"){
+        variabelefilter2 = data.today.pollen_info.boompollen_info;
+        chartfilter2 = "boompollen_info";
+    } else if (type2 === "onkruid"){
+        variabelefilter2 = data.today.pollen_info.onkruidpollen_info;
+        chartfilter2 = "onkruidpollen_info";
+    }
+    document.querySelector(".js-twomodal__description2").innerHTML = variabelefilter2.long_description;
+    document.querySelector(".js-twomodal__gauge2").classList.add(`u-background__${type2}`);
+    document.querySelector(".js-twomodal__type2").innerHTML = variabelefilter2.type;
+    document.querySelector(".js-twomodal__percent2").innerHTML = variabelefilter2.percentage + "%";
+    document.querySelector(".js-twomodal__word2").innerHTML = variabelefilter2.concentration;
+    document.querySelector(".js-twomodal__words2").innerHTML = variabelefilter2.short_description;
+    document.querySelector(".js-twomodal__pin2").style.transform = `rotate(${calculatePin(variabelefilter2.percentage)}deg)`;
+    document.querySelector(".js-twomodal__chartinfo2").innerHTML = variabelefilter2.type;
+    // // Chart
+    for (const day of data.forecast){
+        chartinfo1.push(day.pollen_info[chartfilter1].percentage);
+        chartinfo2.push(day.pollen_info[chartfilter2].percentage);
+    }
+    let html = "";
+    let teller = 0;
+    for (const day of chartinfo1){
+        html += `<div class="c-chart__group"><div class="c-chart__bar" style="height: ${day}%;"><span class="c-chart__percent">${day}%</span></div><div class="c-chart__bar c-chart__bar--2" style="height: ${chartinfo2[teller]}%;"><span class="c-chart__percent">${chartinfo2[teller]}%</span></div></div>`;
+        teller++;
+    }
+    document.querySelector(".js-twomodal__chart").innerHTML = html;
+    // Show
+    document.querySelector(".js-modaloverview").classList.add("u-hidden");
+    document.querySelector(".js-onemodal").classList.add("u-hidden");
+    document.querySelector(".js-twomodal").classList.remove("u-hidden");
+
 }
 
 const showdata = function(data){
@@ -291,6 +491,9 @@ const showdata = function(data){
     } else if (filter.length === 1){
         showOneToday(data, filter[0]);
         showOneForecast(data, filter[0]);
+    } else if (filter.length === 2){
+        showTwoToday(data, filter[0], filter[1]);
+        showTwoForecast(data, filter[0], filter[1]);
     }
 }  
 
@@ -305,51 +508,56 @@ const getdata = function(){
 }
 
 // 1 filter
+// const listenToFilter = function () {
+//     const checkboxes = document.querySelectorAll(".js-checkbox");
+//     for (const checkbox of checkboxes) {
+//         checkbox.addEventListener("change", function () {
+//             filter = [];
+//             for (const otherCheckbox of checkboxes) {
+//                 if (otherCheckbox !== checkbox) {
+//                     otherCheckbox.checked = false;
+//                 }
+//             }
+//             if (checkbox.checked) {
+//                 const value = checkbox.value;
+//                 filter = [value];
+//             }
+//             getdata();
+//         })
+//     }
+// }
+
+// 2 filters
 const listenToFilter = function () {
     const checkboxes = document.querySelectorAll(".js-checkbox");
+    let checkedCount = 0;
+
     for (const checkbox of checkboxes) {
         checkbox.addEventListener("change", function () {
-            filter = [];
-            for (const otherCheckbox of checkboxes) {
-                if (otherCheckbox !== checkbox) {
-                    otherCheckbox.checked = false;
-                }
-            }
             if (checkbox.checked) {
-                const value = checkbox.value;
-                filter = [value];
+                checkedCount++;
+                filter.push(checkbox.value);
+                if (checkedCount > 2) {
+                    checkedCount--;
+                    const waarde = filter[0];
+                    const checkboxes = document.querySelectorAll(".js-checkbox");
+
+                    checkboxes.forEach(checkbox => {
+                        if (checkbox.value === waarde) {
+                            checkbox.checked = false;
+                        }
+                    });
+                
+                    filter = filter.slice(1);
+                }
+            } else {
+                checkedCount--;
+                filter = filter.filter(item => item !== checkbox.value);
             }
             getdata();
         })
     }
 }
-
-// 2 filters
-// const listenToFilter = function () {
-//     const checkboxes = document.querySelectorAll(".js-checkbox");
-//     let checkedCount = 0;
-
-//     for (const checkbox of checkboxes) {
-//         checkbox.addEventListener("change", function () {
-//             if (checkbox.checked) {
-//                 checkedCount++;
-
-//                 if (checkedCount > 2) {
-//                     checkbox.checked = false;
-//                     checkedCount--;
-//                 }
-//             } else {
-//                 checkedCount--;
-//             }
-
-//             const values = Array.from(checkboxes)
-//                 .filter((checkbox) => checkbox.checked)
-//                 .map((checkbox) => checkbox.value);
-            
-//             console.log(values);
-//         })
-//     }
-// }
 
 // DOM
 
