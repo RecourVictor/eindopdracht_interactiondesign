@@ -620,14 +620,19 @@ label{
 
 /* Scroll */
 .c-scroll{
+    position: relative;
+}
+
+.c-scroll__container{
+    padding: var(--global-spacing-s) 0;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     overflow-x: none;
-    padding: var(--global-spacing-s) 0;
 }
 
-.c-scroll::-webkit-scrollbar{
+
+.c-scroll__container::-webkit-scrollbar{
     display: none;
 }
 
@@ -684,6 +689,45 @@ label{
     }
 }
 
+.c-scroll__arrow{
+    background-color: var(--global-color-whitewhite);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--global-boxShadow);
+    position: absolute;
+    transition: var(--global-transition);
+    border: 2px solid var(--global-color-whitewhite);
+    & svg{
+        width: 70%;
+        height: auto;
+    }
+    &:focus-visible{
+        border: 2px solid var(--global-color-lightblue);
+        box-shadow: var(--global-boxShadow-hover);
+    }
+    &:hover{
+        border: 2px solid var(--global-color-lightblue);
+        box-shadow: var(--global-boxShadow-hover);
+    }
+}
+
+.c-scroll__arrow--next{
+    right: 0;
+    top: 50%;
+    transform: translateX(50%) translateY(50%);
+    rotate: -90deg;
+}
+
+.c-scroll__arrow--prev{
+    left: 0;
+    top: 50%;
+    transform: translateX(-50%) translateY(50%);
+    rotate: 90deg;
+}
 
 @media screen and (min-width: 35rem) {
     .c-scroll__item{
@@ -715,7 +759,7 @@ label{
 }
 
 @media screen and (min-width: 48rem) {
-    .c-scroll{
+    .c-scroll__container{
         flex-direction: row;
         overflow-x: scroll;
         scroll-behavior: smooth;

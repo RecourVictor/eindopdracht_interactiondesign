@@ -75,6 +75,24 @@ const listenToClose = function(){
     })
 }
 
+const listenToScroll = function(){
+    console.log("scroll");
+    const scroll = document.querySelector(".js-scroll");
+    const visible = scroll.clientWidth;
+    const total = scroll.scrollWidth;
+    const scrollamount = Math.min(visible, total) /2;
+
+    const leftbtn = document.querySelector(".js-left");
+    const rightbtn = document.querySelector(".js-right");
+
+    leftbtn.addEventListener("click", function(){
+        scroll.scrollLeft -= scrollamount;
+    })
+    rightbtn.addEventListener("click", function(){
+        scroll.scrollLeft += scrollamount;
+    })
+}
+
 // Backend
 const calculatePin = function(percentage){
     const rotatie = (percentage - 50) * 1.8;
@@ -253,6 +271,7 @@ const showForecast = function(data){
     document.querySelector(".js-scroll").classList.remove("c-scrollfilter2");
     document.querySelector(".js-scroll").innerHTML = html;
     listenToModal();
+    listenToScroll();
 }
 
 const showOneForecast = function(data, type){
