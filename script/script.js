@@ -65,6 +65,9 @@ const calculatePin = function(percentage){
 }
 
 const showToday = function(data){
+    // Show
+    document.querySelector(".js-filter1").classList.add("u-hidden");    
+    document.querySelector(".js-overview").classList.remove("u-hidden");
     // Algemeen
     document.querySelector('.js-today__description').innerHTML = data.today.long_description;
     document.querySelector('.js-today__date').innerHTML = data.today.date;
@@ -162,15 +165,15 @@ const showForecast = function(data){
 }
 
 const showOneForecast = function(data, type){
-    console.log(data);
-    console.log(type);
-
     let html = "";
 
     for (const day of data.forecast){
-        console.log(day);
-        console.log(day.date)
         let soort, description, percentage, concentration;
+
+        const json = {
+            today : day,
+            forecast  : data.forecast
+        }
 
         if (type === "grass"){
             soort = "Graspollen";
@@ -188,7 +191,7 @@ const showOneForecast = function(data, type){
             percentage = day.pollen_info.onkruidpollen_info.percentage;
             concentration = day.pollen_info.onkruidpollen_info.concentration;
         }
-        html += `<button data-type="${type}" data-json='${JSON.stringify(day)}' class="c-scroll__item js-modaltrigger"><h3 class="c-forecast__title">${day.date}</h3><p class="c-forecast__description">${description}</p><div class="c-forecast__1 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(percentage)}deg)"></div></div></div><h5>${soort}</h5><p>${concentration}</p></div></button>`
+        html += `<button data-type="${type}" data-json='${JSON.stringify(json)}' class="c-scroll__item js-modaltrigger"><h3 class="c-forecast__title">${day.date}</h3><p class="c-forecast__description">${description}</p><div class="c-forecast__1 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(percentage)}deg)"></div></div></div><h5>${soort}</h5><p>${concentration}</p></div></button>`
     }
     document.querySelector(".js-scroll").classList.add("c-scrollfilter1");
     document.querySelector(".js-scroll").innerHTML = html;
@@ -224,26 +227,61 @@ const showModalData = function(json){
 }
 
 const showOneModalData = function(json, type){
-    console.log(json);
-    console.log(type);
     const data = JSON.parse(json);
-
     // Remove classes
     document.querySelector(".js-onemodal__gauge").classList.remove("u-background__grass");
     document.querySelector(".js-onemodal__gauge").classList.remove("u-background__boom");
     document.querySelector(".js-onemodal__gauge").classList.remove("u-background__onkruid");
     // Algemeen
-    document.querySelector(".js-onemodal__date").innerHTML = data.date;
+    document.querySelector(".js-onemodal__date").innerHTML = data.today.date;
     if (type === "grass"){
         // Algmeen
-        document.querySelector(".js-onemodal__description").innerHTML = data.pollen_info.graspollen_info.long_description;
+        document.querySelector(".js-onemodal__description").innerHTML = data.today.pollen_info.graspollen_info.long_description;
+        // Card
+        document.querySelector(".js-onemodal__gauge").classList.add("u-background__grass");
+        document.querySelector(".js-onemodal__percent").innerHTML = data.today.pollen_info.graspollen_info.percentage + "%";
+        document.querySelector(".js-onemodal__word").innerHTML = data.today.pollen_info.graspollen_info.concentration;
+        document.querySelector(".js-onemodal__words").innerHTML = data.today.pollen_info.graspollen_info.short_description;
+        document.querySelector(".js-onemodal__pin").style.transform = `rotate(${calculatePin(data.today.pollen_info.graspollen_info.percentage)}deg)`;
+        // Chart
+        let html = "";
+        for (const day of data.forecast){
+            html += `<div class="c-chart__bar" style="height: ${day.pollen_info.graspollen_info.percentage}%;"><span class="c-chart__percent">${day.pollen_info.graspollen_info.percentage}%</span></div>`;
+        }
+        document.querySelector(".js-onemodal__chart").innerHTML = html;
     } else if (type === "boom"){
         // Algmeen
-        document.querySelector(".js-onemodal__description").innerHTML = data.pollen_info.boompollen_info.long_description;
+        document.querySelector(".js-onemodal__description").innerHTML = data.today.pollen_info.boompollen_info.long_description;
+        // Card
+        document.querySelector(".js-onemodal__gauge").classList.add("u-background__boom");
+        document.querySelector(".js-onemodal__percent").innerHTML = data.today.pollen_info.boompollen_info.percentage + "%";
+        document.querySelector(".js-onemodal__word").innerHTML = data.today.pollen_info.boompollen_info.concentration;
+        document.querySelector(".js-onemodal__words").innerHTML = data.today.pollen_info.boompollen_info.short_description;
+        document.querySelector(".js-onemodal__pin").style.transform = `rotate(${calculatePin(data.today.pollen_info.boompollen_info.percentage)}deg)`;
+        // Chart
+        let html = "";
+        for (const day of data.forecast){
+            html += `<div class="c-chart__bar" style="height: ${day.pollen_info.boompollen_info.percentage}%;"><span class="c-chart__percent">${day.pollen_info.boompollen_info.percentage}%</span></div>`;
+        }
+        document.querySelector(".js-onemodal__chart").innerHTML = html;
     } else if (type === "onkruid"){
         // Algmeen
-        document.querySelector(".js-onemodal__description").innerHTML = data.pollen_info.onkruidpollen_info.long_description;
+        document.querySelector(".js-onemodal__description").innerHTML = data.today.pollen_info.onkruidpollen_info.long_description;
+        // Card
+        document.querySelector(".js-onemodal__gauge").classList.add("u-background__onkruid");
+        document.querySelector(".js-onemodal__percent").innerHTML = data.today.pollen_info.onkruidpollen_info.percentage + "%";
+        document.querySelector(".js-onemodal__word").innerHTML = data.today.pollen_info.onkruidpollen_info.concentration;
+        document.querySelector(".js-onemodal__words").innerHTML = data.today.pollen_info.onkruidpollen_info.short_description;
+        document.querySelector(".js-onemodal__pin").style.transform = `rotate(${calculatePin(data.today.pollen_info.onkruidpollen_info.percentage)}deg)`;
+        // Chart
+        let html = "";
+        for (const day of data.forecast){
+            html += `<div class="c-chart__bar" style="height: ${day.pollen_info.onkruidpollen_info.percentage}%;"><span class="c-chart__percent">${day.pollen_info.onkruidpollen_info.percentage}%</span></div>`;
+        }
+        document.querySelector(".js-onemodal__chart").innerHTML = html;
     }
+    document.querySelector(".js-modaloverview").classList.add("u-hidden");
+    document.querySelector(".js-onemodal").classList.remove("u-hidden");
 }
 
 const showdata = function(data){
