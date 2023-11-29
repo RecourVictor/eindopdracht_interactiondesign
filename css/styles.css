@@ -32,8 +32,8 @@
     --global-color-whitewhite: white;
     --global-color-white: #FAFAFA;
     --global-color-lightblue: #5099CE;
-    --global-color-lightblue-rgba50: rgba(80, 153, 206, 0.5);
     --global-color-darkblue: #1F4068;
+    --global-color-darkblue-rgba50: rgba(31, 64, 104, 0.5);
 
     /* box shadow */
     --global-boxShadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -267,12 +267,12 @@ label{
     transition: var(--global-transition);
     &:focus-visible{
         & .c-toggle__switch{
-            box-shadow: 0 0 0 0.2rem var(--global-color-lightblue-rgba50);
+            box-shadow: 0 0 0 0.2rem var(--global-color-darkblue-rgba50);
         }
     }
     &:hover{
         & .c-toggle__switch{
-            box-shadow: 0 0 0 0.2rem var(--global-color-lightblue-rgba50);
+            box-shadow: 0 0 0 0.2rem var(--global-color-darkblue-rgba50);
         }
     }
 }
@@ -315,6 +315,7 @@ label{
 
 /* Chart */
 .c-chart{
+    max-width: 100%;
     height: 90%;
     min-height: 20rem;
     display: flex;
@@ -322,6 +323,7 @@ label{
     align-items: flex-end;
     justify-content: center;
 }
+
 .c-chart__bar{
     background-color: var(--global-color-darkblue);
     width: var(--global-spacing-s);
@@ -780,17 +782,18 @@ label{
 /* Modal */
 .c-modal{
     background-color: var(--global-color-white);
-    /* position: fixed; */
+    /* position: sticky; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: calc(100vw - 2 * var(--global-spacing-s));
     max-height: calc(100vh - 2 * var(--global-spacing-s));
-    padding: var(--global-spacing-s);
+    min-height: 50vh;
     overflow-y: auto;
     color: var(--global-color-darkblue);
     border-radius: var(--global-borderRadius);
     box-shadow: var(--global-boxShadow-lg);
+    padding: var(--global-spacing-s);
     border: none;
     animation: fade-out 0.3s ease-in-out;
 }
@@ -810,9 +813,10 @@ label{
 }
 
 .c-modal__close{
-    position: absolute;
-    top: var(--global-spacing);
-    right: var(--global-spacing);
+    position: sticky;
+    width: 100%;
+    text-align: right;
+    top: 0;
     color: var(--global-color-darkblue);
     & svg{
         height: var(--global-fontSize-xl);

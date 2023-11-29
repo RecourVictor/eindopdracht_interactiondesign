@@ -1,7 +1,6 @@
 Todo:
 
 - responsive modal
-- fixed closebtn modal
 - animaties bij loaden/ in screen komen
 - horizontal scrolling btn
 - alle js controleren
