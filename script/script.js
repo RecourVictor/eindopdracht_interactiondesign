@@ -60,7 +60,7 @@ const listenToCheckbox = function(){
     for (const toggle of toggles){
         toggle.addEventListener("keydown", function(e){
             if (e.code === "Enter" || e.code === "Space"){
-                const checkbox = toggle.querySelector(".js-checkbox")
+                const checkbox = this.querySelector(".js-checkbox");
                 checkbox.checked = !checkbox.checked;
             }
         })
@@ -76,7 +76,6 @@ const listenToClose = function(){
 }
 
 const listenToScroll = function(){
-    console.log("scroll");
     const scroll = document.querySelector(".js-scroll");
     const visible = scroll.clientWidth;
     const total = scroll.scrollWidth;
@@ -555,6 +554,9 @@ const listenToFilter = function () {
     const checkboxes = document.querySelectorAll(".js-checkbox");
     for (const checkbox of checkboxes) {
         checkbox.addEventListener("change", function () {
+
+            console.log("filterchange")
+
             let checkedCount = 0;
             for (const checkbox of checkboxes) {
                 if (checkbox.checked) {

@@ -840,6 +840,10 @@ label{
     padding: var(--global-spacing-s);
     border: none;
     animation: fade-out 0.3s ease-in-out;
+    & .c-overview{
+        /* margin-top: var(--global-spacing-s); */
+        margin-top: calc(var(--global-spacing-s) * -1);
+    }
 }
 
 @media screen and (min-width: 48rem) {
@@ -858,6 +862,7 @@ label{
 
 .c-modal__close{
     position: sticky;
+    /* background-color: hotpink; */
     width: 100%;
     text-align: right;
     top: 0;

@@ -2,6 +2,9 @@ Todo:
 
 - responsive modal
 - animaties bij loaden/ in screen komen
+- toestenbord accesibility 
+-- knoppen filters werken niet met enter
+- closebtn modal
 - alle js controleren
 - alle html controleren
 - alle css controleren
