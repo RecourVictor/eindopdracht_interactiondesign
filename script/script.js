@@ -80,7 +80,7 @@ const listenToScroll = function(){
     const scroll = document.querySelector(".js-scroll");
     const visible = scroll.clientWidth;
     const total = scroll.scrollWidth;
-    const scrollamount = Math.min(visible, total) /2;
+    const scrollamount = Math.min(visible, total) / 2;
 
     const leftbtn = document.querySelector(".js-left");
     const rightbtn = document.querySelector(".js-right");
