@@ -530,6 +530,9 @@ const showTwoModalData = function(json, type1, type2){
 }
 
 const showdata = function(data){
+    // haal duplicaten uit de lijst
+    let filterlijst = new Set(filter);
+    filter = [...filterlijst];
     if (filter.length >= 3){
         showToday(data);
         showForecast(data);    
