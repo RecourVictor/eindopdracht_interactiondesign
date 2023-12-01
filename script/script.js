@@ -614,6 +614,10 @@ const init = function(){
     listenToCheckbox();
     // listenToModal();
     listenToClose();
+    setTimeout(function(){
+        document.querySelector(".js-loader").classList.add("u-hidden");
+        document.querySelector(".js-main").classList.remove("u-hidden");
+    }, 1000);
 }
 
 document.addEventListener('DOMContentLoaded',init);

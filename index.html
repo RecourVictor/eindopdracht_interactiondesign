@@ -21,153 +21,503 @@
 </head>
 
 <body>
-    <header>
-        <div class="o-container">
-            <nav>
-                <h1 class="c-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.041 34.333">
-                        <path id="radar" d="M13.894,1.309A16.023,16.023,0,0,1,33.043,17.022a1.144,1.144,0,0,1-2.289,0A13.734,13.734,0,1,0,15.876,30.71v-2.3A11.445,11.445,0,1,1,28.465,17.022a1.144,1.144,0,0,1-2.289,0,9.156,9.156,0,1,0-10.3,9.085V23.793a6.865,6.865,0,1,1,8.011-6.771,1.144,1.144,0,0,1-2.289,0,4.578,4.578,0,1,0-5.722,4.431V19a2.289,2.289,0,1,1,2.289,0V34.189a1.144,1.144,0,0,1-2.289,0V33a16.023,16.023,0,0,1-1.982-31.7Z" transform="translate(-1.002 -1)" fill="currentcolor" />
-                    </svg>
-                    Pollen<span class="c-title__radar">radar</span>
-                </h1>
-                <button class="c-filterbtn js-filterbtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.95 31.4">
-                        <path id="filter-svgrepo-com" d="M26.018,16.431a6.47,6.47,0,0,0,6.2-4.618H37.1a1.848,1.848,0,1,0,0-3.7H32.216a6.47,6.47,0,0,0-12.4,0H3.848a1.848,1.848,0,0,0,0,3.7H19.819A6.47,6.47,0,0,0,26.018,16.431ZM3.848,26.592a1.848,1.848,0,0,0,0,3.7H7.81a6.47,6.47,0,0,0,12.4,0H37.1a1.848,1.848,0,1,0,0-3.7h-16.9a6.47,6.47,0,0,0-12.4,0Z" transform="translate(-2 -3.502)" fill="currentcolor" fill-rule="evenodd" />
+    <div class="js-loader c-loader">
+            <div class="c-loader__container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.041 34.333">
+                    <path id="radar" d="M13.894,1.309A16.023,16.023,0,0,1,33.043,17.022a1.144,1.144,0,0,1-2.289,0A13.734,13.734,0,1,0,15.876,30.71v-2.3A11.445,11.445,0,1,1,28.465,17.022a1.144,1.144,0,0,1-2.289,0,9.156,9.156,0,1,0-10.3,9.085V23.793a6.865,6.865,0,1,1,8.011-6.771,1.144,1.144,0,0,1-2.289,0,4.578,4.578,0,1,0-5.722,4.431V19a2.289,2.289,0,1,1,2.289,0V34.189a1.144,1.144,0,0,1-2.289,0V33a16.023,16.023,0,0,1-1.982-31.7Z" transform="translate(-1.002 -1)" fill="currentcolor" />
+                </svg>
+            </div>
+            <p class="c-title c-loader__title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.041 34.333">
+                    <path id="radar" d="M13.894,1.309A16.023,16.023,0,0,1,33.043,17.022a1.144,1.144,0,0,1-2.289,0A13.734,13.734,0,1,0,15.876,30.71v-2.3A11.445,11.445,0,1,1,28.465,17.022a1.144,1.144,0,0,1-2.289,0,9.156,9.156,0,1,0-10.3,9.085V23.793a6.865,6.865,0,1,1,8.011-6.771,1.144,1.144,0,0,1-2.289,0,4.578,4.578,0,1,0-5.722,4.431V19a2.289,2.289,0,1,1,2.289,0V34.189a1.144,1.144,0,0,1-2.289,0V33a16.023,16.023,0,0,1-1.982-31.7Z" transform="translate(-1.002 -1)" fill="currentcolor" />
+                </svg>
+                Pollen<span class="c-title__radar">radar</span>
+            </p>
+    </div>
+    <div class="js-main u-hidden">
+        <header>
+            <div class="o-container">
+                <nav>
+                    <h1 class="c-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.041 34.333">
+                            <path id="radar" d="M13.894,1.309A16.023,16.023,0,0,1,33.043,17.022a1.144,1.144,0,0,1-2.289,0A13.734,13.734,0,1,0,15.876,30.71v-2.3A11.445,11.445,0,1,1,28.465,17.022a1.144,1.144,0,0,1-2.289,0,9.156,9.156,0,1,0-10.3,9.085V23.793a6.865,6.865,0,1,1,8.011-6.771,1.144,1.144,0,0,1-2.289,0,4.578,4.578,0,1,0-5.722,4.431V19a2.289,2.289,0,1,1,2.289,0V34.189a1.144,1.144,0,0,1-2.289,0V33a16.023,16.023,0,0,1-1.982-31.7Z" transform="translate(-1.002 -1)" fill="currentcolor" />
+                        </svg>
+                        Pollen<span class="c-title__radar">radar</span>
+                    </h1>
+                    <button class="c-filterbtn js-filterbtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.95 31.4">
+                            <path id="filter-svgrepo-com" d="M26.018,16.431a6.47,6.47,0,0,0,6.2-4.618H37.1a1.848,1.848,0,1,0,0-3.7H32.216a6.47,6.47,0,0,0-12.4,0H3.848a1.848,1.848,0,0,0,0,3.7H19.819A6.47,6.47,0,0,0,26.018,16.431ZM3.848,26.592a1.848,1.848,0,0,0,0,3.7H7.81a6.47,6.47,0,0,0,12.4,0H37.1a1.848,1.848,0,1,0,0-3.7h-16.9a6.47,6.47,0,0,0-12.4,0Z" transform="translate(-2 -3.502)" fill="currentcolor" fill-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="c-filter js-filter">
+                        <h5>Personaliseer je pollenkaart</h5>
+                        <form action="#">
+                            <label class="c-toggle js-toggle" for="Graspollen">
+                                <input checked value="grass" name="Graspollen" id="Graspollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
+                                <span class="c-toggle__switch"></span>
+                                Graspollen
+                            </label>
+                            <label class="c-toggle js-toggle" for="Boompollen">
+                                <input checked value="boom" name="Boompollen" id="Boompollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
+                                <span class="c-toggle__switch"></span>
+                                Boompollen
+                            </label>
+                            <label class="c-toggle js-toggle" for="Onkruidpollen">
+                                <input checked value="onkruid" name="Onkruidpollen" id="Onkruidpollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
+                                <span class="c-toggle__switch"></span>
+                                Onkruidpollen
+                            </label>
+                        </form>
+                    </div>
+                </nav>
+                <div class="c-overview js-overview">
+                    <div class="c-overview__date">
+                        <h2>Vandaag</h2>
+                        <p class="c-header__date js-today__date">18/10/2023</p>
+                    </div>
+                    <div class="c-overview__description">
+                        <p class="c-overview__text js-today__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
+                    </div>
+                    <div class="c-overview__weather">
+                        <div class="c-overview__weatheritem">
+                            <img src="assets/svg/temperatuur.svg" alt="Temperatuur" height="70">
+                            <p>Temperatuur</p>
+                            <h3 class="js-today__temp">18°C</h3>
+                        </div>
+                        <div class="c-overview__weatheritem">
+                            <img src="assets/svg/neerslag.svg" alt="Neerslag" height="70">
+                            <p>Neerslag</p>
+                            <h3 class="js-today__neerslag">0.2 mm</h3>
+                        </div>
+                        <div class="c-overview__weatheritem">
+                            <img src="assets/svg/wind.svg" alt="Wind" height="70">
+                            <p>Wind</p>
+                            <h3 class="js-today__wind">10 km/h</h3>
+                        </div>
+                        <div class="c-overview__weatheritem">
+                            <img src="assets/svg/uv.svg" alt="UV-index" height="70">
+                            <p>UV-index</p>
+                            <h3 class="js-today__uv">5</h3>
+                        </div>
+                    </div>
+                    <div class="c-overview__card c-overview__grass u-background__grass">
+                        <h3>Graspollen</h3>
+                        <p class="js-today__grass--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
+                        <div class="c-gauge">
+                            <div class="c-gauge__body">
+                                <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                <div class="c-gauge__cover"></div>
+                                <div class="c-gauge__pin js-today__grass--pin"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="js-today__grass--percent">60%</h4>
+                            <h5 class="js-today__grass--word">Matig</h5>
+                            <h6 class="js-today__grass--words">Matige graspollen</h6>
+                        </div>
+                    </div>
+                    <div class="c-overview__card c-overview__boom u-background__boom">
+                        <h3>Boompollen</h3>
+                        <p class="js-today__boom--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
+                        <div class="c-gauge">
+                            <div class="c-gauge__body">
+                                <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                <div class="c-gauge__cover"></div>
+                                <div class="c-gauge__pin js-today__boom--pin"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="js-today__boom--percent">60%</h4>
+                            <h5 class="js-today__boom--word">Matig</h5>
+                            <h6 class="js-today__boom--words">Matige boompollen</h6>
+                        </div>
+                    </div>
+                    <div class="c-overview__card c-overview__onkruid u-background__onkruid">
+                        <h3>Onkruidpollen</h3>
+                        <p class="js-today__onkruid--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
+                        <div class="c-gauge">
+                            <div class="c-gauge__body">
+                                <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                <div class="c-gauge__cover"></div>
+                                <div class="c-gauge__pin js-today__onkruid--pin"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="js-today__onkruid--percent">60%</h4>
+                            <h5 class="js-today__onkruid--word">Matig</h5>
+                            <h6 class="js-today__onkruid--words">Matige onkruidpollen</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-overview c-filter1 js-filter1 u-hidden">
+                    <div class="c-overview__date">
+                        <h2>Vandaag</h2>
+                        <p class="c-header__date js-filter1__date">18/10/2023</p>
+                    </div>
+                    <div class="c-overview__description">
+                        <p class="c-overview__text js-filter1__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
+                    </div>
+                    <div class="js-filter1__gauge c-overview__card c-filter__gauge1 ">
+                        <div class="c-gauge">
+                            <div class="c-gauge__body">
+                                <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                <div class="c-gauge__cover"></div>
+                                <div class="c-gauge__pin js-filter1__pin"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="js-filter1__percent">60%</h4>
+                            <h5 class="js-filter1__word">Matig</h5>
+                            <h6 class="js-filter1__words">Matige graspollen</h6>
+                        </div>
+                    </div>
+                    <div class="c-overview__card c-filter__chart">
+                        <h3>Komende week</h3>
+                        <div class="c-chart js-filter1__chart">
+                            <div class="c-chart__bar" style="height: 80%;"><span class="c-chart__percent">80%</span></div>
+                            <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
+                            <div class="c-chart__bar" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                            <div class="c-chart__bar" style="height: 80%;"><span class="c-chart__percent">80%</span></div>
+                            <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
+                            <div class="c-chart__bar" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                            <div class="c-chart__bar" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-overview c-filter2 js-filter2 u-hidden">
+                    <div class="c-overview__date">
+                        <h2>Vandaag</h2>
+                        <p class="c-header__date js-filter2__date">18/10/2023</p>
+                    </div>
+                    <div class="c-overview__description">
+                        <p class="c-overview__text js-filter2__description1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
+                    </div>
+                    <div class="c-overview__description2">
+                        <p class="c-overview__text js-filter2__description2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
+                    </div>
+                    <div class="c-overview__card js-filter2__gauge1 c-filter__gauge1">
+                        <h3 class="js-filter2__type1">Graspollen</h3>
+                        <div class="c-gauge">
+                            <div class="c-gauge__body">
+                                <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                <div class="c-gauge__cover"></div>
+                                <div class="c-gauge__pin js-filter2__pin1"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="js-filter2__percent1">60%</h4>
+                            <h5 class="js-filter2__word1">Matig</h5>
+                            <h6 class="js-filter2__words1">Matige graspollen</h6>
+                        </div>
+                    </div>
+                    <div class="c-overview__card js-filter2__gauge2 c-filter__gauge2">
+                        <h3 class="js-filter2__type2">Boompollen</h3>
+                        <div class="c-gauge">
+                            <div class="c-gauge__body">
+                                <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                <div class="c-gauge__cover"></div>
+                                <div class="c-gauge__pin js-filter2__pin2"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="js-filter2__percent2">60%</h4>
+                            <h5 class="js-filter2__word2">Matig</h5>
+                            <h6 class="js-filter2__words2">Matige boompollen</h6>
+                        </div>
+                    </div>
+                    <div class="c-overview__card c-filter__chart">
+                        <h3>Komende week</h3>
+                        <div class="c-chart js-filter2__chart">
+                            <div class="c-chart__group">
+                                <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
+                                <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                            </div>
+                            <div class="c-chart__group">
+                                <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
+                                <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                            </div>
+                            <div class="c-chart__group">
+                                <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
+                                <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                            </div>
+                            <div class="c-chart__group">
+                                <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
+                                <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                            </div>
+                            <div class="c-chart__group">
+                                <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
+                                <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                            </div>
+                            <div class="c-chart__group">
+                                <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
+                                <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                            </div>
+                            <div class="c-chart__group">
+                                <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
+                                <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
+                            </div>
+                        </div>
+                        <div class="c-chart__legende">
+                            <div class="c-chart__legende--item">
+                                <div class="c-chart__legende--color c-chart__legende--color1"></div>
+                                <p class="js-filter2__chartinfo1">Hallo</p>
+                            </div>
+                            <div class="c-chart__legende--item">
+                                <div class="c-chart__legende--color c-chart__legende--color2"></div>
+                                <p class="js-filter2__chartinfo2">Hallo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="o-container">
+                <h2>Komende week</h2>
+                <section class="c-scroll">
+                    <div class="c-scroll__container js-scroll">
+                        <button class="c-scroll__item js-modaltrigger">
+                            <h3 class="c-forecast__title">18/10/2023</h3>
+                            <p class="c-forecast__description">Hoge graspollen morgen, aangenaam weer, lichte regen, matige luchtkwaliteit.</p>
+                            <div class="c-forecast__1 c-forecast__gauge">
+                                <div class="c-gauge">
+                                    <div class="c-gauge__body">
+                                        <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                        <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                        <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                        <div class="c-gauge__cover"></div>
+                                        <div class="c-gauge__pin"></div>
+                                    </div>
+                                </div>
+                                <h5>Graspollen</h5>
+                                <p>Matig</p>
+                            </div>
+                            <div class="c-forecast__2 c-forecast__gauge">
+                                <div class="c-gauge">
+                                    <div class="c-gauge__body">
+                                        <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                        <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                        <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                        <div class="c-gauge__cover"></div>
+                                        <div class="c-gauge__pin"></div>
+                                    </div>
+                                </div>
+                                <h5>Boompollen</h5>
+                                <p>Matig</p>
+                            </div>
+                            <div class="c-forecast__3 c-forecast__gauge">
+                                <div class="c-gauge">
+                                    <div class="c-gauge__body">
+                                        <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                        <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                        <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                        <div class="c-gauge__cover"></div>
+                                        <div class="c-gauge__pin"></div>
+                                    </div>
+                                </div>
+                                <h5>Onkruidpollen</h5>
+                                <p>Matig</p>
+                            </div>
+                        </button>
+                    </div>
+                    <button class="c-scroll__arrow c-scroll__arrow--prev js-left">
+                        <svg fill="currentcolor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
+                            <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
+                        </svg>
+                    </button>
+                    <button class="c-scroll__arrow c-scroll__arrow--next js-right">
+                        <svg fill="currentcolor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
+                            <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
+                        </svg>
+                    </button>
+                </section>
+                <!-- uit code verwijderen -- start hier -->
+                <section class="c-scroll c-scrollfilter1 u-hidden">
+                    <button class="c-scroll__item js-modaltrigger">
+                        <h3 class="c-forecast__title">18/10/2023</h3>
+                        <p class="c-forecast__description">Hoge graspollen morgen, aangenaam weer, lichte regen, matige luchtkwaliteit.</p>
+                        <div class="c-forecast__1 c-forecast__gauge">
+                            <div class="c-gauge">
+                                <div class="c-gauge__body">
+                                    <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                    <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                    <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                    <div class="c-gauge__cover"></div>
+                                    <div class="c-gauge__pin"></div>
+                                </div>
+                            </div>
+                            <h5>Graspollen</h5>
+                            <p>Matig</p>
+                        </div>
+                    </button>
+                </section>
+                <section class="c-scroll c-scrollfilter2 u-hidden">
+                    <button class="c-scroll__item js-modaltrigger">
+                        <h3 class="c-forecast__title">18/10/2023</h3>
+                        <p class="c-forecast__description">Hoge graspollen morgen, aangenaam weer, lichte regen, matige luchtkwaliteit.<br>Hoge graspollen morgen, aangenaam weer, lichte regen, matige luchtkwaliteit.</p>
+                        <div class="c-forecast__1 c-forecast__gauge">
+                            <div class="c-gauge">
+                                <div class="c-gauge__body">
+                                    <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                    <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                    <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                    <div class="c-gauge__cover"></div>
+                                    <div class="c-gauge__pin"></div>
+                                </div>
+                            </div>
+                            <h5>Graspollen</h5>
+                            <p>Matig</p>
+                        </div>
+                        <div class="c-forecast__2 c-forecast__gauge">
+                            <div class="c-gauge">
+                                <div class="c-gauge__body">
+                                    <div class="c-gauge__fill c-gauge__fill--high"></div>
+                                    <div class="c-gauge__fill c-gauge__fill--medium"></div>
+                                    <div class="c-gauge__fill c-gauge__fill--low"></div>
+                                    <div class="c-gauge__cover"></div>
+                                    <div class="c-gauge__pin"></div>
+                                </div>
+                            </div>
+                            <h5>Graspollen</h5>
+                            <p>Matig</p>
+                        </div>
+                    </button>
+                </section>
+                <!-- uit code verwijderen -- stop hier -->
+            </div>
+        </main>
+        <dialog class="js-modal c-modal">
+            <div class="c-modal__closecontainer">
+                <button class="c-modal__close js-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.973 30.973">
+                        <g id="close-circle-svgrepo-com" transform="translate(-1.25 -1.25)">
+                            <path id="Path_16" data-name="Path 16" d="M10.594,9.066a1.08,1.08,0,0,0-1.528,1.528L11.9,13.432,9.066,16.269A1.08,1.08,0,1,0,10.594,17.8l2.838-2.837L16.269,17.8A1.08,1.08,0,1,0,17.8,16.269L14.96,13.432,17.8,10.594a1.08,1.08,0,1,0-1.528-1.528L13.432,11.9Z" transform="translate(3.304 3.304)" fill="currentcolor" />
+                            <path id="Path_17" data-name="Path 17" d="M16.736,1.25A15.486,15.486,0,1,0,32.223,16.736,15.486,15.486,0,0,0,16.736,1.25ZM3.411,16.736A13.325,13.325,0,1,1,16.736,30.062,13.325,13.325,0,0,1,3.411,16.736Z" transform="translate(0 0)" fill="currentcolor" fill-rule="evenodd" />
+                        </g>
                     </svg>
                 </button>
-                <div class="c-filter js-filter">
-                    <h5>Personaliseer je pollenkaart</h5>
-                    <form action="#">
-                        <label class="c-toggle js-toggle" for="Graspollen">
-                            <input checked value="grass" name="Graspollen" id="Graspollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
-                            <span class="c-toggle__switch"></span>
-                            Graspollen
-                        </label>
-                        <label class="c-toggle js-toggle" for="Boompollen">
-                            <input checked value="boom" name="Boompollen" id="Boompollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
-                            <span class="c-toggle__switch"></span>
-                            Boompollen
-                        </label>
-                        <label class="c-toggle js-toggle" for="Onkruidpollen">
-                            <input checked value="onkruid" name="Onkruidpollen" id="Onkruidpollen" class="c-toggle__checkbox js-checkbox" type="checkbox">
-                            <span class="c-toggle__switch"></span>
-                            Onkruidpollen
-                        </label>
-                    </form>
-                </div>
-            </nav>
-            <div class="c-overview js-overview">
+            </div>
+            <div class="c-overview js-modaloverview">
                 <div class="c-overview__date">
-                    <h2>Vandaag</h2>
-                    <p class="c-header__date js-today__date">18/10/2023</p>
+                    <h2 class="js-modal__date">18/10/2023</h2>
                 </div>
                 <div class="c-overview__description">
-                    <p class="c-overview__text js-today__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
+                    <p class="c-overview__text js-modal__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
                 </div>
                 <div class="c-overview__weather">
                     <div class="c-overview__weatheritem">
                         <img src="assets/svg/temperatuur.svg" alt="Temperatuur" height="70">
                         <p>Temperatuur</p>
-                        <h3 class="js-today__temp">18°C</h3>
+                        <h3 class="js-modal__temp">18°C</h3>
                     </div>
                     <div class="c-overview__weatheritem">
                         <img src="assets/svg/neerslag.svg" alt="Neerslag" height="70">
                         <p>Neerslag</p>
-                        <h3 class="js-today__neerslag">0.2 mm</h3>
+                        <h3 class="js-modal__neerslag">0.2 mm</h3>
                     </div>
                     <div class="c-overview__weatheritem">
                         <img src="assets/svg/wind.svg" alt="Wind" height="70">
                         <p>Wind</p>
-                        <h3 class="js-today__wind">10 km/h</h3>
+                        <h3 class="js-modal__wind">10 km/h</h3>
                     </div>
                     <div class="c-overview__weatheritem">
                         <img src="assets/svg/uv.svg" alt="UV-index" height="70">
                         <p>UV-index</p>
-                        <h3 class="js-today__uv">5</h3>
+                        <h3 class="js-modal__uv">5</h3>
                     </div>
                 </div>
                 <div class="c-overview__card c-overview__grass u-background__grass">
                     <h3>Graspollen</h3>
-                    <p class="js-today__grass--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
+                    <p class="js-modal__grass--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
                     <div class="c-gauge">
                         <div class="c-gauge__body">
                             <div class="c-gauge__fill c-gauge__fill--high"></div>
                             <div class="c-gauge__fill c-gauge__fill--medium"></div>
                             <div class="c-gauge__fill c-gauge__fill--low"></div>
                             <div class="c-gauge__cover"></div>
-                            <div class="c-gauge__pin js-today__grass--pin"></div>
+                            <div class="c-gauge__pin js-modal__grass--pin"></div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="js-today__grass--percent">60%</h4>
-                        <h5 class="js-today__grass--word">Matig</h5>
-                        <h6 class="js-today__grass--words">Matige graspollen</h6>
+                        <h4 class="js-modal__grass--percent">60%</h4>
+                        <h5 class="js-modal__grass--word">Matig</h5>
+                        <h6 class="js-modal__grass--words">Matige graspollen</h6>
                     </div>
                 </div>
                 <div class="c-overview__card c-overview__boom u-background__boom">
                     <h3>Boompollen</h3>
-                    <p class="js-today__boom--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
+                    <p class="js-modal__boom--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
                     <div class="c-gauge">
                         <div class="c-gauge__body">
                             <div class="c-gauge__fill c-gauge__fill--high"></div>
                             <div class="c-gauge__fill c-gauge__fill--medium"></div>
                             <div class="c-gauge__fill c-gauge__fill--low"></div>
                             <div class="c-gauge__cover"></div>
-                            <div class="c-gauge__pin js-today__boom--pin"></div>
+                            <div class="c-gauge__pin js-modal__boom--pin"></div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="js-today__boom--percent">60%</h4>
-                        <h5 class="js-today__boom--word">Matig</h5>
-                        <h6 class="js-today__boom--words">Matige boompollen</h6>
+                        <h4 class="js-modal__boom--percent">60%</h4>
+                        <h5 class="js-modal__boom--word">Matig</h5>
+                        <h6 class="js-modal__boom--words">Matige boompollen</h6>
                     </div>
                 </div>
                 <div class="c-overview__card c-overview__onkruid u-background__onkruid">
                     <h3>Onkruidpollen</h3>
-                    <p class="js-today__onkruid--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
+                    <p class="js-modal__onkruid--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
                     <div class="c-gauge">
                         <div class="c-gauge__body">
                             <div class="c-gauge__fill c-gauge__fill--high"></div>
                             <div class="c-gauge__fill c-gauge__fill--medium"></div>
                             <div class="c-gauge__fill c-gauge__fill--low"></div>
                             <div class="c-gauge__cover"></div>
-                            <div class="c-gauge__pin js-today__onkruid--pin"></div>
+                            <div class="c-gauge__pin js-modal__onkruid--pin"></div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="js-today__onkruid--percent">60%</h4>
-                        <h5 class="js-today__onkruid--word">Matig</h5>
-                        <h6 class="js-today__onkruid--words">Matige onkruidpollen</h6>
+                        <h4 class="js-modal__onkruid--percent">60%</h4>
+                        <h5 class="js-modal__onkruid--word">Matig</h5>
+                        <h6 class="js-modal__onkruid--words">Matige onkruidpollen</h6>
                     </div>
                 </div>
             </div>
-            <div class="c-overview c-filter1 js-filter1 u-hidden">
+            <div class="c-overview c-filter1 js-onemodal u-hidden">
                 <div class="c-overview__date">
-                    <h2>Vandaag</h2>
-                    <p class="c-header__date js-filter1__date">18/10/2023</p>
+                    <h2 class="js-onemodal__date">18/10/2023</h2>
                 </div>
                 <div class="c-overview__description">
-                    <p class="c-overview__text js-filter1__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
+                    <p class="c-overview__text js-onemodal__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
                 </div>
-                <div class="js-filter1__gauge c-overview__card c-filter__gauge1 ">
+                <div class="c-overview__card js-onemodal__gauge c-filter__gauge1">
                     <div class="c-gauge">
                         <div class="c-gauge__body">
                             <div class="c-gauge__fill c-gauge__fill--high"></div>
                             <div class="c-gauge__fill c-gauge__fill--medium"></div>
                             <div class="c-gauge__fill c-gauge__fill--low"></div>
                             <div class="c-gauge__cover"></div>
-                            <div class="c-gauge__pin js-filter1__pin"></div>
+                            <div class="c-gauge__pin js-onemodal__pin"></div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="js-filter1__percent">60%</h4>
-                        <h5 class="js-filter1__word">Matig</h5>
-                        <h6 class="js-filter1__words">Matige graspollen</h6>
+                        <h4 class="js-onemodal__percent">60%</h4>
+                        <h5 class="js-onemodal__word">Matig</h5>
+                        <h6 class="js-onemodal__words">Matige graspollen</h6>
                     </div>
                 </div>
                 <div class="c-overview__card c-filter__chart">
                     <h3>Komende week</h3>
-                    <div class="c-chart js-filter1__chart">
+                    <div class="c-chart js-onemodal__chart">
                         <div class="c-chart__bar" style="height: 80%;"><span class="c-chart__percent">80%</span></div>
                         <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
                         <div class="c-chart__bar" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
@@ -178,54 +528,53 @@
                     </div>
                 </div>
             </div>
-            <div class="c-overview c-filter2 js-filter2 u-hidden">
+            <div class="c-overview c-filter2 js-twomodal u-hidden">
                 <div class="c-overview__date">
-                    <h2>Vandaag</h2>
-                    <p class="c-header__date js-filter2__date">18/10/2023</p>
+                    <h2 class="js-twomodal__date">18/10/2023</h2>
                 </div>
                 <div class="c-overview__description">
-                    <p class="c-overview__text js-filter2__description1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
+                    <p class="c-overview__text js-twomodal__description1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
                 </div>
                 <div class="c-overview__description2">
-                    <p class="c-overview__text js-filter2__description2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
+                    <p class="c-overview__text js-twomodal__description2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
                 </div>
-                <div class="c-overview__card js-filter2__gauge1 c-filter__gauge1">
-                    <h3 class="js-filter2__type1">Graspollen</h3>
+                <div class="c-overview__card js-twomodal__gauge1 u-background__grass c-filter__gauge1">
+                    <h3 class="js-twomodal__type1">Graspollen</h3>
                     <div class="c-gauge">
                         <div class="c-gauge__body">
                             <div class="c-gauge__fill c-gauge__fill--high"></div>
                             <div class="c-gauge__fill c-gauge__fill--medium"></div>
                             <div class="c-gauge__fill c-gauge__fill--low"></div>
                             <div class="c-gauge__cover"></div>
-                            <div class="c-gauge__pin js-filter2__pin1"></div>
+                            <div class="c-gauge__pin js-twomodal__pin1"></div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="js-filter2__percent1">60%</h4>
-                        <h5 class="js-filter2__word1">Matig</h5>
-                        <h6 class="js-filter2__words1">Matige graspollen</h6>
+                        <h4 class="js-twomodal__percent1">60%</h4>
+                        <h5 class="js-twomodal__word1">Matig</h5>
+                        <h6 class="js-twomodal__words1">Matige graspollen</h6>
                     </div>
                 </div>
-                <div class="c-overview__card js-filter2__gauge2 c-filter__gauge2">
-                    <h3 class="js-filter2__type2">Boompollen</h3>
+                <div class="c-overview__card js-twomodal__gauge2 u-background__boom c-filter__gauge2">
+                    <h3 class="js-twomodal__type2">Boompollen</h3>
                     <div class="c-gauge">
                         <div class="c-gauge__body">
                             <div class="c-gauge__fill c-gauge__fill--high"></div>
                             <div class="c-gauge__fill c-gauge__fill--medium"></div>
                             <div class="c-gauge__fill c-gauge__fill--low"></div>
                             <div class="c-gauge__cover"></div>
-                            <div class="c-gauge__pin js-filter2__pin2"></div>
+                            <div class="c-gauge__pin js-twomodal__pin2"></div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="js-filter2__percent2">60%</h4>
-                        <h5 class="js-filter2__word2">Matig</h5>
-                        <h6 class="js-filter2__words2">Matige boompollen</h6>
+                        <h4 class="js-twomodal__percent2">60%</h4>
+                        <h5 class="js-twomodal__word2">Matig</h5>
+                        <h6 class="js-twomodal__words2">Matige boompollen</h6>
                     </div>
                 </div>
                 <div class="c-overview__card c-filter__chart">
                     <h3>Komende week</h3>
-                    <div class="c-chart js-filter2__chart">
+                    <div class="c-chart js-twomodal__chart">
                         <div class="c-chart__group">
                             <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
                             <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
@@ -258,358 +607,23 @@
                     <div class="c-chart__legende">
                         <div class="c-chart__legende--item">
                             <div class="c-chart__legende--color c-chart__legende--color1"></div>
-                            <p class="js-filter2__chartinfo1">Hallo</p>
+                            <p class="js-twomodal__chartinfo1">Graspollen</p>
                         </div>
                         <div class="c-chart__legende--item">
                             <div class="c-chart__legende--color c-chart__legende--color2"></div>
-                            <p class="js-filter2__chartinfo2">Hallo</p>
+                            <p class="js-twomodal__chartinfo2">Boompollen</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="o-container">
-            <h2>Komende week</h2>
-            <section class="c-scroll">
-                <div class="c-scroll__container js-scroll">
-                    <button class="c-scroll__item js-modaltrigger">
-                        <h3 class="c-forecast__title">18/10/2023</h3>
-                        <p class="c-forecast__description">Hoge graspollen morgen, aangenaam weer, lichte regen, matige luchtkwaliteit.</p>
-                        <div class="c-forecast__1 c-forecast__gauge">
-                            <div class="c-gauge">
-                                <div class="c-gauge__body">
-                                    <div class="c-gauge__fill c-gauge__fill--high"></div>
-                                    <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                                    <div class="c-gauge__fill c-gauge__fill--low"></div>
-                                    <div class="c-gauge__cover"></div>
-                                    <div class="c-gauge__pin"></div>
-                                </div>
-                            </div>
-                            <h5>Graspollen</h5>
-                            <p>Matig</p>
-                        </div>
-                        <div class="c-forecast__2 c-forecast__gauge">
-                            <div class="c-gauge">
-                                <div class="c-gauge__body">
-                                    <div class="c-gauge__fill c-gauge__fill--high"></div>
-                                    <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                                    <div class="c-gauge__fill c-gauge__fill--low"></div>
-                                    <div class="c-gauge__cover"></div>
-                                    <div class="c-gauge__pin"></div>
-                                </div>
-                            </div>
-                            <h5>Boompollen</h5>
-                            <p>Matig</p>
-                        </div>
-                        <div class="c-forecast__3 c-forecast__gauge">
-                            <div class="c-gauge">
-                                <div class="c-gauge__body">
-                                    <div class="c-gauge__fill c-gauge__fill--high"></div>
-                                    <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                                    <div class="c-gauge__fill c-gauge__fill--low"></div>
-                                    <div class="c-gauge__cover"></div>
-                                    <div class="c-gauge__pin"></div>
-                                </div>
-                            </div>
-                            <h5>Onkruidpollen</h5>
-                            <p>Matig</p>
-                        </div>
-                    </button>
-                </div>
-                <button class="c-scroll__arrow c-scroll__arrow--prev js-left">
-                    <svg fill="currentcolor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
-                        <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-                    </svg>
-                </button>
-                <button class="c-scroll__arrow c-scroll__arrow--next js-right">
-                    <svg fill="currentcolor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
-                        <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-                    </svg>
-                </button>
-            </section>
-            <!-- uit code verwijderen -- start hier -->
-            <section class="c-scroll c-scrollfilter1 u-hidden">
-                <button class="c-scroll__item js-modaltrigger">
-                    <h3 class="c-forecast__title">18/10/2023</h3>
-                    <p class="c-forecast__description">Hoge graspollen morgen, aangenaam weer, lichte regen, matige luchtkwaliteit.</p>
-                    <div class="c-forecast__1 c-forecast__gauge">
-                        <div class="c-gauge">
-                            <div class="c-gauge__body">
-                                <div class="c-gauge__fill c-gauge__fill--high"></div>
-                                <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                                <div class="c-gauge__fill c-gauge__fill--low"></div>
-                                <div class="c-gauge__cover"></div>
-                                <div class="c-gauge__pin"></div>
-                            </div>
-                        </div>
-                        <h5>Graspollen</h5>
-                        <p>Matig</p>
-                    </div>
-                </button>
-            </section>
-            <section class="c-scroll c-scrollfilter2 u-hidden">
-                <button class="c-scroll__item js-modaltrigger">
-                    <h3 class="c-forecast__title">18/10/2023</h3>
-                    <p class="c-forecast__description">Hoge graspollen morgen, aangenaam weer, lichte regen, matige luchtkwaliteit.<br>Hoge graspollen morgen, aangenaam weer, lichte regen, matige luchtkwaliteit.</p>
-                    <div class="c-forecast__1 c-forecast__gauge">
-                        <div class="c-gauge">
-                            <div class="c-gauge__body">
-                                <div class="c-gauge__fill c-gauge__fill--high"></div>
-                                <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                                <div class="c-gauge__fill c-gauge__fill--low"></div>
-                                <div class="c-gauge__cover"></div>
-                                <div class="c-gauge__pin"></div>
-                            </div>
-                        </div>
-                        <h5>Graspollen</h5>
-                        <p>Matig</p>
-                    </div>
-                    <div class="c-forecast__2 c-forecast__gauge">
-                        <div class="c-gauge">
-                            <div class="c-gauge__body">
-                                <div class="c-gauge__fill c-gauge__fill--high"></div>
-                                <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                                <div class="c-gauge__fill c-gauge__fill--low"></div>
-                                <div class="c-gauge__cover"></div>
-                                <div class="c-gauge__pin"></div>
-                            </div>
-                        </div>
-                        <h5>Graspollen</h5>
-                        <p>Matig</p>
-                    </div>
-                </button>
-            </section>
-            <!-- uit code verwijderen -- stop hier -->
-        </div>
-    </main>
-    <dialog class="js-modal c-modal">
-        <div class="c-modal__closecontainer">
-            <button class="c-modal__close js-close">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.973 30.973">
-                    <g id="close-circle-svgrepo-com" transform="translate(-1.25 -1.25)">
-                        <path id="Path_16" data-name="Path 16" d="M10.594,9.066a1.08,1.08,0,0,0-1.528,1.528L11.9,13.432,9.066,16.269A1.08,1.08,0,1,0,10.594,17.8l2.838-2.837L16.269,17.8A1.08,1.08,0,1,0,17.8,16.269L14.96,13.432,17.8,10.594a1.08,1.08,0,1,0-1.528-1.528L13.432,11.9Z" transform="translate(3.304 3.304)" fill="currentcolor" />
-                        <path id="Path_17" data-name="Path 17" d="M16.736,1.25A15.486,15.486,0,1,0,32.223,16.736,15.486,15.486,0,0,0,16.736,1.25ZM3.411,16.736A13.325,13.325,0,1,1,16.736,30.062,13.325,13.325,0,0,1,3.411,16.736Z" transform="translate(0 0)" fill="currentcolor" fill-rule="evenodd" />
-                    </g>
-                </svg>
-            </button>
-        </div>
-        <div class="c-overview js-modaloverview">
-            <div class="c-overview__date">
-                <h2 class="js-modal__date">18/10/2023</h2>
+        </dialog>
+        <footer>
+            <div class="o-container c-footer">
+                <p>&copy; Pollenradar 2023</p>
+                <p>In opdracht van Howest MCT</p>
             </div>
-            <div class="c-overview__description">
-                <p class="c-overview__text js-modal__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
-            </div>
-            <div class="c-overview__weather">
-                <div class="c-overview__weatheritem">
-                    <img src="assets/svg/temperatuur.svg" alt="Temperatuur" height="70">
-                    <p>Temperatuur</p>
-                    <h3 class="js-modal__temp">18°C</h3>
-                </div>
-                <div class="c-overview__weatheritem">
-                    <img src="assets/svg/neerslag.svg" alt="Neerslag" height="70">
-                    <p>Neerslag</p>
-                    <h3 class="js-modal__neerslag">0.2 mm</h3>
-                </div>
-                <div class="c-overview__weatheritem">
-                    <img src="assets/svg/wind.svg" alt="Wind" height="70">
-                    <p>Wind</p>
-                    <h3 class="js-modal__wind">10 km/h</h3>
-                </div>
-                <div class="c-overview__weatheritem">
-                    <img src="assets/svg/uv.svg" alt="UV-index" height="70">
-                    <p>UV-index</p>
-                    <h3 class="js-modal__uv">5</h3>
-                </div>
-            </div>
-            <div class="c-overview__card c-overview__grass u-background__grass">
-                <h3>Graspollen</h3>
-                <p class="js-modal__grass--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
-                <div class="c-gauge">
-                    <div class="c-gauge__body">
-                        <div class="c-gauge__fill c-gauge__fill--high"></div>
-                        <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                        <div class="c-gauge__fill c-gauge__fill--low"></div>
-                        <div class="c-gauge__cover"></div>
-                        <div class="c-gauge__pin js-modal__grass--pin"></div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="js-modal__grass--percent">60%</h4>
-                    <h5 class="js-modal__grass--word">Matig</h5>
-                    <h6 class="js-modal__grass--words">Matige graspollen</h6>
-                </div>
-            </div>
-            <div class="c-overview__card c-overview__boom u-background__boom">
-                <h3>Boompollen</h3>
-                <p class="js-modal__boom--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
-                <div class="c-gauge">
-                    <div class="c-gauge__body">
-                        <div class="c-gauge__fill c-gauge__fill--high"></div>
-                        <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                        <div class="c-gauge__fill c-gauge__fill--low"></div>
-                        <div class="c-gauge__cover"></div>
-                        <div class="c-gauge__pin js-modal__boom--pin"></div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="js-modal__boom--percent">60%</h4>
-                    <h5 class="js-modal__boom--word">Matig</h5>
-                    <h6 class="js-modal__boom--words">Matige boompollen</h6>
-                </div>
-            </div>
-            <div class="c-overview__card c-overview__onkruid u-background__onkruid">
-                <h3>Onkruidpollen</h3>
-                <p class="js-modal__onkruid--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui accusantium ratione, aut suscipit vitae nisi nobis consequuntur error sapiente sed tempora aspernatur reprehenderit ipsa doloremque quibusdam dolorem temporibus optio. Explicabo.</p>
-                <div class="c-gauge">
-                    <div class="c-gauge__body">
-                        <div class="c-gauge__fill c-gauge__fill--high"></div>
-                        <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                        <div class="c-gauge__fill c-gauge__fill--low"></div>
-                        <div class="c-gauge__cover"></div>
-                        <div class="c-gauge__pin js-modal__onkruid--pin"></div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="js-modal__onkruid--percent">60%</h4>
-                    <h5 class="js-modal__onkruid--word">Matig</h5>
-                    <h6 class="js-modal__onkruid--words">Matige onkruidpollen</h6>
-                </div>
-            </div>
-        </div>
-        <div class="c-overview c-filter1 js-onemodal u-hidden">
-            <div class="c-overview__date">
-                <h2 class="js-onemodal__date">18/10/2023</h2>
-            </div>
-            <div class="c-overview__description">
-                <p class="c-overview__text js-onemodal__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
-            </div>
-            <div class="c-overview__card js-onemodal__gauge c-filter__gauge1">
-                <div class="c-gauge">
-                    <div class="c-gauge__body">
-                        <div class="c-gauge__fill c-gauge__fill--high"></div>
-                        <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                        <div class="c-gauge__fill c-gauge__fill--low"></div>
-                        <div class="c-gauge__cover"></div>
-                        <div class="c-gauge__pin js-onemodal__pin"></div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="js-onemodal__percent">60%</h4>
-                    <h5 class="js-onemodal__word">Matig</h5>
-                    <h6 class="js-onemodal__words">Matige graspollen</h6>
-                </div>
-            </div>
-            <div class="c-overview__card c-filter__chart">
-                <h3>Komende week</h3>
-                <div class="c-chart js-onemodal__chart">
-                    <div class="c-chart__bar" style="height: 80%;"><span class="c-chart__percent">80%</span></div>
-                    <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
-                    <div class="c-chart__bar" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                    <div class="c-chart__bar" style="height: 80%;"><span class="c-chart__percent">80%</span></div>
-                    <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
-                    <div class="c-chart__bar" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                    <div class="c-chart__bar" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="c-overview c-filter2 js-twomodal u-hidden">
-            <div class="c-overview__date">
-                <h2 class="js-twomodal__date">18/10/2023</h2>
-            </div>
-            <div class="c-overview__description">
-                <p class="c-overview__text js-twomodal__description1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
-            </div>
-            <div class="c-overview__description2">
-                <p class="c-overview__text js-twomodal__description2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloremque excepturi corrupti iure asperiores nostrum? Explicabo nisi enim dolorum temporibus, dolores provident excepturi laboriosam. Ea quod debitis dolorem nemo nihil!</p>
-            </div>
-            <div class="c-overview__card js-twomodal__gauge1 u-background__grass c-filter__gauge1">
-                <h3 class="js-twomodal__type1">Graspollen</h3>
-                <div class="c-gauge">
-                    <div class="c-gauge__body">
-                        <div class="c-gauge__fill c-gauge__fill--high"></div>
-                        <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                        <div class="c-gauge__fill c-gauge__fill--low"></div>
-                        <div class="c-gauge__cover"></div>
-                        <div class="c-gauge__pin js-twomodal__pin1"></div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="js-twomodal__percent1">60%</h4>
-                    <h5 class="js-twomodal__word1">Matig</h5>
-                    <h6 class="js-twomodal__words1">Matige graspollen</h6>
-                </div>
-            </div>
-            <div class="c-overview__card js-twomodal__gauge2 u-background__boom c-filter__gauge2">
-                <h3 class="js-twomodal__type2">Boompollen</h3>
-                <div class="c-gauge">
-                    <div class="c-gauge__body">
-                        <div class="c-gauge__fill c-gauge__fill--high"></div>
-                        <div class="c-gauge__fill c-gauge__fill--medium"></div>
-                        <div class="c-gauge__fill c-gauge__fill--low"></div>
-                        <div class="c-gauge__cover"></div>
-                        <div class="c-gauge__pin js-twomodal__pin2"></div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="js-twomodal__percent2">60%</h4>
-                    <h5 class="js-twomodal__word2">Matig</h5>
-                    <h6 class="js-twomodal__words2">Matige boompollen</h6>
-                </div>
-            </div>
-            <div class="c-overview__card c-filter__chart">
-                <h3>Komende week</h3>
-                <div class="c-chart js-twomodal__chart">
-                    <div class="c-chart__group">
-                        <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
-                        <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                    </div>
-                    <div class="c-chart__group">
-                        <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
-                        <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                    </div>
-                    <div class="c-chart__group">
-                        <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
-                        <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                    </div>
-                    <div class="c-chart__group">
-                        <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
-                        <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                    </div>
-                    <div class="c-chart__group">
-                        <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
-                        <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                    </div>
-                    <div class="c-chart__group">
-                        <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
-                        <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                    </div>
-                    <div class="c-chart__group">
-                        <div class="c-chart__bar" style="height: 60%;"><span class="c-chart__percent">60%</span></div>
-                        <div class="c-chart__bar c-chart__bar--2" style="height: 100%;"><span class="c-chart__percent">100%</span></div>
-                    </div>
-                </div>
-                <div class="c-chart__legende">
-                    <div class="c-chart__legende--item">
-                        <div class="c-chart__legende--color c-chart__legende--color1"></div>
-                        <p class="js-twomodal__chartinfo1">Graspollen</p>
-                    </div>
-                    <div class="c-chart__legende--item">
-                        <div class="c-chart__legende--color c-chart__legende--color2"></div>
-                        <p class="js-twomodal__chartinfo2">Boompollen</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </dialog>
-    <footer>
-        <div class="o-container c-footer">
-            <p>&copy; Pollenradar 2023</p>
-            <p>In opdracht van Howest MCT</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 
 </html>
