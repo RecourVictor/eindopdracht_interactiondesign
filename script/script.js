@@ -60,11 +60,35 @@ const listenToCheckbox = function(){
     for (const toggle of toggles){
         toggle.addEventListener("keydown", function(e){
             if (e.code === "Enter" || e.code === "Space"){
+                const checkboxes = document.querySelectorAll(".js-checkbox");
                 const checkbox = this.querySelector(".js-checkbox");
                 checkbox.checked = !checkbox.checked;
+                
+                let checkedCount = 0;
+                for (const checkbox of checkboxes) {
+                    if (checkbox.checked) {
+                        checkedCount++;
+                    }
+                }
+                if (checkedCount === 0){
+                    checkedCount = 3;
+                    filter = [ "grass", "boom", "onkruid"];
+                    const checkboxes = document.querySelectorAll(".js-checkbox");
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = true;
+                    });
+                } else {
+                    if (!checkbox.checked) {
+                        filter = filter.filter(item => item !== checkbox.value);
+                    } else {
+                        filter.push(checkbox.value);
+                    }
+                }
+                getdata();
             }
         })
     }
+    listenToFilter();
 }
 
 const listenToClose = function(){
@@ -507,7 +531,7 @@ const showTwoModalData = function(json, type1, type2){
 }
 
 const showdata = function(data){
-    if (filter.length === 3){
+    if (filter.length >= 3){
         showToday(data);
         showForecast(data);    
     } else if (filter.length === 1){
@@ -554,9 +578,6 @@ const listenToFilter = function () {
     const checkboxes = document.querySelectorAll(".js-checkbox");
     for (const checkbox of checkboxes) {
         checkbox.addEventListener("change", function () {
-
-            console.log("filterchange")
-
             let checkedCount = 0;
             for (const checkbox of checkboxes) {
                 if (checkbox.checked) {
