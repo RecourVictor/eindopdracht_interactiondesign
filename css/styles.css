@@ -316,17 +316,19 @@ label{
 /* Chart */
 .c-chart{
     max-width: 100%;
+    min-width: 90%;
     height: 90%;
     min-height: 20rem;
     display: flex;
-    gap: var(--global-spacing);
+    gap: var(--global-spacing-xs);
     align-items: flex-end;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .c-chart__bar{
     background-color: var(--global-color-darkblue);
-    width: var(--global-spacing-s);
+    /* width: var(--global-spacing-s); */
+    width: calc(100% / 7);
     position: relative;
     display: flex;
     align-items: end;
@@ -334,9 +336,11 @@ label{
 }
 .c-chart__bar--2{
     background-color: var(--global-color-lightblue);
+    width: 50%;
 }
 
 .c-chart__percent{
+    display: none;
     color: var(--global-color-white);
     position: absolute;
     bottom: 1rem;
@@ -346,15 +350,22 @@ label{
     display: flex;
     align-items: flex-end;
     height: 100%;
+    width: calc(100% / 7);
+    & .c-chart__bar{
+        width: 50%;
+    }
 }
 
 .c-chart__legende{
     display: flex;
+    flex-wrap: wrap;
     gap: var(--global-spacing-xs);
     justify-content: center;
+    align-items: center;
 }
 
 .c-chart__legende--item{
+    /* width: 100%; */
     display: flex;
     align-items: center;
     gap: var(--global-spacing-xs);
@@ -372,6 +383,19 @@ label{
 
 .c-chart__legende--color2{
     background-color: var(--global-color-lightblue);
+}
+
+@media screen and (min-width: 35rem) {
+    .c-chart{
+        gap: var(--global-spacing);
+
+    }
+    .c-chart__percent{
+        display: block;
+    }
+    /* .c-chart__legende--item{
+        width: auto;
+    } */
 }
 
 /* Overview */
@@ -399,13 +423,26 @@ label{
 }
 
 .c-filter2{
-    grid-template-rows: repeat(5, auto);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas:
     "date date date date date date"
     "description description description description description description"
     'description2 description2 description2 description2 description2 description2'
-    "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
+    "gauge1 gauge1 gauge1 gauge1 gauge1 gauge1"
+    "gauge2 gauge2 gauge2 gauge2 gauge2 gauge2"
     "chart chart chart chart chart chart";
+}
+
+@media screen and (min-width: 35rem){
+    .c-filter2{
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+        "date date date date date date"
+        "description description description description description description"
+        'description2 description2 description2 description2 description2 description2'
+        "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
+        "chart chart chart chart chart chart";    
+    }
 }
 
 @media screen and (min-width: 48rem) {
@@ -502,6 +539,9 @@ label{
     justify-content: space-evenly;
     flex-wrap: wrap;
     grid-area: weer;
+
+    padding: var(--global-spacing-xs) 0;
+    gap: var(--global-spacing-s);
 }
 
 .c-overview__weatheritem{
@@ -510,6 +550,31 @@ label{
     align-items: center;
     justify-content: center;
     gap: var(--global-spacing-xs);
+
+
+    width: calc(100% / 2 - var(--global-spacing-s));
+}
+
+/* @media screen and (min-width: 35rem) {
+    .c-overview__weatheritem{
+        background-color: green;
+    }
+
+} */
+
+@media screen and (min-width: 48rem) {
+    .c-overview__weatheritem{
+        width: calc(100% / 4 - var(--global-spacing-s));
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .c-overview__weather{
+        gap: 0;
+    }
+    .c-overview__weatheritem{
+        width: auto;
+    }
 }
 
 .c-overview__card{
@@ -694,7 +759,8 @@ label{
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    display: flex;
+    /* display: flex; */
+    display: none;
     align-items: center;
     justify-content: center;
     box-shadow: var(--global-boxShadow);
@@ -770,6 +836,10 @@ label{
 
     .c-scroll__item{
         grid-template-columns: repeat(3, 8rem);
+    }
+
+    .c-scroll__arrow{
+        display: flex;
     }
 }
 
@@ -860,12 +930,15 @@ label{
     }
 }
 
-.c-modal__close{
+.c-modal__closecontainer{
     position: sticky;
     /* background-color: hotpink; */
     width: 100%;
     text-align: right;
     top: 0;
+}
+
+.c-modal__close{
     color: var(--global-color-darkblue);
     & svg{
         height: var(--global-fontSize-xl);
