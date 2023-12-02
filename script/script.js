@@ -100,19 +100,34 @@ const listenToClose = function(){
 }
 
 const listenToScroll = function(){
-    const scroll = document.querySelector(".js-scroll");
-    const total = scroll.scrollWidth;
-    const scrollamount = total / 7;
+    console.log("scroll")
 
-    const leftbtn = document.querySelector(".js-left");
-    const rightbtn = document.querySelector(".js-right");
+    const scrollContainer = document.querySelector('.js-scroll');
+    let isMouseDown = false;
+    let startX;
+    let scrollLeft;
 
-    leftbtn.addEventListener("click", function(){
-        scroll.scrollLeft -= scrollamount;
-    })
-    rightbtn.addEventListener("click", function(){
-        scroll.scrollLeft += scrollamount;
-    })
+    scrollContainer.addEventListener('mousedown', (e) => {
+        isMouseDown = true;
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener('mouseup', () => {
+      isMouseDown = false;
+    });
+
+    scrollContainer.addEventListener('mouseleave', () => {
+       isMouseDown = false;
+    });
+
+    scrollContainer.addEventListener('mousemove', (e) => {
+        if (!isMouseDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 3;
+        scrollContainer.scrollLeft = scrollLeft - walk;
+    });
 }
 
 const animate = function(element){
@@ -370,6 +385,7 @@ const showOneForecast = function(data, type){
     document.querySelector(".js-scroll").classList.add("c-scrollfilter1");
     document.querySelector(".js-scroll").innerHTML = html;
     listenToOneModal();
+    listenToScroll();
 }
 
 const showTwoForecast = function(data, type1, type2){
@@ -404,6 +420,7 @@ const showTwoForecast = function(data, type1, type2){
     document.querySelector(".js-scroll").classList.add("c-scrollfilter2");
     document.querySelector(".js-scroll").innerHTML = html;
     listenToTwoModal();
+    listenToScroll();
 }
 
 const showModalData = function(json){
@@ -664,6 +681,7 @@ const init = function(){
     listenToFilterTab();
     listenToFilter();
     listenToCheckbox();
+    listenToScroll();
     // listenToModal();
     listenToClose();
     listenToAnimate();

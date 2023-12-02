@@ -5,6 +5,3 @@ Todo:
 - code opschonen
 - responsive testen
 - checklist overlopen
-
-optioneel
-- scrolling btn hidden als hij niet clickble is

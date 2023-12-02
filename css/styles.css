@@ -726,6 +726,7 @@ label{
 }
 
 .c-scroll__container{
+    cursor: grab;
     padding: var(--global-spacing-s) 0;
     display: flex;
     flex-direction: column;
@@ -791,47 +792,6 @@ label{
     }
 }
 
-.c-scroll__arrow{
-    background-color: var(--global-color-whitewhite);
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    /* display: flex; */
-    display: none;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--global-boxShadow);
-    position: absolute;
-    transition: var(--global-transition);
-    border: 2px solid var(--global-color-whitewhite);
-    & svg{
-        width: 70%;
-        height: auto;
-    }
-    &:focus-visible{
-        border: 2px solid var(--global-color-lightblue);
-        box-shadow: var(--global-boxShadow-hover);
-    }
-    &:hover{
-        border: 2px solid var(--global-color-lightblue);
-        box-shadow: var(--global-boxShadow-hover);
-    }
-}
-
-.c-scroll__arrow--next{
-    right: 0;
-    top: 50%;
-    transform: translateX(50%) translateY(50%);
-    rotate: -90deg;
-}
-
-.c-scroll__arrow--prev{
-    left: 0;
-    top: 50%;
-    transform: translateX(-50%) translateY(50%);
-    rotate: 90deg;
-}
-
 @media screen and (min-width: 35rem) {
     .c-scroll__item{
         grid-template-columns: repeat(3, 8rem);
@@ -873,10 +833,6 @@ label{
 
     .c-scroll__item{
         grid-template-columns: repeat(3, 8rem);
-    }
-
-    .c-scroll__arrow{
-        display: flex;
     }
 }
 
