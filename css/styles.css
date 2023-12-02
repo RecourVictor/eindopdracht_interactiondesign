@@ -6,10 +6,9 @@
 :root{
     /* Container with */
     --global-container-width: 95vw;
-
-    /* fonts */
+    /* Fonts */
     --global-fontFamily: 'Poppins', sans-serif;
-    /* fontsize */
+    /* Fontsize */
     --global-fontSize: 1rem;
     --global-fontSize-xs: 0.75rem;
     --global-fontSize-s: 1rem;
@@ -17,46 +16,33 @@
     --global-fontSize-l: 1.2rem;
     --global-fontSize-xl: 1.5rem;
     --global-fontSize-xxl: 2.5rem;
-
-    /* spacing */
+    /* Spacing */
     --global-spacing: 1rem;
     --global-spacing-xs: 0.5rem;
     --global-spacing-s: 2rem;
     --global-spacing-m: 3rem; 
     --global-spacing-xl: 4rem;
-
-    /* border radius */
+    /* Border radius */
     --global-borderRadius: 30px;
-
-    /* colors */
+    /* Colors */
     --global-color-whitewhite: white;
     --global-color-white: #FAFAFA;
     --global-color-lightblue: #5099CE;
     --global-color-darkblue: #1F4068;
     --global-color-darkblue-rgba50: rgba(31, 64, 104, 0.5);
-
-    /* box shadow */
+    /* Box shadow */
     --global-boxShadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     --global-boxShadow-lg: 0px 0px 10px rgba(0, 0, 0, 0.2);
     --global-boxShadow-hover: 0px 0px 20px rgba(0, 0, 0, 0.2);
-
     /* Transition */
     --global-transition: all 0.3s ease;
 }
 
-@keyframes rotateAnimation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(-360deg);
-    }
-}
-
 @media screen and (min-width: 48rem) {
     :root{
+        /* Container with */
         --global-container-width: 90vw;
-
+        /* Fontsize */
         --global-fontSize-s: 1.1rem;
         --global-fontSize-m: 1.15rem;
         --global-fontSize-l: 1.2rem;
@@ -67,13 +53,24 @@
 
 @media screen and (min-width: 64rem) {
     :root{
+        /* Container with */
         --global-container-width: 85vw;
-
+        /* Fontsize */
         --global-fontSize-s: 1.15rem;
         --global-fontSize-m: 1.2rem;
         --global-fontSize-l: 1.3rem;
         --global-fontSize-xl: 2rem;
         --global-fontSize-xxl: 4rem;
+    }
+}
+
+/* ANIMATIONS */
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
     }
 }
 
@@ -100,6 +97,7 @@
         display: none;
     }
 }
+
 /*---------------------------------------/*
  # GENERIC
 /*---------------------------------------*/
@@ -193,7 +191,7 @@ label{
 /*---------------------------------------/*
  # COMPONENTS
 /*---------------------------------------*/
-/* Navigation */
+/* NAVIGATION */
 .c-title{
     color: var(--global-color-darkblue);
     font-weight: 700;
@@ -230,7 +228,7 @@ label{
     }
 }
 
-/* Filter */
+/* FILTER */
 .c-filter{
     background-color: var(--global-color-whitewhite);
     min-width: 20rem;
@@ -271,7 +269,7 @@ label{
     }
 }
 
-/* Toggle */
+/* TOGGLE */
 .c-toggle{
     transition: var(--global-transition);
     &:focus-visible{
@@ -322,7 +320,7 @@ label{
     display: none;
 }
 
-/* Chart */
+/* CHART */
 .c-chart{
     max-width: 100%;
     min-width: 90%;
@@ -336,13 +334,13 @@ label{
 
 .c-chart__bar{
     background-color: var(--global-color-darkblue);
-    /* width: var(--global-spacing-s); */
     width: calc(100% / 7);
     position: relative;
     display: flex;
     align-items: end;
     justify-content: center;
 }
+
 .c-chart__bar--2{
     background-color: var(--global-color-lightblue);
     width: 50%;
@@ -374,7 +372,6 @@ label{
 }
 
 .c-chart__legende--item{
-    /* width: 100%; */
     display: flex;
     align-items: center;
     gap: var(--global-spacing-xs);
@@ -402,12 +399,9 @@ label{
     .c-chart__percent{
         display: block;
     }
-    /* .c-chart__legende--item{
-        width: auto;
-    } */
 }
 
-/* Overview */
+/* OVERVIEW */
 .c-overview{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -442,80 +436,6 @@ label{
     "gauge1 gauge1 gauge1 gauge1 gauge1 gauge1"
     "gauge2 gauge2 gauge2 gauge2 gauge2 gauge2"
     "chart chart chart chart chart chart";
-}
-
-@media screen and (min-width: 35rem){
-    .c-filter2{
-        grid-template-rows: repeat(6, auto);
-        grid-template-areas:
-        "date date date date date date"
-        "description description description description description description"
-        'description2 description2 description2 description2 description2 description2'
-        "weer weer weer weer weer weer"
-        "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
-        "chart chart chart chart chart chart";    
-    }
-}
-
-@media screen and (min-width: 48rem) {
-    .c-overview{
-        grid-template-rows: repeat(5, auto);
-        grid-template-areas:
-            "date date date date date date"
-            "description description description description description description"
-            "weer weer weer weer weer weer"
-            "grass grass grass boom boom boom"
-            "onkruid onkruid onkruid onkruid onkruid onkruid";
-    }
-
-    .c-filter1{
-        /* grid-template-rows: repeat(5, auto); */
-        grid-template-areas:
-        "date date date date date date"
-        "description description description description description description"
-        "weer weer weer weer weer weer"
-        "gauge1 gauge1 chart chart chart chart"
-        "gauge1 gauge1 chart chart chart chart";
-    }
-
-    .c-filter2{
-        grid-template-rows: repeat(6, auto);
-        grid-template-areas:
-        "date date date date date date"
-        "description description description description description description"
-        'description2 description2 description2 description2 description2 description2'
-        "weer weer weer weer weer weer"
-        "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
-        "chart chart chart chart chart chart";
-    }
-}
-
-@media screen and (min-width: 64rem) {
-    .c-overview{
-        grid-template-rows: repeat(3, auto);
-        grid-template-areas:
-            "date date date weer weer weer"
-            "description description description weer weer weer"
-            "grass grass boom boom onkruid onkruid";
-    }
-    .c-filter1{
-        grid-template-rows: repeat(4, auto);
-        grid-template-areas:
-        "date date date weer weer weer"
-        "description description description weer weer weer"
-        "gauge1 gauge1 chart chart chart chart"
-        "gauge1 gauge1 chart chart chart chart";
-    }
-
-    .c-filter2{
-        grid-template-rows: repeat(5, auto);
-        grid-template-areas:
-        "date date date weer weer weer"
-        "description description description weer weer weer"
-        "description2 description2 description2 weer weer weer"
-        "gauge1 gauge1 chart chart chart chart"
-        "gauge2 gauge2 chart chart chart chart";
-    }
 }
 
 .c-overview__date{
@@ -554,7 +474,6 @@ label{
     justify-content: space-evenly;
     flex-wrap: wrap;
     grid-area: weer;
-
     padding: var(--global-spacing-xs) 0;
     gap: var(--global-spacing-s);
 }
@@ -565,31 +484,7 @@ label{
     align-items: center;
     justify-content: center;
     gap: var(--global-spacing-xs);
-
-
     width: calc(100% / 2 - var(--global-spacing-s));
-}
-
-/* @media screen and (min-width: 35rem) {
-    .c-overview__weatheritem{
-        background-color: green;
-    }
-
-} */
-
-@media screen and (min-width: 48rem) {
-    .c-overview__weatheritem{
-        width: calc(100% / 4 - var(--global-spacing-s));
-    }
-}
-
-@media screen and (min-width: 64rem) {
-    .c-overview__weather{
-        gap: 0;
-    }
-    .c-overview__weatheritem{
-        width: auto;
-    }
 }
 
 .c-overview__card{
@@ -603,7 +498,6 @@ label{
     background-position: right bottom;
     background-color: var(--global-color-whitewhite);
     box-shadow: var(--global-boxShadow);
-
     opacity: 0;
     transform: translateY(50%);
     transition: var(--global-transition);
@@ -626,7 +520,92 @@ label{
     transform: translateY(0);
 }
 
-/* Gauge */
+@media screen and (min-width: 35rem){
+    .c-filter2{
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas:
+        "date date date date date date"
+        "description description description description description description"
+        'description2 description2 description2 description2 description2 description2'
+        "weer weer weer weer weer weer"
+        "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
+        "chart chart chart chart chart chart";    
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    .c-overview{
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+            "date date date date date date"
+            "description description description description description description"
+            "weer weer weer weer weer weer"
+            "grass grass grass boom boom boom"
+            "onkruid onkruid onkruid onkruid onkruid onkruid";
+    }
+
+    .c-filter1{
+        grid-template-areas:
+        "date date date date date date"
+        "description description description description description description"
+        "weer weer weer weer weer weer"
+        "gauge1 gauge1 chart chart chart chart"
+        "gauge1 gauge1 chart chart chart chart";
+    }
+
+    .c-filter2{
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas:
+        "date date date date date date"
+        "description description description description description description"
+        'description2 description2 description2 description2 description2 description2'
+        "weer weer weer weer weer weer"
+        "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
+        "chart chart chart chart chart chart";
+    }
+
+    .c-overview__weatheritem{
+        width: calc(100% / 4 - var(--global-spacing-s));
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .c-overview{
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            "date date date weer weer weer"
+            "description description description weer weer weer"
+            "grass grass boom boom onkruid onkruid";
+    }
+    .c-filter1{
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+        "date date date weer weer weer"
+        "description description description weer weer weer"
+        "gauge1 gauge1 chart chart chart chart"
+        "gauge1 gauge1 chart chart chart chart";
+    }
+
+    .c-filter2{
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+        "date date date weer weer weer"
+        "description description description weer weer weer"
+        "description2 description2 description2 weer weer weer"
+        "gauge1 gauge1 chart chart chart chart"
+        "gauge2 gauge2 chart chart chart chart";
+    }
+
+    .c-overview__weather{
+        gap: 0;
+    }
+
+    .c-overview__weatheritem{
+        width: auto;
+    }
+}
+
+/* GAUGE */
 .c-gauge {
     width: 100%;
     max-width: 15rem;
@@ -692,6 +671,7 @@ label{
     transform: translateX(-50%);
     transform-origin: center bottom;
 }
+
 .c-gauge__pin::after{
     position: absolute;
     bottom: 0;
@@ -720,20 +700,18 @@ label{
     transition-delay: 0.1s;
 }
 
-/* Scroll */
+/* SCROLLCONTAINER */
 .c-scroll{
     position: relative;
 }
 
 .c-scroll__container{
-    cursor: grab;
     padding: var(--global-spacing-s) 0;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     overflow-x: none;
 }
-
 
 .c-scroll__container::-webkit-scrollbar{
     display: none;
@@ -802,6 +780,7 @@ label{
             "description description description"
             "item1 item2 item3";
     }
+
     .c-scrollfilter1{
         & .c-scroll__item{
             grid-template-areas:
@@ -810,6 +789,7 @@ label{
             ". item1 .";
         }
     }
+
     .c-scrollfilter2{
         & .c-scroll__item{
             grid-template-columns: repeat(4, 6rem);
@@ -823,6 +803,7 @@ label{
 
 @media screen and (min-width: 48rem) {
     .c-scroll__container{
+        cursor: grab;
         flex-direction: row;
         overflow-x: scroll;
         scroll-behavior: smooth;
@@ -842,6 +823,7 @@ label{
     }
 }
 
+/* FORECAST ITEMS */
 .c-forecast__title{
     grid-area: title;
 }
@@ -870,7 +852,7 @@ label{
     align-items: center;
 }
 
-/* Footer */
+/* FOOTER */
 .c-footer{
     text-align: center;
     font-size: var(--global-fontSize-xs);
@@ -886,46 +868,30 @@ label{
     }
 }
 
-/* Modal */
+/* MODAL */
 .c-modal{
     background-color: var(--global-color-white);
-    /* position: sticky; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(100vw - 2 * var(--global-spacing-s));
-    max-height: calc(100vh - 2 * var(--global-spacing-s));
+    width: calc(100vw - 2 * var(--global-spacing-xs));
+    max-height: calc(100vh - 2 * var(--global-spacing-xs));
     min-height: 50vh;
     overflow-y: auto;
     color: var(--global-color-darkblue);
     border-radius: var(--global-borderRadius);
     box-shadow: var(--global-boxShadow-lg);
-    padding: var(--global-spacing-s);
+    padding: var(--global-spacing-xs);
     border: none;
     animation: fade-out 0.3s ease-in-out;
     & .c-overview{
-        /* margin-top: var(--global-spacing-s); */
         margin-top: calc(var(--global-spacing-s) * -1);
     }
 }
 
-@media screen and (min-width: 48rem) {
-    .c-modal{
-        width: calc(100vw - 2 * var(--global-spacing-m));
-        max-height: calc(100vh - 2 * var(--global-spacing-m));
-    }
-}
-
-@media screen and (min-width: 64rem) {
-    .c-modal{
-        width: calc(100vw - 2 * var(--global-spacing-xl));
-        max-height: calc(100vh - 2 * var(--global-spacing-xl));
-    }
-}
-
 .c-modal__closecontainer{
+    z-index: 3000;
     position: sticky;
-    /* background-color: hotpink; */
     width: 100%;
     text-align: right;
     top: 0;
@@ -960,7 +926,29 @@ label{
     animation: fade-in 0.3s ease-in-out;
 }
 
-/* Loader */
+@media screen and (min-width: 35rem) {
+    .c-modal{
+        width: calc(100vw - 2 * var(--global-spacing-s));
+        max-height: calc(100vh - 2 * var(--global-spacing-s));
+        padding: var(--global-spacing-s);
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    .c-modal{
+        width: calc(100vw - 2 * var(--global-spacing-m));
+        max-height: calc(100vh - 2 * var(--global-spacing-m));
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .c-modal{
+        width: calc(100vw - 2 * var(--global-spacing-xl));
+        max-height: calc(100vh - 2 * var(--global-spacing-xl));
+    }
+}
+
+/* LOADER */
 .c-loader{
     display: flex;
     flex-direction: column;
@@ -973,7 +961,6 @@ label{
     width: 30vw;
     margin: var(--global-spacing-m);
     color: var(--global-color-darkblue);
-    /* background-color: hotpink; */
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,107 +1,13 @@
+// VARIABLE
 let filter = [ "grass", "boom", "onkruid" ];
 
-// Frontend
-const listenToFilterTab = function(){
-    document.querySelector('.js-filterbtn').addEventListener("click", function(){
-        document.querySelector(".js-filter").classList.toggle("c-filter__show");
-
-        const filters = document.querySelectorAll(".js-toggle");
-        for (const filter of filters){
-            if (filter.hasAttribute("tabindex")){
-                filter.removeAttribute("tabindex");
-            } else {
-                filter.setAttribute("tabindex", "0");
-            }
-        }
-    })
-}
-
-const listenToModal = function(){
-    const modaltriggers = document.querySelectorAll(".js-modaltrigger");
-    for (const trigger of modaltriggers){
-        trigger.addEventListener("click", function(){
-            const data = this.dataset.json;
-            showModalData(data);
-            document.querySelector(".js-modal").showModal();
-            document.body.style.overflowY = "hidden";
-        })
-    }
-}
-
-const listenToOneModal = function(){
-    const modaltriggers = document.querySelectorAll(".js-modaltrigger");
-    for (const trigger of modaltriggers){
-        trigger.addEventListener("click", function(){
-            const data = this.dataset.json;
-            const type = this.dataset.type;
-            showOneModalData(data, type);
-            document.querySelector(".js-modal").showModal();
-            document.body.style.overflowY = "hidden";
-        })
-    }
-}
-
-const listenToTwoModal = function(){
-    const modaltriggers = document.querySelectorAll(".js-modaltrigger");
-    for (const trigger of modaltriggers){
-        trigger.addEventListener("click", function(){
-            const data = this.dataset.json;
-            const type1 = this.dataset.type1;
-            const type2 = this.dataset.type2;
-            showTwoModalData(data, type1, type2);
-            document.querySelector(".js-modal").showModal();
-            document.body.style.overflowY = "hidden";
-        })
-    }
-}
-
-const listenToCheckbox = function(){
-    const toggles = document.querySelectorAll(".js-toggle");
-    for (const toggle of toggles){
-        toggle.addEventListener("keydown", function(e){
-            if (e.code === "Enter" || e.code === "Space"){
-                const checkboxes = document.querySelectorAll(".js-checkbox");
-                const checkbox = this.querySelector(".js-checkbox");
-                checkbox.checked = !checkbox.checked;
-                
-                let checkedCount = 0;
-                for (const checkbox of checkboxes) {
-                    if (checkbox.checked) {
-                        checkedCount++;
-                    }
-                }
-                if (checkedCount === 0){
-                    checkedCount = 3;
-                    filter = [ "grass", "boom", "onkruid"];
-                    const checkboxes = document.querySelectorAll(".js-checkbox");
-                    checkboxes.forEach(checkbox => {
-                        checkbox.checked = true;
-                    });
-                } else {
-                    if (!checkbox.checked) {
-                        filter = filter.filter(item => item !== checkbox.value);
-                    } else {
-                        filter.push(checkbox.value);
-                    }
-                }
-                getdata();
-            }
-        })
-    }
-    listenToFilter();
-}
-
-const listenToClose = function(){
-    const closebtn = document.querySelector(".js-close");
-    closebtn.addEventListener("click", function(){
-        document.body.style.overflowY = "auto";
-        document.querySelector(".js-modal").close();
-    })
+// OTHER
+const calculatePin = function(percentage){
+    const rotatie = (percentage - 50) * 1.8;
+    return rotatie;
 }
 
 const listenToScroll = function(){
-    console.log("scroll")
-
     const scrollContainer = document.querySelector('.js-scroll');
     let isMouseDown = false;
     let startX;
@@ -130,6 +36,7 @@ const listenToScroll = function(){
     });
 }
 
+// ANIMATIONS
 const animate = function(element){
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -163,12 +70,7 @@ const listenToAnimate = function(){
     animate(document.querySelector(".c-modal__chart2"));
 }
 
-// Backend
-const calculatePin = function(percentage){
-    const rotatie = (percentage - 50) * 1.8;
-    return rotatie;
-}
-
+// TODAY
 const showToday = function(data){
     // Algemeen
     document.querySelector('.js-today__description').innerHTML = data.today.long_description;
@@ -340,6 +242,7 @@ const showTwoToday = function(data, type1, type2){
     document.querySelector(".js-filter2").classList.remove("u-hidden");
 }
 
+// FORECAST
 const showForecast = function(data){
     let html = "";
     for (const day of data.forecast){
@@ -423,6 +326,7 @@ const showTwoForecast = function(data, type1, type2){
     listenToScroll();
 }
 
+// MODAL
 const showModalData = function(json){
     const data = JSON.parse(json);
     document.querySelector(".js-modal__date").innerHTML = data.date;
@@ -595,6 +499,54 @@ const showTwoModalData = function(json, type1, type2){
 
 }
 
+const listenToClose = function(){
+    const closebtn = document.querySelector(".js-close");
+    closebtn.addEventListener("click", function(){
+        document.body.style.overflowY = "auto";
+        document.querySelector(".js-modal").close();
+    })
+}
+
+const listenToModal = function(){
+    const modaltriggers = document.querySelectorAll(".js-modaltrigger");
+    for (const trigger of modaltriggers){
+        trigger.addEventListener("click", function(){
+            const data = this.dataset.json;
+            showModalData(data);
+            document.querySelector(".js-modal").showModal();
+            document.body.style.overflowY = "hidden";
+        })
+    }
+}
+
+const listenToOneModal = function(){
+    const modaltriggers = document.querySelectorAll(".js-modaltrigger");
+    for (const trigger of modaltriggers){
+        trigger.addEventListener("click", function(){
+            const data = this.dataset.json;
+            const type = this.dataset.type;
+            showOneModalData(data, type);
+            document.querySelector(".js-modal").showModal();
+            document.body.style.overflowY = "hidden";
+        })
+    }
+}
+
+const listenToTwoModal = function(){
+    const modaltriggers = document.querySelectorAll(".js-modaltrigger");
+    for (const trigger of modaltriggers){
+        trigger.addEventListener("click", function(){
+            const data = this.dataset.json;
+            const type1 = this.dataset.type1;
+            const type2 = this.dataset.type2;
+            showTwoModalData(data, type1, type2);
+            document.querySelector(".js-modal").showModal();
+            document.body.style.overflowY = "hidden";
+        })
+    }
+}
+
+// DATA
 const showdata = function(data){
     // haal duplicaten uit de lijst
     let filterlijst = new Set(filter);
@@ -624,27 +576,22 @@ const getdata = function(){
     })
 }
 
-// 1 filter
-// const listenToFilter = function () {
-//     const checkboxes = document.querySelectorAll(".js-checkbox");
-//     for (const checkbox of checkboxes) {
-//         checkbox.addEventListener("change", function () {
-//             filter = [];
-//             for (const otherCheckbox of checkboxes) {
-//                 if (otherCheckbox !== checkbox) {
-//                     otherCheckbox.checked = false;
-//                 }
-//             }
-//             if (checkbox.checked) {
-//                 const value = checkbox.value;
-//                 filter = [value];
-//             }
-//             getdata();
-//         })
-//     }
-// }
+// FILTER
+const listenToFilterTab = function(){
+    document.querySelector('.js-filterbtn').addEventListener("click", function(){
+        document.querySelector(".js-filter").classList.toggle("c-filter__show");
 
-// 2 filters
+        const filters = document.querySelectorAll(".js-toggle");
+        for (const filter of filters){
+            if (filter.hasAttribute("tabindex")){
+                filter.removeAttribute("tabindex");
+            } else {
+                filter.setAttribute("tabindex", "0");
+            }
+        }
+    })
+}
+
 const listenToFilter = function () {
     const checkboxes = document.querySelectorAll(".js-checkbox");
     for (const checkbox of checkboxes) {
@@ -674,17 +621,56 @@ const listenToFilter = function () {
     }
 }
 
-// DOM
+const listenToCheckbox = function(){
+    const toggles = document.querySelectorAll(".js-toggle");
+    for (const toggle of toggles){
+        toggle.addEventListener("keydown", function(e){
+            if (e.code === "Enter" || e.code === "Space"){
+                const checkboxes = document.querySelectorAll(".js-checkbox");
+                const checkbox = this.querySelector(".js-checkbox");
+                checkbox.checked = !checkbox.checked;
+                
+                let checkedCount = 0;
+                for (const checkbox of checkboxes) {
+                    if (checkbox.checked) {
+                        checkedCount++;
+                    }
+                }
+                if (checkedCount === 0){
+                    checkedCount = 3;
+                    filter = [ "grass", "boom", "onkruid"];
+                    const checkboxes = document.querySelectorAll(".js-checkbox");
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = true;
+                    });
+                } else {
+                    if (!checkbox.checked) {
+                        filter = filter.filter(item => item !== checkbox.value);
+                    } else {
+                        filter.push(checkbox.value);
+                    }
+                }
+                getdata();
+            }
+        })
+    }
+    listenToFilter();
+}
 
+// DOM
 const init = function(){
+    // OTHER
+    listenToScroll();
+    listenToAnimate();
+    // MODAL
+    listenToClose();
+    // DATA
     getdata();
+    // FILTER
     listenToFilterTab();
     listenToFilter();
     listenToCheckbox();
-    listenToScroll();
-    // listenToModal();
-    listenToClose();
-    listenToAnimate();
+    // DOM LOADED
     setTimeout(function(){
         document.querySelector(".js-loader").classList.add("u-hidden");
         document.querySelector(".js-main").classList.remove("u-hidden");
