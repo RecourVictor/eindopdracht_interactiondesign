@@ -602,6 +602,9 @@ const getdata = function(){
     .then(function(myJson){
         showdata(myJson);
     })
+    .catch(function(error){
+        console.log(error);
+    })
 }
 
 // 1 filter
