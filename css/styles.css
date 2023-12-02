@@ -603,6 +603,27 @@ label{
     background-position: right bottom;
     background-color: var(--global-color-whitewhite);
     box-shadow: var(--global-boxShadow);
+
+    opacity: 0;
+    transform: translateY(50%);
+    transition: var(--global-transition);
+}
+
+.c-overview__card--2, .c-modal__card--2{
+    transition-delay: 0.1s;
+}
+
+.c-overview__card--3, .c-modal__card--3{
+    transition-delay: 0.2s;
+}
+
+.c-overview__card--filter2, .c-modal__card--filter2{
+    transition-delay: 0.2s;
+}
+
+.c-overview__card.c-animate{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Gauge */
@@ -696,6 +717,7 @@ label{
 
 .c-filter__chart{
     grid-area: chart;
+    transition-delay: 0.1s;
 }
 
 /* Scroll */

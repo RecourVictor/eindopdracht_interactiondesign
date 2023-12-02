@@ -115,6 +115,39 @@ const listenToScroll = function(){
     })
 }
 
+const animate = function(element){
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                element.classList.add("c-animate");
+            } else {
+                element.classList.remove("c-animate");
+            }
+        });
+    });
+    observer.observe(element);
+}
+
+const listenToAnimate = function(){
+    animate(document.querySelector(".c-overview__card--1"));
+    animate(document.querySelector(".c-overview__card--2"));
+    animate(document.querySelector(".c-overview__card--3"));
+    animate(document.querySelector(".c-overview__weather"));
+    animate(document.querySelector(".c-overview__card--filter"));
+    animate(document.querySelector(".c-overview__chart"));
+    animate(document.querySelector(".c-overview__card--filter1"));
+    animate(document.querySelector(".c-overview__card--filter2"));
+    animate(document.querySelector(".c-overview__chart2"));
+    animate(document.querySelector(".c-modal__card--1"));
+    animate(document.querySelector(".c-modal__card--2"));
+    animate(document.querySelector(".c-modal__card--3"));
+    animate(document.querySelector(".c-modal__card--filter"))
+    animate(document.querySelector(".c-modal__chart"));
+    animate(document.querySelector(".c-modal__card--filter1"));
+    animate(document.querySelector(".c-modal__card--filter2"));
+    animate(document.querySelector(".c-modal__chart2"));
+}
+
 // Backend
 const calculatePin = function(percentage){
     const rotatie = (percentage - 50) * 1.8;
@@ -630,6 +663,7 @@ const init = function(){
     listenToCheckbox();
     // listenToModal();
     listenToClose();
+    listenToAnimate();
     setTimeout(function(){
         document.querySelector(".js-loader").classList.add("u-hidden");
         document.querySelector(".js-main").classList.remove("u-hidden");
