@@ -423,20 +423,22 @@ label{
 }
 
 .c-filter1{
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
     grid-template-areas:
     "date date date date date date"
     "description description description description description description"
+    "weer weer weer weer weer weer"
     "gauge1 gauge1 gauge1 gauge1 gauge1 gauge1"
     "chart chart chart chart chart chart";
 }
 
 .c-filter2{
-    grid-template-rows: repeat(6, auto);
+    grid-template-rows: repeat(7, auto);
     grid-template-areas:
     "date date date date date date"
     "description description description description description description"
     'description2 description2 description2 description2 description2 description2'
+    "weer weer weer weer weer weer"
     "gauge1 gauge1 gauge1 gauge1 gauge1 gauge1"
     "gauge2 gauge2 gauge2 gauge2 gauge2 gauge2"
     "chart chart chart chart chart chart";
@@ -444,11 +446,12 @@ label{
 
 @media screen and (min-width: 35rem){
     .c-filter2{
-        grid-template-rows: repeat(5, auto);
+        grid-template-rows: repeat(6, auto);
         grid-template-areas:
         "date date date date date date"
         "description description description description description description"
         'description2 description2 description2 description2 description2 description2'
+        "weer weer weer weer weer weer"
         "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
         "chart chart chart chart chart chart";    
     }
@@ -466,20 +469,22 @@ label{
     }
 
     .c-filter1{
-        grid-template-rows: repeat(4, auto);
+        /* grid-template-rows: repeat(5, auto); */
         grid-template-areas:
         "date date date date date date"
         "description description description description description description"
+        "weer weer weer weer weer weer"
         "gauge1 gauge1 chart chart chart chart"
         "gauge1 gauge1 chart chart chart chart";
     }
 
     .c-filter2{
-        grid-template-rows: repeat(5, auto);
+        grid-template-rows: repeat(6, auto);
         grid-template-areas:
         "date date date date date date"
         "description description description description description description"
         'description2 description2 description2 description2 description2 description2'
+        "weer weer weer weer weer weer"
         "gauge1 gauge1 gauge1 gauge2 gauge2 gauge2"
         "chart chart chart chart chart chart";
     }
@@ -496,8 +501,8 @@ label{
     .c-filter1{
         grid-template-rows: repeat(4, auto);
         grid-template-areas:
-        "date date date date date date"
-        "description description description description description description"
+        "date date date weer weer weer"
+        "description description description weer weer weer"
         "gauge1 gauge1 chart chart chart chart"
         "gauge1 gauge1 chart chart chart chart";
     }
@@ -505,8 +510,9 @@ label{
     .c-filter2{
         grid-template-rows: repeat(5, auto);
         grid-template-areas:
-        "date date date date date date"
-        "description description description description2 description2 description2"
+        "date date date weer weer weer"
+        "description description description weer weer weer"
+        "description2 description2 description2 weer weer weer"
         "gauge1 gauge1 chart chart chart chart"
         "gauge2 gauge2 chart chart chart chart";
     }

@@ -1,7 +1,6 @@
 Todo:
 
 - animaties bij loaden/ in screen komen
-- toestenbord accesibility checken
 - alle js controleren
 - alle html controleren
 - alle css controleren

@@ -160,6 +160,10 @@ const showOneToday = function(data, type){
     document.querySelector(".js-filter1__gauge").classList.remove("u-background__onkruid");
     // Algemeen
     document.querySelector(".js-filter1__date").innerHTML = data.today.date;
+    document.querySelector(".js-filter1__temp").innerHTML = data.today.weather_conditions.temperature;
+    document.querySelector(".js-filter1__neerslag").innerHTML = data.today.weather_conditions.rainfall;
+    document.querySelector(".js-filter1__wind").innerHTML = data.today.weather_conditions.wind_speed;
+    document.querySelector(".js-filter1__uv").innerHTML = data.today.uv_index;
     if (type === "grass"){
         // Algmeen
         document.querySelector(".js-filter1__description").innerHTML = data.today.pollen_info.graspollen_info.long_description;
@@ -228,6 +232,10 @@ const showTwoToday = function(data, type1, type2){
 
     // Algemeen
     document.querySelector(".js-filter2__date").innerHTML = data.today.date;
+    document.querySelector(".js-filter2__temp").innerHTML = data.today.weather_conditions.temperature;
+    document.querySelector(".js-filter2__neerslag").innerHTML = data.today.weather_conditions.rainfall;
+    document.querySelector(".js-filter2__wind").innerHTML = data.today.weather_conditions.wind_speed;
+    document.querySelector(".js-filter2__uv").innerHTML = data.today.uv_index;
     // Filter 1
     if (type1 === "grass"){
         variabelefilter1 = data.today.pollen_info.graspollen_info;
@@ -405,6 +413,10 @@ const showOneModalData = function(json, type){
     document.querySelector(".js-onemodal__gauge").classList.remove("u-background__onkruid");
     // Algemeen
     document.querySelector(".js-onemodal__date").innerHTML = data.today.date;
+    document.querySelector(".js-onemodal__temp").innerHTML = data.today.weather_conditions.temperature;
+    document.querySelector(".js-onemodal__neerslag").innerHTML = data.today.weather_conditions.rainfall;
+    document.querySelector(".js-onemodal__wind").innerHTML = data.today.weather_conditions.wind_speed;
+    document.querySelector(".js-onemodal__uv").innerHTML = data.today.uv_index;
     if (type === "grass"){
         // Algmeen
         document.querySelector(".js-onemodal__description").innerHTML = data.today.pollen_info.graspollen_info.long_description;
@@ -472,6 +484,10 @@ const showTwoModalData = function(json, type1, type2){
 
     // Algemeen
     document.querySelector(".js-twomodal__date").innerHTML = data.today.date;
+    document.querySelector(".js-twomodal__temp").innerHTML = data.today.weather_conditions.temperature;
+    document.querySelector(".js-twomodal__neerslag").innerHTML = data.today.weather_conditions.rainfall;
+    document.querySelector(".js-twomodal__wind").innerHTML = data.today.weather_conditions.wind_speed;
+    document.querySelector(".js-twomodal__uv").innerHTML = data.today.uv_index;
     // Filter 1
     if (type1 === "grass"){
         variabelefilter1 = data.today.pollen_info.graspollen_info;
