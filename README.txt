@@ -1,5 +1,4 @@
 Todo:
-
 - alle js controleren
 - alle html controleren
 - alle css controleren

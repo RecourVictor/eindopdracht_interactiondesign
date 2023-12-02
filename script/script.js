@@ -595,7 +595,7 @@ const showdata = function(data){
 }  
 
 const getdata = function(){
-    fetch('../assets/json/pollenradar.json')
+    fetch('./assets/json/pollenradar.json')
     .then(function(response){
         return response.json();
     })
