@@ -3,7 +3,6 @@ Todo:
 - alle html controleren
 - alle css controleren
 - code opschonen
-- json updaten
 - responsive testen
 - checklist overlopen
 

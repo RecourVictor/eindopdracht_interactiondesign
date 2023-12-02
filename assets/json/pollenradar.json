@@ -1,26 +1,26 @@
 {
     "today": {
-      "date": "2023-10-18",
+      "date": "18/10/2023",
         "pollen_info": {
             "graspollen_info": {
               "type": "Graspollen",
               "concentration": "Matig",
-              "percentage": 50,
-              "short_description": "Matige graspollenconcentratie",
+              "percentage": 42,
+              "short_description": "Matige graspollen",
               "long_description": "Vandaag zal de concentratie van graspollen matig zijn, wat kan leiden tot milde allergische reacties bij gevoelige personen."
             },
             "boompollen_info": {
               "type": "Boompollen",
               "concentration": "Laag",
-              "percentage": 20,
-              "short_description": "Lage boompollenconcentratie",
+              "percentage": 15,
+              "short_description": "Lage boompollen",
               "long_description": "Vandaag is de concentratie van boompollen laag, wat gunstig is voor mensen met boompollenallergie."
             },
             "onkruidpollen_info": {
               "type": "Onkruidpollen",
               "concentration": "Hoog",
-              "percentage": 80,
-              "short_description": "Hoge onkruidpollenconcentratie",
+              "percentage": 77,
+              "short_description": "Hoge onkruidpollen",
               "long_description": "Vandaag zal de concentratie van onkruidpollen hoog zijn, wat kan leiden tot sterke allergische reacties bij gevoelige personen."
             }
         },
@@ -29,33 +29,32 @@
         "rainfall": "0.2 mm",
         "wind_speed": "10 km/h"
       },
-      "air_quality_index": 42,
       "uv_index": 5,
       "long_description": "Vandaag zal de concentratie van onkruidpollen hoog zijn, wat kan leiden tot allergische reacties bij mensen met pollenallergieën. De temperatuur zal aangenaam zijn, maar er kan lichte regen vallen, en de luchtkwaliteit is matig."
     },
     "forecast": [
       {
-        "date": "2023-10-19",
+        "date": "19/10/2023",
         "pollen_info": {
           "graspollen_info": {
             "type": "Graspollen",
             "concentration": "Hoog",
-            "percentage": 70,
-            "short_description": "Hoge graspollenconcentratie",
+            "percentage": 75,
+            "short_description": "Hoge graspollen",
             "long_description": "Morgen worden hoge graspollenconcentraties verwacht, wat kan leiden tot allergische reacties bij gevoelige personen."
           },
           "boompollen_info": {
             "type": "Boompollen",
             "concentration": "Matig",
-            "percentage": 40,
-            "short_description": "Matige boompollenconcentratie",
+            "percentage": 37,
+            "short_description": "Matige boompollen",
             "long_description": "De concentratie van boompollen zal matig zijn, wat enige symptomen kan veroorzaken bij mensen met boompollenallergie."
           },
           "onkruidpollen_info": {
             "type": "Onkruidpollen",
             "concentration": "Laag",
-            "percentage": 10,
-            "short_description": "Lage onkruidpollenconcentratie",
+            "percentage": 13,
+            "short_description": "Lage onkruidpollen",
             "long_description": "Morgen wordt een lage concentratie van onkruidpollen verwacht, wat gunstig is voor mensen met onkruidpollenallergie."
           }
         },
@@ -64,33 +63,32 @@
           "rainfall": "0.1 mm",
           "wind_speed": "15 km/h"
         },
-        "air_quality_index": 45,
         "uv_index": 6,
         "long_description": "Morgen zullen de graspollen een hoge concentratie bereiken, wat kan leiden tot allergische reacties bij gevoelige personen. Het weer zal aangenaam zijn, maar er kan lichte regen vallen, en de luchtkwaliteit is matig.",
         "short_description": "Hoge graspollen morgen, aangenaam weer, lichte regen, matige luchtkwaliteit."
       },
       {
-        "date": "2023-10-20",
+        "date": "20/10/2023",
         "pollen_info": {
           "graspollen_info": {
             "type": "Graspollen",
             "concentration": "Laag",
-            "percentage": 30,
-            "short_description": "Lage graspollenconcentratie",
+            "percentage": 24,
+            "short_description": "Lage graspollen",
             "long_description": "Overmorgen wordt een lage concentratie van graspollen verwacht, wat gunstig is voor mensen met graspollenallergie."
           },
           "boompollen_info": {
             "type": "Boompollen",
             "concentration": "Hoog",
-            "percentage": 60,
-            "short_description": "Hoge boompollenconcentratie",
+            "percentage": 87,
+            "short_description": "Hoge boompollen",
             "long_description": "Overmorgen zal de concentratie van boompollen hoog zijn, wat kan leiden tot allergische reacties bij mensen met boompollenallergie."
           },
           "onkruidpollen_info": {
             "type": "Onkruidpollen",
             "concentration": "Matig",
-            "percentage": 50,
-            "short_description": "Matige onkruidpollenconcentratie",
+            "percentage": 61,
+            "short_description": "Matige onkruidpollen",
             "long_description": "Overmorgen zal de concentratie van onkruidpollen matig zijn, wat milde allergische reacties kan veroorzaken bij gevoelige personen."
           }
         },
@@ -99,33 +97,32 @@
           "rainfall": "0.0 mm",
           "wind_speed": "12 km/h"
         },
-        "air_quality_index": 47,
         "uv_index": 7,
         "long_description": "Overmorgen zal de concentratie van boompollen hoog zijn, wat kan leiden tot allergische reacties bij mensen met boompollenallergie. Het weer zal aangenaam en droog zijn, maar de luchtkwaliteit is matig.",
         "short_description": "Overmorgen hoge boompollen, aangenaam weer, matige luchtkwaliteit."
       },
       {
-        "date": "2023-10-21",
+        "date": "21/10/2023",
         "pollen_info": {
           "graspollen_info": {
             "type": "Graspollen",
             "concentration": "Matig",
-            "percentage": 40,
-            "short_description": "Gemiddelde graspollenconcentratie",
+            "percentage": 44,
+            "short_description": "Gemiddelde graspollen",
             "long_description": "Zaterdag wordt een gemiddelde concentratie van graspollen verwacht, wat een milde impact kan hebben op mensen met graspollenallergie."
           },
           "boompollen_info": {
             "type": "Boompollen",
             "concentration": "Laag",
-            "percentage": 20,
-            "short_description": "Lage boompollenconcentratie",
+            "percentage": 22,
+            "short_description": "Lage boompollen",
             "long_description": "Zaterdag zal de concentratie van boompollen laag zijn, wat gunstig is voor mensen met boompollenallergie."
           },
           "onkruidpollen_info": {
             "type": "Onkruidpollen",
             "concentration": "Hoog",
-            "percentage": 70,
-            "short_description": "Hoge onkruidpollenconcentratie",
+            "percentage": 78,
+            "short_description": "Hoge onkruidpollen",
             "long_description": "Zaterdag zal de concentratie van onkruidpollen hoog zijn, wat kan leiden tot allergische reacties bij gevoelige personen."
           }
       },
@@ -134,7 +131,6 @@
           "rainfall": "5.2 mm",
           "wind_speed": "15 km/h"
         },
-        "air_quality_index": 54,
         "uv_index": 5,
         "long_description": "Zaterdag zal de concentratie van onkruidpollen hoog zijn, wat kan leiden tot allergische reacties bij gevoelige personen. Het weer zal koeler zijn met regenval, en de luchtkwaliteit is matig.",
         "short_description": "Zaterdag hoge onkruidpollen, koeler weer, matige luchtkwaliteit."
@@ -145,22 +141,22 @@
           "graspollen_info": {
             "type": "Graspollen",
             "concentration": "Hoog",
-            "percentage": 70,
-            "short_description": "Hoge graspollenconcentratie",
+            "percentage": 82,
+            "short_description": "Hoge graspollen",
             "long_description": "Zondag wordt een hoge concentratie van graspollen verwacht, wat kan leiden tot allergische reacties bij mensen met graspollenallergie."
           },
           "boompollen_info": {
             "type": "Boompollen",
             "concentration": "Matig",
-            "percentage": 50,
-            "short_description": "Matige boompollenconcentratie",
+            "percentage": 62,
+            "short_description": "Matige boompollen",
             "long_description": "Zondag zal de concentratie van boompollen matig zijn, wat een milde impact kan hebben op mensen met boompollenallergie."
           },
           "onkruidpollen_info": {
             "type": "Onkruidpollen",
             "concentration": "Laag",
-            "percentage": 20,
-            "short_description": "Lage onkruidpollenconcentratie",
+            "percentage": 7,
+            "short_description": "Lage onkruidpollen",
             "long_description": "Zondag zal de concentratie van onkruidpollen laag zijn, wat gunstig is voor mensen met onkruidpollenallergie."
           }
       },
@@ -169,33 +165,32 @@
           "rainfall": "1.5 mm",
           "wind_speed": "10 km/h"
         },
-        "air_quality_index": 48,
         "uv_index": 6,
         "long_description": "Zondag zal de concentratie van graspollen hoog zijn, wat kan leiden tot allergische reacties bij mensen met graspollenallergie. Het weer zal aangenaam zijn met lichte regenval, en de luchtkwaliteit is matig.",
         "short_description": "Zondag hoge graspollen, aangenaam weer, matige luchtkwaliteit."
       },
       {
-        "date": "2023-10-23",
+        "date": "23/10/2023",
         "pollen_info": {
           "graspollen_info": {
             "type": "Graspollen",
             "concentration": "Laag",
-            "percentage": 30,
-            "short_description": "Lage graspollenconcentratie",
+            "percentage": 26,
+            "short_description": "Lage graspollen",
             "long_description": "Maandag wordt een lage concentratie van graspollen verwacht, wat gunstig is voor mensen met graspollenallergie."
           },
           "boompollen_info": {
             "type": "Boompollen",
             "concentration": "Matig",
-            "percentage": 50,
-            "short_description": "Matige boompollenconcentratie",
+            "percentage": 57,
+            "short_description": "Matige boompollen",
             "long_description": "Maandag zal de concentratie van boompollen matig zijn, wat een milde impact kan hebben op mensen met boompollenallergie."
           },
           "onkruidpollen_info": {
             "type": "Onkruidpollen",
             "concentration": "Hoog",
-            "percentage": 60,
-            "short_description": "Hoge onkruidpollenconcentratie",
+            "percentage": 73,
+            "short_description": "Hoge onkruidpollen",
             "long_description": "Maandag zal de concentratie van onkruidpollen hoog zijn, wat kan leiden tot allergische reacties bij gevoelige personen."
           }
       },
@@ -204,33 +199,32 @@
           "rainfall": "0.8 mm",
           "wind_speed": "14 km/h"
         },
-        "air_quality_index": 52,
         "uv_index": 6,
         "long_description": "Maandag zal de concentratie van onkruidpollen hoog zijn, wat kan leiden tot allergische reacties bij gevoelige personen. Het weer zal aangenaam zijn met lichte regenval, en de luchtkwaliteit is matig.",
         "short_description": "Maandag hoge onkruidpollen, aangenaam weer, matige luchtkwaliteit."
       },
       {
-        "date": "2023-10-24",
+        "date": "24/10/2023",
         "pollen_info": {
           "graspollen_info": {
             "type": "Graspollen",
             "concentration": "Matig",
-            "percentage": 50,
-            "short_description": "Matige graspollenconcentratie",
+            "percentage": 44,
+            "short_description": "Matige graspollen",
             "long_description": "Dinsdag wordt een matige concentratie van graspollen verwacht, wat een milde impact kan hebben op mensen met graspollenallergie."
           },
           "boompollen_info": {
             "type": "Boompollen",
             "concentration": "Laag",
-            "percentage": 20,
-            "short_description": "Lage boompollenconcentratie",
+            "percentage": 12,
+            "short_description": "Lage boompollen",
             "long_description": "Dinsdag zal de concentratie van boompollen laag zijn, wat gunstig is voor mensen met boompollenallergie."
           },
           "onkruidpollen_info": {
             "type": "Onkruidpollen",
             "concentration": "Laag",
             "percentage": 15,
-            "short_description": "Lage onkruidpollenconcentratie",
+            "short_description": "Lage onkruidpollen",
             "long_description": "Dinsdag zal de concentratie van onkruidpollen laag zijn, wat gunstig is voor mensen met onkruidpollenallergie."
           }
       },
@@ -239,33 +233,32 @@
           "rainfall": "0.3 mm",
           "wind_speed": "10 km/h"
         },
-        "air_quality_index": 49,
         "uv_index": 5,
         "long_description": "Dinsdag wordt een matige concentratie van graspollen verwacht, terwijl de concentraties van boompollen en onkruidpollen laag zijn. Het weer zal aangenaam zijn met lichte regenval, en de luchtkwaliteit is matig.",
         "short_description": "Dinsdag matige graspollen, lage boompollen en onkruidpollen, aangenaam weer, matige luchtkwaliteit."
       },
       {
-        "date": "2023-10-25",
+        "date": "25/10/2023",
         "pollen_info": {
           "graspollen_info": {
             "type": "Graspollen",
             "concentration": "Laag",
             "percentage": 25,
-            "short_description": "Lage graspollenconcentratie",
+            "short_description": "Lage graspollen",
             "long_description": "Woensdag wordt een lage concentratie van graspollen verwacht, wat gunstig is voor mensen met graspollenallergie."
           },
           "boompollen_info": {
             "type": "Boompollen",
             "concentration": "Laag",
-            "percentage": 20,
-            "short_description": "Lage boompollenconcentratie",
+            "percentage": 22,
+            "short_description": "Lage boompollen",
             "long_description": "Woensdag zal de concentratie van boompollen laag zijn, wat gunstig is voor mensen met boompollenallergie."
           },
           "onkruidpollen_info": {
             "type": "Onkruidpollen",
             "concentration": "Laag",
-            "percentage": 15,
-            "short_description": "Lage onkruidpollenconcentratie",
+            "percentage": 23,
+            "short_description": "Lage onkruidpollen",
             "long_description": "Woensdag zal de concentratie van onkruidpollen laag zijn, wat gunstig is voor mensen met onkruidpollenallergie."
           }
       },
@@ -274,7 +267,6 @@
           "rainfall": "0.2 mm",
           "wind_speed": "10 km/h"
         },
-        "air_quality_index": 48,
         "uv_index": 5,
         "long_description": "Woensdag wordt een lage concentratie van graspollen verwacht, evenals lage concentraties van boompollen en onkruidpollen. Het weer zal aangenaam zijn met lichte regenval, en de luchtkwaliteit is matig.",
         "short_description": "Woensdag lage graspollen, lage boompollen en onkruidpollen, aangenaam weer, matige luchtkwaliteit."
