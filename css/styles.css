@@ -498,8 +498,8 @@ label{
     background-position: right bottom;
     background-color: var(--global-color-whitewhite);
     box-shadow: var(--global-boxShadow);
-    opacity: 0;
-    transform: translateY(50%);
+    opacity: 1;
+    transform: translateY(0);
     transition: var(--global-transition);
 }
 
@@ -516,8 +516,8 @@ label{
 }
 
 .c-overview__card.c-animate{
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(50%);
 }
 
 @media screen and (min-width: 35rem){

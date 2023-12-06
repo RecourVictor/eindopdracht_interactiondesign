@@ -41,9 +41,9 @@ const animate = function(element){
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                element.classList.add("c-animate");
-            } else {
                 element.classList.remove("c-animate");
+            } else {
+                element.classList.add("c-animate");
             }
         });
     });
@@ -54,7 +54,6 @@ const listenToAnimate = function(){
     animate(document.querySelector(".c-overview__card--1"));
     animate(document.querySelector(".c-overview__card--2"));
     animate(document.querySelector(".c-overview__card--3"));
-    animate(document.querySelector(".c-overview__weather"));
     animate(document.querySelector(".c-overview__card--filter"));
     animate(document.querySelector(".c-overview__chart"));
     animate(document.querySelector(".c-overview__card--filter1"));
@@ -317,7 +316,7 @@ const showTwoForecast = function(data, type1, type2){
             forecast  : data.forecast
         }
 
-        html += `<button data-type1="${type1}" data-type2="${type2}" data-json='${JSON.stringify(json)}' class="c-scroll__item js-modaltrigger"><h3 class="c-forecast__title">${day.date}</h3><p class="c-forecast__description">${day.pollen_info[type1info].long_description}<br>${day.pollen_info[type2info].long_description}</p><div class="c-forecast__1 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(day.pollen_info[type1info].percentage)}deg)"></div></div></div><h5>${day.pollen_info[type1info].type}</h5><p>${day.pollen_info[type1info].concentration}</p></div><div class="c-forecast__2 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(day.pollen_info[type2info].percentage)}deg)"></div></div></div><h5>${day.pollen_info[type2info].type}</h5><p>${day.pollen_info[type2info].concentration}</p></div></button>`;
+        html += `<button data-type1="${type1}" data-type2="${type2}" data-json='${JSON.stringify(json)}' class="c-scroll__item js-modaltrigger"><h3 class="c-forecast__title">${day.date}</h3><p class="c-forecast__description">${day.pollen_info[type1info].short_description}<br>${day.pollen_info[type2info].short_description}</p><div class="c-forecast__1 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(day.pollen_info[type1info].percentage)}deg)"></div></div></div><h5>${day.pollen_info[type1info].type}</h5><p>${day.pollen_info[type1info].concentration}</p></div><div class="c-forecast__2 c-forecast__gauge"><div class="c-gauge"><div class="c-gauge__body"><div class="c-gauge__fill c-gauge__fill--high"></div><div class="c-gauge__fill c-gauge__fill--medium"></div><div class="c-gauge__fill c-gauge__fill--low"></div><div class="c-gauge__cover"></div><div class="c-gauge__pin" style="transform: rotate(${calculatePin(day.pollen_info[type2info].percentage)}deg)"></div></div></div><h5>${day.pollen_info[type2info].type}</h5><p>${day.pollen_info[type2info].concentration}</p></div></button>`;
     }
     document.querySelector(".js-scroll").classList.remove("c-scrollfilter1");
     document.querySelector(".js-scroll").classList.add("c-scrollfilter2");
